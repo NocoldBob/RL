@@ -1,14 +1,17 @@
-# RL 从零开始：低算力贪吃蛇 Actor-Critic
+# RL 从零开始：低算力贪吃蛇强化学习
 
 [![CI](https://github.com/NocoldBob/RL/actions/workflows/ci.yml/badge.svg)](https://github.com/NocoldBob/RL/actions/workflows/ci.yml)
 
 面向强化学习新手的中文实践项目。从一个可以直接观察的贪吃蛇环境开始，在普通 CPU
-上理解状态、动作、奖励、教师策略、Actor-Critic 和独立评估。
+上理解状态、动作、奖励、教师策略、Actor-Critic、DQN 和独立评估。
 
 项目起点是 2024 年发布的低算力入门教程，重点是让新人快速跑通完整训练闭环。当前版本
 沿着这条教学路线继续完善，将可运行实现明确定位为**单步 Actor-Critic**，并补齐状态表达、
 行为克隆、独立评估和自动测试。它与 SAC 同属 Actor-Critic 家族；完整 SAC 所需的更多组件，
 会放到后续连续动作课程中单独讲解。
+
+第四篇进一步增加了带经验回放和目标网络的 DQN，以及随机策略、教师策略、纯
+Actor-Critic、DQN 四种方法的多随机种子统一评估。
 
 ## 当前版本带来了什么
 
@@ -19,6 +22,7 @@
 - 训练与评估使用独立环境，支持固定随机种子、CPU/CUDA 和跨平台路径。
 - 检查点保存模型、优化器、训练轮次和环境配置，可以恢复训练并直接播放。
 - 增加依赖清单、自动测试、GitHub CI 和短训练冒烟测试。
+- 增加 DQN、确定性播放程序和可导出 JSON/CSV 的四策略基准工具。
 
 ## 环境要求
 
@@ -86,6 +90,30 @@ python .\贪吃蛇\play.py .\runs\snake\checkpoints\best.pt --fps 15
 
 播放阶段不会调用教师策略，画面中的每个动作都来自模型。
 
+## DQN 实验
+
+训练默认 DQN：
+
+```powershell
+python .\贪吃蛇\train_dqn.py
+```
+
+播放 DQN 检查点：
+
+```powershell
+python .\贪吃蛇\play_dqn.py .\runs\dqn\checkpoints\best.pt --fps 15
+```
+
+用三个训练种子统一比较随机策略、教师策略、纯 Actor-Critic 和 DQN：
+
+```powershell
+python .\贪吃蛇\benchmark.py --seeds 7 42 2026 --episodes 1000 `
+  --eval-episodes 100 --device cpu
+```
+
+基准结果保存在 `runs/benchmark/results.json` 和 `results.csv`。发布第四篇前的原始精简数据
+保存在 [`docs/experiments/04-dqn-benchmark.json`](docs/experiments/04-dqn-benchmark.json)。
+
 ## 可复现验证样例
 
 在 Windows CPU、`seed=42` 的默认小网格配置下，发布前实测 500 Episode 的最后一轮
@@ -121,6 +149,10 @@ TD 误差同时更新策略和价值网络，并用少量熵奖励保持探索�
   model.py        # 卷积 Actor-Critic 与行为克隆更新
   main.py         # 训练、评估、日志和检查点
   play.py         # 无教师辅助的模型可视化
+  dqn.py          # Q 网络、经验回放和 DQN 更新
+  train_dqn.py    # DQN 训练、评估和检查点
+  play_dqn.py     # 无探索的 DQN 可视化
+  benchmark.py    # 四种策略的多随机种子统一评估
 tests/            # 环境、模型、检查点和短训练测试
 docs/csdn/        # 可发布到 CSDN 的后续教程
 ```
@@ -139,13 +171,13 @@ python -m pytest
 - [第一篇：RL 强化学习从小白到老鸟（一）——速通贪吃蛇游戏](https://blog.csdn.net/bobwww123/article/details/138722671)
 - [第二篇：RL 强化学习从小白到老鸟（二）——手撕 GPT](https://blog.csdn.net/bobwww123/article/details/138948884)
 - [第三篇 Markdown：让贪吃蛇训练更稳定、更容易复现](docs/csdn/03-让贪吃蛇训练更稳定更容易复现.md)
+- [第四篇 Markdown：DQN 实战，四种策略同场对照](docs/csdn/04-DQN实战四种策略同场对照.md)
 
 ## 后续路线
 
-1. 增加随机策略和教师策略基线对比。
-2. 增加适合离散动作的 DQN 课程。
-3. 增加 A2C/PPO 与多随机种子实验。
-4. 在连续动作环境中单独讲解真正的 SAC。
+1. 增加 Double DQN、Dueling DQN 等稳定性对照。
+2. 增加 A2C/PPO 与当前轻量 Actor-Critic 的多随机种子比较。
+3. 在连续动作环境中单独讲解完整 SAC。
 
 ## License
 

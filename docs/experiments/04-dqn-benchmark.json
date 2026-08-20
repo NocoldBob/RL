@@ -1,0 +1,33 @@
+{
+  "config": {
+    "seeds": [7, 42, 2026],
+    "train_episodes": 1000,
+    "eval_episodes": 100,
+    "grid_size": 6,
+    "end_score": 4,
+    "max_steps": 100,
+    "evaluation_seed_base": 300000,
+    "device": "cpu",
+    "torch_threads": 1
+  },
+  "runs": [
+    {"seed": 7, "strategy": "random", "reward": -1.8822, "score": 0.17, "success_rate": 0.0},
+    {"seed": 7, "strategy": "teacher", "reward": 134.3089, "score": 3.0, "success_rate": 1.0},
+    {"seed": 7, "strategy": "actor_critic", "reward": -31.4811, "score": 0.09, "success_rate": 0.0, "train_seconds": 38.5558},
+    {"seed": 7, "strategy": "dqn", "reward": -3.2484, "score": 0.72, "success_rate": 0.05, "train_seconds": 33.1690},
+    {"seed": 42, "strategy": "random", "reward": -2.4946, "score": 0.13, "success_rate": 0.0},
+    {"seed": 42, "strategy": "teacher", "reward": 134.3089, "score": 3.0, "success_rate": 1.0},
+    {"seed": 42, "strategy": "actor_critic", "reward": -32.04, "score": 0.1, "success_rate": 0.0, "train_seconds": 31.2325},
+    {"seed": 42, "strategy": "dqn", "reward": 30.4223, "score": 1.1, "success_rate": 0.15, "train_seconds": 25.6708},
+    {"seed": 2026, "strategy": "random", "reward": -2.426, "score": 0.13, "success_rate": 0.0},
+    {"seed": 2026, "strategy": "teacher", "reward": 134.3089, "score": 3.0, "success_rate": 1.0},
+    {"seed": 2026, "strategy": "actor_critic", "reward": -16.3971, "score": 0.31, "success_rate": 0.0, "train_seconds": 35.6688},
+    {"seed": 2026, "strategy": "dqn", "reward": 48.829, "score": 1.34, "success_rate": 0.29, "train_seconds": 28.7687}
+  ],
+  "aggregate": {
+    "random": {"reward_mean": -2.2676, "reward_std": 0.2740, "score_mean": 0.1433, "score_std": 0.0189, "success_rate_mean": 0.0, "success_rate_std": 0.0},
+    "teacher": {"reward_mean": 134.3089, "reward_std": 0.0, "score_mean": 3.0, "score_std": 0.0, "success_rate_mean": 1.0, "success_rate_std": 0.0},
+    "actor_critic": {"reward_mean": -26.6394, "reward_std": 7.2460, "score_mean": 0.1667, "score_std": 0.1014, "success_rate_mean": 0.0, "success_rate_std": 0.0, "train_seconds_mean": 35.1524},
+    "dqn": {"reward_mean": 25.3343, "reward_std": 21.5628, "score_mean": 1.0533, "score_std": 0.2553, "success_rate_mean": 0.1633, "success_rate_std": 0.0984, "train_seconds_mean": 29.2028}
+  }
+}
