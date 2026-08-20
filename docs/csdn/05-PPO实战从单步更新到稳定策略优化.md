@@ -8,7 +8,7 @@
 >
 > 第三篇：[让贪吃蛇训练更稳定、更容易复现](https://blog.csdn.net/bobwww123/article/details/163925583)
 >
-> 第四篇：[DQN 实战：四种策略同场对照](04-DQN实战四种策略同场对照.md)
+> 第四篇：[DQN 实战：四种策略同场对照](https://blog.csdn.net/bobwww123/article/details/163925932)
 
 ![PPO 实战：从单步更新到稳定策略优化](../assets/csdn-05/cover.png)
 

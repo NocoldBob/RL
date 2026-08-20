@@ -199,7 +199,8 @@ python -m pytest
 - [第二篇：RL 强化学习从小白到老鸟（二）——手撕 GPT](https://blog.csdn.net/bobwww123/article/details/138948884)
 - [第三篇：让贪吃蛇训练更稳定、更容易复现](https://blog.csdn.net/bobwww123/article/details/163925583)
 - [第三篇 Markdown 源稿](docs/csdn/03-让贪吃蛇训练更稳定更容易复现.md)
-- [第四篇 Markdown：DQN 实战，四种策略同场对照](docs/csdn/04-DQN实战四种策略同场对照.md)
+- [第四篇：DQN 实战，四种策略同场对照](https://blog.csdn.net/bobwww123/article/details/163925932)
+- [第四篇 Markdown 源稿](docs/csdn/04-DQN实战四种策略同场对照.md)
 - [第五篇 Markdown：PPO 实战，从单步更新到稳定策略优化](docs/csdn/05-PPO实战从单步更新到稳定策略优化.md)
 
 ## 后续路线
