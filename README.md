@@ -170,7 +170,8 @@ python -m pytest
 
 - [第一篇：RL 强化学习从小白到老鸟（一）——速通贪吃蛇游戏](https://blog.csdn.net/bobwww123/article/details/138722671)
 - [第二篇：RL 强化学习从小白到老鸟（二）——手撕 GPT](https://blog.csdn.net/bobwww123/article/details/138948884)
-- [第三篇 Markdown：让贪吃蛇训练更稳定、更容易复现](docs/csdn/03-让贪吃蛇训练更稳定更容易复现.md)
+- [第三篇：让贪吃蛇训练更稳定、更容易复现](https://blog.csdn.net/bobwww123/article/details/163925583)
+- [第三篇 Markdown 源稿](docs/csdn/03-让贪吃蛇训练更稳定更容易复现.md)
 - [第四篇 Markdown：DQN 实战，四种策略同场对照](docs/csdn/04-DQN实战四种策略同场对照.md)
 
 ## 后续路线

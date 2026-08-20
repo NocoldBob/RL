@@ -6,7 +6,7 @@
 >
 > 第二篇：[手撕 GPT（零基础保姆级教学）](https://blog.csdn.net/bobwww123/article/details/138948884)
 >
-> 第三篇：[让贪吃蛇训练更稳定、更容易复现](03-让贪吃蛇训练更稳定更容易复现.md)
+> 第三篇：[让贪吃蛇训练更稳定、更容易复现](https://blog.csdn.net/bobwww123/article/details/163925583)
 
 ![DQN 实战：四种策略同场对照](../assets/csdn-04/cover.png)
 
