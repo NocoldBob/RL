@@ -6,6 +6,7 @@ from pathlib import Path
 import numpy as np
 import pytest
 import torch
+from benchmark_double_dqn import evaluate_q_diagnostics
 from dqn import DQNAgent, ReplayBuffer
 from train_dqn import DQNTrainConfig, epsilon_at_step, train_dqn
 
@@ -46,6 +47,22 @@ def test_dqn_update_and_target_sync() -> None:
     agent.sync_target()
     for online, target in zip(agent.online.parameters(), agent.target.parameters(), strict=True):
         torch.testing.assert_close(online, target)
+
+
+def test_double_dqn_separates_action_selection_from_evaluation() -> None:
+    agent = DQNAgent(7, 3, 5)
+    with torch.no_grad():
+        for parameter in agent.online.parameters():
+            parameter.zero_()
+        for parameter in agent.target.parameters():
+            parameter.zero_()
+        agent.online.network[-1].bias.copy_(torch.tensor([3.0, 1.0, 0.0]))
+        agent.target.network[-1].bias.copy_(torch.tensor([1.0, 5.0, 0.0]))
+    states = torch.zeros((2, 7, 5, 5))
+    dqn_values = agent.bootstrap_values(states, double_dqn=False)
+    double_dqn_values = agent.bootstrap_values(states, double_dqn=True)
+    torch.testing.assert_close(dqn_values, torch.full((2,), 5.0))
+    torch.testing.assert_close(double_dqn_values, torch.full((2,), 1.0))
 
 
 def test_dqn_checkpoint_round_trip(tmp_path: Path) -> None:
@@ -111,3 +128,40 @@ def test_short_dqn_training_creates_artifacts(tmp_path: Path) -> None:
     assert (output_dir / "checkpoints" / "latest.pt").is_file()
     assert (output_dir / "checkpoints" / "best.pt").is_file()
     assert (output_dir / "history.json").is_file()
+
+
+def test_short_double_dqn_training_and_diagnostics(tmp_path: Path) -> None:
+    output_dir = tmp_path / "double-dqn"
+    summary = train_dqn(
+        DQNTrainConfig(
+            episodes=4,
+            grid_size=5,
+            end_score=3,
+            max_steps=6,
+            replay_capacity=32,
+            batch_size=4,
+            learning_starts=4,
+            train_interval=1,
+            target_update_interval=3,
+            double_dqn=True,
+            eval_interval=0,
+            save_interval=0,
+            output_dir=output_dir,
+            tensorboard=False,
+        )
+    )
+    assert summary["algorithm"] == "double_dqn"
+    checkpoint = output_dir / "checkpoints" / "latest.pt"
+    assert checkpoint.is_file()
+    restored = DQNAgent(7, 3, 5)
+    restored.load_checkpoint(checkpoint)
+    diagnostics = evaluate_q_diagnostics(
+        restored,
+        grid_size=5,
+        end_score=3,
+        max_steps=6,
+        episodes=3,
+        seed_base=500,
+        gamma=0.99,
+    )
+    assert all(np.isfinite(value) for value in diagnostics.values())

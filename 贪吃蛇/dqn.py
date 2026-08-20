@@ -146,11 +146,35 @@ class DQNAgent:
         )
         return int(self.online(state).argmax(dim=1).item())
 
-    def update(self, batch: TransitionBatch, gamma: float = 0.99) -> dict[str, float]:
+    @torch.no_grad()
+    def bootstrap_values(
+        self,
+        next_states: torch.Tensor,
+        *,
+        double_dqn: bool,
+    ) -> torch.Tensor:
+        """Estimate next-state values with DQN or Double DQN selection."""
+
+        target_q_values = self.target(next_states)
+        if not double_dqn:
+            return target_q_values.max(dim=1).values
+        next_actions = self.online(next_states).argmax(dim=1, keepdim=True)
+        return target_q_values.gather(1, next_actions).squeeze(1)
+
+    def update(
+        self,
+        batch: TransitionBatch,
+        gamma: float = 0.99,
+        *,
+        double_dqn: bool = False,
+    ) -> dict[str, float]:
         q_values = self.online(batch.states)
         selected_q_values = q_values.gather(1, batch.actions.unsqueeze(1)).squeeze(1)
         with torch.no_grad():
-            next_q_values = self.target(batch.next_states).max(dim=1).values
+            next_q_values = self.bootstrap_values(
+                batch.next_states,
+                double_dqn=double_dqn,
+            )
             targets = batch.rewards + gamma * (1.0 - batch.dones) * next_q_values
 
         loss = F.smooth_l1_loss(selected_q_values, targets)
@@ -161,6 +185,7 @@ class DQNAgent:
         return {
             "loss": float(loss.detach()),
             "q_mean": float(selected_q_values.detach().mean()),
+            "bootstrap_q_mean": float(next_q_values.detach().mean()),
             "target_mean": float(targets.detach().mean()),
             "gradient_norm": float(gradient_norm),
         }
@@ -180,7 +205,7 @@ class DQNAgent:
         path.parent.mkdir(parents=True, exist_ok=True)
         torch.save(
             {
-                "algorithm": "dqn",
+                "algorithm": "double_dqn" if config.get("double_dqn") else "dqn",
                 "online_state_dict": self.online.state_dict(),
                 "target_state_dict": self.target.state_dict(),
                 "optimizer_state_dict": self.optimizer.state_dict(),
@@ -193,8 +218,8 @@ class DQNAgent:
 
     def load_checkpoint(self, filename: str | Path) -> dict[str, Any]:
         checkpoint = torch.load(filename, map_location=self.device, weights_only=True)
-        if checkpoint.get("algorithm") != "dqn":
-            raise ValueError("checkpoint is not a DQN checkpoint")
+        if checkpoint.get("algorithm") not in {"dqn", "double_dqn"}:
+            raise ValueError("checkpoint is not a DQN-family checkpoint")
         self.online.load_state_dict(checkpoint["online_state_dict"])
         self.target.load_state_dict(
             checkpoint.get("target_state_dict", checkpoint["online_state_dict"])

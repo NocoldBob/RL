@@ -1,4 +1,4 @@
-"""Render a trained DQN Snake agent without exploration."""
+"""Render a trained DQN-family Snake agent without exploration."""
 
 from __future__ import annotations
 
@@ -51,7 +51,7 @@ def play_dqn(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Play a trained Snake DQN checkpoint")
+    parser = argparse.ArgumentParser(description="Play a trained Snake DQN-family checkpoint")
     parser.add_argument(
         "checkpoint",
         type=Path,

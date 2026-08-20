@@ -31,6 +31,7 @@ class DQNTrainConfig:
     learning_rate: float = 3e-4
     weight_decay: float = 0.0
     gamma: float = 0.99
+    double_dqn: bool = False
     epsilon_start: float = 1.0
     epsilon_end: float = 0.05
     epsilon_decay_steps: int = 8_000
@@ -173,7 +174,11 @@ def train_dqn(config: DQNTrainConfig) -> dict[str, Any]:
 
                 ready = total_steps >= config.learning_starts and len(replay) >= config.batch_size
                 if ready and total_steps % config.train_interval == 0:
-                    metrics = agent.update(replay.sample(config.batch_size, device), config.gamma)
+                    metrics = agent.update(
+                        replay.sample(config.batch_size, device),
+                        config.gamma,
+                        double_dqn=config.double_dqn,
+                    )
                     losses.append(metrics["loss"])
                     if writer is not None:
                         for name, value in metrics.items():
@@ -246,7 +251,7 @@ def train_dqn(config: DQNTrainConfig) -> dict[str, Any]:
         config=config.checkpoint_payload(),
     )
     summary: dict[str, Any] = {
-        "algorithm": "dqn",
+        "algorithm": "double_dqn" if config.double_dqn else "dqn",
         "episodes": config.episodes,
         "total_steps": total_steps,
         "last_reward": history["train_reward"][-1],
@@ -279,6 +284,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--target-update-interval", type=int, default=250)
     parser.add_argument("--learning-rate", type=float, default=3e-4)
     parser.add_argument("--gamma", type=float, default=0.99)
+    parser.add_argument("--double-dqn", action="store_true")
     parser.add_argument("--epsilon-start", type=float, default=1.0)
     parser.add_argument("--epsilon-end", type=float, default=0.05)
     parser.add_argument("--epsilon-decay-steps", type=int, default=8_000)
@@ -307,6 +313,7 @@ def main() -> None:
         target_update_interval=arguments.target_update_interval,
         learning_rate=arguments.learning_rate,
         gamma=arguments.gamma,
+        double_dqn=arguments.double_dqn,
         epsilon_start=arguments.epsilon_start,
         epsilon_end=arguments.epsilon_end,
         epsilon_decay_steps=arguments.epsilon_decay_steps,

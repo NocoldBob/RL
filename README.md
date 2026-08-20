@@ -16,6 +16,9 @@ Actor-Critic、DQN 四种方法的多随机种子统一评估。
 第五篇增加了 Rollout、GAE 和裁剪目标组成的 PPO，并将统一基准扩展为五种策略。PPO
 评估默认按策略分布进行可复现采样，同时保留贪心动作模式用于对照。
 
+第六篇在完全相同的网络和训练预算下配对比较 DQN 与 Double DQN，并增加初始 Q、实际折扣
+回报、目标选择差值和网络动作分歧等诊断，区分价值偏差与最终策略成绩。
+
 ## 当前版本带来了什么
 
 - 环境严格执行智能体传入的动作，让动作、奖励和下一状态保持一致。
@@ -25,7 +28,7 @@ Actor-Critic、DQN 四种方法的多随机种子统一评估。
 - 训练与评估使用独立环境，支持固定随机种子、CPU/CUDA 和跨平台路径。
 - 检查点保存模型、优化器、训练轮次和环境配置，可以恢复训练并直接播放。
 - 增加依赖清单、自动测试、GitHub CI 和短训练冒烟测试。
-- 增加 DQN、PPO、独立播放程序和可导出 JSON/CSV 的五策略基准工具。
+- 增加 DQN、Double DQN、PPO、独立播放程序和可导出 JSON/CSV 的基准工具。
 
 ## 环境要求
 
@@ -137,6 +140,24 @@ python .\贪吃蛇\benchmark.py --seeds 7 42 2026 --episodes 1000 `
 第五篇发布前的原始结果保存在
 [`docs/experiments/05-ppo-benchmark.json`](docs/experiments/05-ppo-benchmark.json)。
 
+## Double DQN 实验
+
+使用相同配置训练 Double DQN：
+
+```powershell
+python .\贪吃蛇\train_dqn.py --double-dqn --output-dir runs\double-dqn
+```
+
+配对比较普通 DQN 与 Double DQN，并诊断 Q 值：
+
+```powershell
+python .\贪吃蛇\benchmark_double_dqn.py --seeds 7 42 2026 `
+  --episodes 1000 --eval-episodes 100 --device cpu --torch-threads 1
+```
+
+第六篇原始结果保存在
+[`docs/experiments/06-double-dqn-benchmark.json`](docs/experiments/06-double-dqn-benchmark.json)。
+
 ## 可复现验证样例
 
 在 Windows CPU、`seed=42` 的默认小网格配置下，发布前实测 500 Episode 的最后一轮
@@ -180,6 +201,7 @@ TD 误差同时更新策略和价值网络，并用少量熵奖励保持探索�
   train_ppo.py    # PPO 训练、评估、日志和检查点
   play_ppo.py     # 策略采样或贪心动作的 PPO 可视化
   benchmark.py    # 五种策略的多随机种子统一评估
+  benchmark_double_dqn.py # DQN/Double DQN 配对评估和 Q 值诊断
 tests/            # 环境、模型、检查点和短训练测试
 docs/csdn/        # 可发布到 CSDN 的后续教程
 ```
@@ -202,10 +224,11 @@ python -m pytest
 - [第四篇：DQN 实战，四种策略同场对照](https://blog.csdn.net/bobwww123/article/details/163925932)
 - [第四篇 Markdown 源稿](docs/csdn/04-DQN实战四种策略同场对照.md)
 - [第五篇 Markdown：PPO 实战，从单步更新到稳定策略优化](docs/csdn/05-PPO实战从单步更新到稳定策略优化.md)
+- [第六篇 Markdown：Double DQN 实战，降低 Q 值成绩就会更好吗](docs/csdn/06-DoubleDQN实战降低Q值成绩就会更好吗.md)
 
 ## 后续路线
 
-1. 增加 Double DQN、Dueling DQN 等稳定性对照。
+1. 增加 Dueling DQN，继续做单变量稳定性对照。
 2. 增加障碍地图和课程难度，比较算法的泛化能力。
 3. 在连续动作环境中单独讲解完整 SAC。
 
