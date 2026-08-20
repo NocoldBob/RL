@@ -97,6 +97,41 @@ class QNetwork(nn.Module):
         return self.network(observation)
 
 
+class DuelingQNetwork(nn.Module):
+    """Estimate state value and centered action advantages separately."""
+
+    def __init__(self, input_channels: int, action_count: int, grid_size: int) -> None:
+        super().__init__()
+        feature_dim = 16 * grid_size * grid_size
+        self.encoder = nn.Sequential(
+            nn.Conv2d(input_channels, 16, kernel_size=3, padding=1),
+            nn.ReLU(),
+            nn.Flatten(),
+            nn.Linear(feature_dim, 64),
+            nn.ReLU(),
+        )
+        self.value_head = nn.Linear(64, 1)
+        self.advantage_head = nn.Linear(64, action_count)
+
+    def decompose(self, observation: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
+        features = self.encoder(observation)
+        return self.value_head(features), self.advantage_head(features)
+
+    def forward(self, observation: torch.Tensor) -> torch.Tensor:
+        value, advantage = self.decompose(observation)
+        return value + advantage - advantage.mean(dim=1, keepdim=True)
+
+
+def dqn_algorithm_name(*, double_dqn: bool, dueling: bool) -> str:
+    if dueling and double_dqn:
+        return "dueling_double_dqn"
+    if dueling:
+        return "dueling_dqn"
+    if double_dqn:
+        return "double_dqn"
+    return "dqn"
+
+
 class DQNAgent:
     """Online/target Q networks with epsilon-greedy action selection."""
 
@@ -108,14 +143,17 @@ class DQNAgent:
         *,
         learning_rate: float = 3e-4,
         weight_decay: float = 0.0,
+        dueling: bool = False,
         device: torch.device | str = "cpu",
     ) -> None:
         self.input_channels = input_channels
         self.action_count = action_count
         self.grid_size = grid_size
+        self.dueling = dueling
         self.device = torch.device(device)
-        self.online = QNetwork(input_channels, action_count, grid_size).to(self.device)
-        self.target = QNetwork(input_channels, action_count, grid_size).to(self.device)
+        network_type = DuelingQNetwork if dueling else QNetwork
+        self.online = network_type(input_channels, action_count, grid_size).to(self.device)
+        self.target = network_type(input_channels, action_count, grid_size).to(self.device)
         self.target.load_state_dict(self.online.state_dict())
         self.target.eval()
         self.optimizer = torch.optim.Adam(
@@ -205,7 +243,10 @@ class DQNAgent:
         path.parent.mkdir(parents=True, exist_ok=True)
         torch.save(
             {
-                "algorithm": "double_dqn" if config.get("double_dqn") else "dqn",
+                "algorithm": dqn_algorithm_name(
+                    double_dqn=bool(config.get("double_dqn", False)),
+                    dueling=bool(config.get("dueling", self.dueling)),
+                ),
                 "online_state_dict": self.online.state_dict(),
                 "target_state_dict": self.target.state_dict(),
                 "optimizer_state_dict": self.optimizer.state_dict(),
@@ -218,7 +259,13 @@ class DQNAgent:
 
     def load_checkpoint(self, filename: str | Path) -> dict[str, Any]:
         checkpoint = torch.load(filename, map_location=self.device, weights_only=True)
-        if checkpoint.get("algorithm") not in {"dqn", "double_dqn"}:
+        supported_algorithms = {
+            "dqn",
+            "double_dqn",
+            "dueling_dqn",
+            "dueling_double_dqn",
+        }
+        if checkpoint.get("algorithm") not in supported_algorithms:
             raise ValueError("checkpoint is not a DQN-family checkpoint")
         self.online.load_state_dict(checkpoint["online_state_dict"])
         self.target.load_state_dict(

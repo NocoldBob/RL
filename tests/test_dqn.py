@@ -7,7 +7,8 @@ import numpy as np
 import pytest
 import torch
 from benchmark_double_dqn import evaluate_q_diagnostics
-from dqn import DQNAgent, ReplayBuffer
+from benchmark_dueling_dqn import evaluate_representation_diagnostics
+from dqn import DQNAgent, DuelingQNetwork, ReplayBuffer, dqn_algorithm_name
 from train_dqn import DQNTrainConfig, epsilon_at_step, train_dqn
 
 
@@ -63,6 +64,30 @@ def test_double_dqn_separates_action_selection_from_evaluation() -> None:
     double_dqn_values = agent.bootstrap_values(states, double_dqn=True)
     torch.testing.assert_close(dqn_values, torch.full((2,), 5.0))
     torch.testing.assert_close(double_dqn_values, torch.full((2,), 1.0))
+
+
+def test_dueling_network_reconstructs_centered_q_values() -> None:
+    torch.manual_seed(7)
+    network = DuelingQNetwork(7, 3, 5)
+    states = torch.randn((4, 7, 5, 5))
+    value, advantage = network.decompose(states)
+    expected = value + advantage - advantage.mean(dim=1, keepdim=True)
+    torch.testing.assert_close(network(states), expected)
+    assert value.shape == (4, 1)
+    assert advantage.shape == (4, 3)
+    torch.testing.assert_close(
+        (expected - value).mean(dim=1),
+        torch.zeros(4),
+        atol=1e-6,
+        rtol=1e-6,
+    )
+
+
+def test_dqn_algorithm_names_cover_factorial_variants() -> None:
+    assert dqn_algorithm_name(double_dqn=False, dueling=False) == "dqn"
+    assert dqn_algorithm_name(double_dqn=True, dueling=False) == "double_dqn"
+    assert dqn_algorithm_name(double_dqn=False, dueling=True) == "dueling_dqn"
+    assert dqn_algorithm_name(double_dqn=True, dueling=True) == "dueling_double_dqn"
 
 
 def test_dqn_checkpoint_round_trip(tmp_path: Path) -> None:
@@ -165,3 +190,43 @@ def test_short_double_dqn_training_and_diagnostics(tmp_path: Path) -> None:
         gamma=0.99,
     )
     assert all(np.isfinite(value) for value in diagnostics.values())
+
+
+def test_short_dueling_double_dqn_training(tmp_path: Path) -> None:
+    output_dir = tmp_path / "dueling-double-dqn"
+    summary = train_dqn(
+        DQNTrainConfig(
+            episodes=4,
+            grid_size=5,
+            end_score=3,
+            max_steps=6,
+            replay_capacity=32,
+            batch_size=4,
+            learning_starts=4,
+            train_interval=1,
+            target_update_interval=3,
+            double_dqn=True,
+            dueling=True,
+            eval_interval=0,
+            save_interval=0,
+            output_dir=output_dir,
+            tensorboard=False,
+        )
+    )
+    assert summary["algorithm"] == "dueling_double_dqn"
+    checkpoint = output_dir / "checkpoints" / "latest.pt"
+    restored = DQNAgent(7, 3, 5, dueling=True)
+    metadata = restored.load_checkpoint(checkpoint)
+    assert metadata["config"]["dueling"] is True
+    diagnostics = evaluate_representation_diagnostics(
+        restored,
+        grid_size=5,
+        end_score=3,
+        max_steps=6,
+        episodes=3,
+        seed_base=700,
+    )
+    assert diagnostics["parameter_count"] > 0
+    assert diagnostics["q_action_margin_mean"] is not None
+    assert diagnostics["state_value_mean"] is not None
+    assert diagnostics["advantage_range_mean"] is not None

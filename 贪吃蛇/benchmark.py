@@ -90,6 +90,7 @@ def load_dqn(checkpoint_path: Path, device: torch.device) -> DQNAgent:
         grid_size=grid_size,
         learning_rate=float(config.get("learning_rate", 3e-4)),
         weight_decay=float(config.get("weight_decay", 0.0)),
+        dueling=bool(config.get("dueling", False)),
         device=device,
     )
     env.close()

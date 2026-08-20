@@ -11,7 +11,7 @@ from typing import Any
 
 import numpy as np
 import torch
-from dqn import DQNAgent, ReplayBuffer
+from dqn import DQNAgent, ReplayBuffer, dqn_algorithm_name
 from environment import SnakeEnv
 from main import choose_device, seed_everything
 from torch.utils.tensorboard import SummaryWriter
@@ -32,6 +32,7 @@ class DQNTrainConfig:
     weight_decay: float = 0.0
     gamma: float = 0.99
     double_dqn: bool = False
+    dueling: bool = False
     epsilon_start: float = 1.0
     epsilon_end: float = 0.05
     epsilon_decay_steps: int = 8_000
@@ -141,6 +142,7 @@ def train_dqn(config: DQNTrainConfig) -> dict[str, Any]:
         grid_size=config.grid_size,
         learning_rate=config.learning_rate,
         weight_decay=config.weight_decay,
+        dueling=config.dueling,
         device=device,
     )
     replay = ReplayBuffer(config.replay_capacity, seed=config.seed)
@@ -251,7 +253,10 @@ def train_dqn(config: DQNTrainConfig) -> dict[str, Any]:
         config=config.checkpoint_payload(),
     )
     summary: dict[str, Any] = {
-        "algorithm": "double_dqn" if config.double_dqn else "dqn",
+        "algorithm": dqn_algorithm_name(
+            double_dqn=config.double_dqn,
+            dueling=config.dueling,
+        ),
         "episodes": config.episodes,
         "total_steps": total_steps,
         "last_reward": history["train_reward"][-1],
@@ -285,6 +290,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--learning-rate", type=float, default=3e-4)
     parser.add_argument("--gamma", type=float, default=0.99)
     parser.add_argument("--double-dqn", action="store_true")
+    parser.add_argument("--dueling", action="store_true")
     parser.add_argument("--epsilon-start", type=float, default=1.0)
     parser.add_argument("--epsilon-end", type=float, default=0.05)
     parser.add_argument("--epsilon-decay-steps", type=int, default=8_000)
@@ -314,6 +320,7 @@ def main() -> None:
         learning_rate=arguments.learning_rate,
         gamma=arguments.gamma,
         double_dqn=arguments.double_dqn,
+        dueling=arguments.dueling,
         epsilon_start=arguments.epsilon_start,
         epsilon_end=arguments.epsilon_end,
         epsilon_decay_steps=arguments.epsilon_decay_steps,
