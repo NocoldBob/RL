@@ -1,0 +1,191 @@
+{
+  "config": {
+    "seeds": [
+      7,
+      42,
+      2026
+    ],
+    "train_episodes": 1000,
+    "eval_episodes": 100,
+    "grid_size": 6,
+    "end_score": 4,
+    "max_steps": 100,
+    "evaluation_seed_base": 300000,
+    "device": "cpu",
+    "torch_threads": 1
+  },
+  "runs": [
+    {
+      "seed": 7,
+      "strategy": "random",
+      "train_seconds": 0.0,
+      "reward": -1.8821999999999997,
+      "score": 0.17,
+      "success_rate": 0.0
+    },
+    {
+      "seed": 7,
+      "strategy": "teacher",
+      "train_seconds": 0.0,
+      "reward": 134.30890000000002,
+      "score": 3.0,
+      "success_rate": 1.0
+    },
+    {
+      "seed": 7,
+      "strategy": "actor_critic",
+      "train_seconds": 23.873799600172788,
+      "reward": -31.481100000000055,
+      "score": 0.09,
+      "success_rate": 0.0
+    },
+    {
+      "seed": 7,
+      "strategy": "dqn",
+      "train_seconds": 18.06037379987538,
+      "reward": -3.2484000000000166,
+      "score": 0.72,
+      "success_rate": 0.05
+    },
+    {
+      "seed": 7,
+      "strategy": "ppo",
+      "train_seconds": 5.301911700051278,
+      "reward": 7.7035,
+      "score": 0.71,
+      "success_rate": 0.04
+    },
+    {
+      "seed": 42,
+      "strategy": "random",
+      "train_seconds": 0.0,
+      "reward": -2.4946,
+      "score": 0.13,
+      "success_rate": 0.0
+    },
+    {
+      "seed": 42,
+      "strategy": "teacher",
+      "train_seconds": 0.0,
+      "reward": 134.30890000000002,
+      "score": 3.0,
+      "success_rate": 1.0
+    },
+    {
+      "seed": 42,
+      "strategy": "actor_critic",
+      "train_seconds": 17.419563800096512,
+      "reward": -32.040000000000056,
+      "score": 0.1,
+      "success_rate": 0.0
+    },
+    {
+      "seed": 42,
+      "strategy": "dqn",
+      "train_seconds": 14.307909300085157,
+      "reward": 30.42230000000002,
+      "score": 1.1,
+      "success_rate": 0.15
+    },
+    {
+      "seed": 42,
+      "strategy": "ppo",
+      "train_seconds": 9.218912200070918,
+      "reward": 29.605600000000003,
+      "score": 1.55,
+      "success_rate": 0.19
+    },
+    {
+      "seed": 2026,
+      "strategy": "random",
+      "train_seconds": 0.0,
+      "reward": -2.426,
+      "score": 0.13,
+      "success_rate": 0.0
+    },
+    {
+      "seed": 2026,
+      "strategy": "teacher",
+      "train_seconds": 0.0,
+      "reward": 134.30890000000002,
+      "score": 3.0,
+      "success_rate": 1.0
+    },
+    {
+      "seed": 2026,
+      "strategy": "actor_critic",
+      "train_seconds": 18.9950568000786,
+      "reward": -16.397100000000027,
+      "score": 0.31,
+      "success_rate": 0.0
+    },
+    {
+      "seed": 2026,
+      "strategy": "dqn",
+      "train_seconds": 13.745827400125563,
+      "reward": 48.829000000000015,
+      "score": 1.34,
+      "success_rate": 0.29
+    },
+    {
+      "seed": 2026,
+      "strategy": "ppo",
+      "train_seconds": 13.058973900042474,
+      "reward": 39.484000000000016,
+      "score": 1.44,
+      "success_rate": 0.23
+    }
+  ],
+  "aggregate": {
+    "random": {
+      "reward_mean": -2.2676,
+      "reward_std": 0.27395420541883786,
+      "score_mean": 0.14333333333333334,
+      "score_std": 0.01885618083164127,
+      "success_rate_mean": 0.0,
+      "success_rate_std": 0.0,
+      "train_seconds_mean": 0.0,
+      "train_seconds_std": 0.0
+    },
+    "teacher": {
+      "reward_mean": 134.30890000000002,
+      "reward_std": 0.0,
+      "score_mean": 3.0,
+      "score_std": 0.0,
+      "success_rate_mean": 1.0,
+      "success_rate_std": 0.0,
+      "train_seconds_mean": 0.0,
+      "train_seconds_std": 0.0
+    },
+    "actor_critic": {
+      "reward_mean": -26.639400000000045,
+      "reward_std": 7.245993112058567,
+      "score_mean": 0.16666666666666666,
+      "score_std": 0.10143416036468626,
+      "success_rate_mean": 0.0,
+      "success_rate_std": 0.0,
+      "train_seconds_mean": 20.096140066782635,
+      "train_seconds_std": 2.747553846716297
+    },
+    "dqn": {
+      "reward_mean": 25.334300000000006,
+      "reward_std": 21.562772018612712,
+      "score_mean": 1.0533333333333335,
+      "score_std": 0.25525586292102204,
+      "success_rate_mean": 0.16333333333333333,
+      "success_rate_std": 0.09843215373488932,
+      "train_seconds_mean": 15.371370166695366,
+      "train_seconds_std": 1.915209200062668
+    },
+    "ppo": {
+      "reward_mean": 25.597700000000007,
+      "reward_std": 13.280248287588607,
+      "score_mean": 1.2333333333333334,
+      "score_std": 0.37276742823851383,
+      "success_rate_mean": 0.15333333333333335,
+      "success_rate_std": 0.08178562764256865,
+      "train_seconds_mean": 9.193265933388224,
+      "train_seconds_std": 3.1668593055664402
+    }
+  }
+}

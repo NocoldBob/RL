@@ -1,4 +1,4 @@
-"""Train and fairly compare four Snake policies on shared evaluation seeds."""
+"""Train and fairly compare five Snake policies on shared evaluation seeds."""
 
 from __future__ import annotations
 
@@ -18,7 +18,9 @@ from dqn import DQNAgent
 from environment import SnakeEnv
 from main import TrainConfig, as_tensor, choose_device, train
 from model import ConvActorCritic
+from ppo import PPOAgent
 from train_dqn import DQNTrainConfig, train_dqn
+from train_ppo import PPOTrainConfig, train_ppo
 
 Policy = Callable[[np.ndarray, SnakeEnv], int]
 
@@ -96,6 +98,25 @@ def load_dqn(checkpoint_path: Path, device: torch.device) -> DQNAgent:
     return agent
 
 
+def load_ppo(checkpoint_path: Path, device: torch.device) -> PPOAgent:
+    checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=True)
+    config = dict(checkpoint.get("config", {}))
+    grid_size = int(config.get("grid_size", 6))
+    env = SnakeEnv(grid_size=grid_size)
+    agent = PPOAgent(
+        input_channels=env.observation_space.shape[0],
+        action_count=env.action_space.n,
+        grid_size=grid_size,
+        learning_rate=float(config.get("learning_rate", 3e-4)),
+        weight_decay=float(config.get("weight_decay", 0.0)),
+        device=device,
+    )
+    env.close()
+    agent.load_checkpoint(checkpoint_path)
+    agent.model.eval()
+    return agent
+
+
 def timed_training(function: Callable[[], Any], timing_path: Path, *, reuse: bool) -> float:
     if reuse and timing_path.is_file():
         return float(json.loads(timing_path.read_text(encoding="utf-8"))["seconds"])
@@ -111,7 +132,7 @@ def timed_training(function: Callable[[], Any], timing_path: Path, *, reuse: boo
 
 def aggregate_results(rows: list[dict[str, Any]]) -> dict[str, dict[str, float]]:
     aggregate: dict[str, dict[str, float]] = {}
-    for strategy in ("random", "teacher", "actor_critic", "dqn"):
+    for strategy in ("random", "teacher", "actor_critic", "dqn", "ppo"):
         selected = [row for row in rows if row["strategy"] == strategy]
         values: dict[str, float] = {}
         for metric in ("reward", "score", "success_rate", "train_seconds"):
@@ -151,8 +172,10 @@ def run_benchmark(
         seed_dir = output_dir / f"seed-{seed}"
         ac_dir = seed_dir / "actor-critic"
         dqn_dir = seed_dir / "dqn"
+        ppo_dir = seed_dir / "ppo"
         ac_checkpoint = ac_dir / "checkpoints" / "latest.pt"
         dqn_checkpoint = dqn_dir / "checkpoints" / "latest.pt"
+        ppo_checkpoint = ppo_dir / "checkpoints" / "latest.pt"
 
         ac_seconds = timed_training(
             lambda current_seed=seed, current_dir=ac_dir: train(
@@ -192,10 +215,32 @@ def run_benchmark(
             dqn_dir / "timing.json",
             reuse=reuse and dqn_checkpoint.is_file(),
         )
+        ppo_seconds = timed_training(
+            lambda current_seed=seed, current_dir=ppo_dir: train_ppo(
+                PPOTrainConfig(
+                    episodes=episodes,
+                    grid_size=grid_size,
+                    end_score=end_score,
+                    max_steps=max_steps,
+                    eval_interval=0,
+                    save_interval=0,
+                    seed=current_seed,
+                    torch_threads=torch_threads,
+                    device=device_name,
+                    output_dir=current_dir,
+                    tensorboard=False,
+                )
+            ),
+            ppo_dir / "timing.json",
+            reuse=reuse and ppo_checkpoint.is_file(),
+        )
 
         actor_critic = load_actor_critic(ac_checkpoint, device)
         dqn = load_dqn(dqn_checkpoint, device)
+        ppo = load_ppo(ppo_checkpoint, device)
         random_source = random.Random(seed)
+        ppo_generator = torch.Generator(device=device)
+        ppo_generator.manual_seed(seed)
         policies: dict[str, tuple[Policy, float]] = {
             "random": (
                 lambda _observation, env, rng=random_source: rng.randrange(env.action_space.n),
@@ -216,6 +261,13 @@ def run_benchmark(
                     random_source=rng,
                 ),
                 dqn_seconds,
+            ),
+            "ppo": (
+                lambda observation, _env, agent=ppo, generator=ppo_generator: agent.predict(
+                    observation,
+                    generator=generator,
+                ),
+                ppo_seconds,
             ),
         }
         for strategy, (policy, train_seconds) in policies.items():

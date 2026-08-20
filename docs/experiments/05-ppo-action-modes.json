@@ -1,0 +1,16 @@
+{
+  "config": {
+    "train_seeds": [7, 42, 2026],
+    "eval_episodes": 100,
+    "evaluation_seed_base": 300000,
+    "sampled_action_rng_seed": "same as train seed"
+  },
+  "runs": [
+    {"seed": 7, "mode": "sampled", "reward": 7.7035, "score": 0.71, "success_rate": 0.04},
+    {"seed": 7, "mode": "greedy", "reward": 3.8413, "score": 0.57, "success_rate": 0.03},
+    {"seed": 42, "mode": "sampled", "reward": 29.6056, "score": 1.55, "success_rate": 0.19},
+    {"seed": 42, "mode": "greedy", "reward": -27.6909, "score": 0.11, "success_rate": 0.0},
+    {"seed": 2026, "mode": "sampled", "reward": 39.484, "score": 1.44, "success_rate": 0.23},
+    {"seed": 2026, "mode": "greedy", "reward": 17.9146, "score": 0.62, "success_rate": 0.06}
+  ]
+}
