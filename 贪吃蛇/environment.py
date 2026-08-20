@@ -1,276 +1,304 @@
-# -*- coding: utf-8 -*-
-"""
-Project: 
-File Name: environment
-Created on: 2024/5/9 14:49
-author: fastbiubiu@163.com
-Desc: (说明)
-"""
-import gym
+"""Gymnasium environment for the low-compute Snake lesson."""
+
+from __future__ import annotations
+
+from collections import Counter, deque
+from typing import Any, ClassVar
+
+import gymnasium as gym
 import numpy as np
-from gym import spaces
 import pygame
-from collections import Counter
-from collections import deque
+from gymnasium import spaces
 
 
-class SnakeEnv(gym.Env):
-    def __init__(self, grid_size=10, end_score=10):
+class SnakeEnv(gym.Env[np.ndarray, int]):
+    """A compact Snake environment with relative left/right/forward actions."""
+
+    metadata: ClassVar[dict[str, Any]] = {
+        "render_modes": ["human"],
+        "render_fps": 30,
+    }
+    direction_channels: ClassVar[dict[tuple[int, int], int]] = {
+        (-1, 0): 3,
+        (1, 0): 4,
+        (0, -1): 5,
+        (0, 1): 6,
+    }
+
+    def __init__(
+        self,
+        grid_size: int = 10,
+        end_score: int = 10,
+        max_steps: int = 500,
+        render_mode: str | None = None,
+    ) -> None:
+        super().__init__()
+        if grid_size < 5:
+            raise ValueError("grid_size must be at least 5")
+        if end_score < 2:
+            raise ValueError("end_score must be at least 2")
+        if max_steps < 1:
+            raise ValueError("max_steps must be positive")
+        if render_mode not in {None, "human"}:
+            raise ValueError("render_mode must be None or 'human'")
+
         self.grid_size = grid_size
         self.end_score = end_score
-        self.action_space = spaces.Discrete(3)  # 0: 向左转, 1: 向右转, 2: 直行
-        self.observation_space = spaces.Box(low=0, high=1, shape=(3, grid_size, grid_size), dtype=np.float32)
-        self.snake = [self._get_center_position()]
-        self.food_pos = self._generate_food()
-        self.current_direction = np.array([0, 1])  # 初始方向向右
-        self.score = 0
-        self.visited = set()
-        self.last_action = None
-        self.reward = 0
-        self.visited_positions = []
-        self.game_over = False
-        self.reset()
+        self.max_steps = max_steps
+        self.render_mode = render_mode
+        self.action_space = spaces.Discrete(3)
+        self.observation_space = spaces.Box(
+            low=0,
+            high=1,
+            shape=(7, grid_size, grid_size),
+            dtype=np.float32,
+        )
 
-    def reset(self):
+        self.snake: list[np.ndarray] = []
+        self.food_pos = np.zeros(2, dtype=np.int64)
+        self.current_direction = np.array([0, 1], dtype=np.int64)
+        self.score = 0
+        self.step_count = 0
+        self.visited: set[tuple[int, int]] = set()
+        self.visited_positions: list[np.ndarray] = []
+        self.game_over = False
+        self.window: pygame.Surface | None = None
+        self.clock: pygame.time.Clock | None = None
+        self.closed = False
+
+    def reset(
+        self,
+        *,
+        seed: int | None = None,
+        options: dict[str, Any] | None = None,
+    ) -> tuple[np.ndarray, dict[str, Any]]:
+        super().reset(seed=seed)
+        del options
         self.snake = [self._get_center_position()]
         self.food_pos = self._generate_food()
-        self.current_direction = np.array([0, 1])
+        self.current_direction = np.array([0, 1], dtype=np.int64)
         self.score = 0
-        self.reward = 0
-        self.game_over = False
+        self.step_count = 0
         self.visited.clear()
         self.visited_positions.clear()
-        return self._get_observation()
+        self.game_over = False
+        self.closed = False
+        observation = self._get_observation()
+        if self.render_mode == "human":
+            self.render()
+        return observation, self._info(executed_action=None)
 
-    def _is_safe(self, position):
-        if any(position < 0) or any(position >= self.grid_size):
-            return False
-        if tuple(position) in map(tuple, self.snake[1:]):
-            return False
-        return True
+    def step(self, action: int) -> tuple[np.ndarray, float, bool, bool, dict[str, Any]]:
+        if self.game_over:
+            raise RuntimeError("episode is finished; call reset() before step()")
+        if not self.action_space.contains(action):
+            raise ValueError(f"invalid action {action!r}; expected 0, 1, or 2")
 
-    def _bfs_safe_path(self, position, depth=11):
-        directions = [np.array([-1, 0]), np.array([1, 0]), np.array([0, -1]), np.array([0, 1])]  # 上下左右
-        queue = deque([(position, 0)])  # (position, current_depth)
-        visited = set(map(tuple, self.snake))  # 蛇身位置被视为已访问
-
-        while queue:
-            position, current_depth = queue.popleft()
-            if current_depth >= depth:
-                return True  # 如果能达到这个深度，认为有安全路径
-
-            for d in directions:
-                new_position = position + d
-                if tuple(new_position) not in visited and self._is_safe(new_position):
-                    queue.append((new_position, current_depth + 1))
-                    visited.add(tuple(new_position))
-
-        return False  # 如果搜索完毕没有找到安全路径，则认为不安全
-
-    def step(self, action):
-        self.reward = 0
-        info = {}
-        # 尝试所有可能的动作并选择一个最佳的
-        best_action = action
-        best_reward = -float('inf')
-        #---------------------------------预训练结束后注释本区代码------------------------
-        for trial_action in range(3):
-            trial_direction = self._get_direction(trial_action)
-            trial_head = self.snake[0] + trial_direction
-            if self._is_safe(trial_head) and self._bfs_safe_path(trial_head):
-                trial_reward = self._calculate_potential_reward(trial_head)
-                if trial_reward > best_reward:
-                    best_reward = trial_reward
-                    best_action = trial_action
-
-            # 执行最佳动作
-        self.current_direction = self._get_direction(best_action)
+        executed_action = int(action)
+        self.current_direction = self._get_direction(executed_action)
         new_head = self.snake[0] + self.current_direction
-        # 检查新的蛇头位置是否超出边界或者撞到自己
-        if self._is_collision(new_head) or any(new_head < 0) or any(new_head) >= self.grid_size:
-            self.game_over = True
-            self.reward -= 5
-            return self._get_observation(), self.reward, self.game_over, info
-        # --------------------------------------------------------------------------------
-        self._calculate_reward(new_head)
-        self.last_action = action
+        self.step_count += 1
 
-        done = self._update_snake_and_food(new_head)
+        if self._is_collision(new_head):
+            reward = -5.0
+            terminated = True
+        else:
+            reward = self._calculate_reward(new_head)
+            reward_delta, terminated = self._update_snake_and_food(new_head)
+            reward += reward_delta
 
-        return self._get_observation(), self.reward, done, info
+        truncated = self.step_count >= self.max_steps and not terminated
+        self.game_over = terminated or truncated
+        observation = self._get_observation()
+        info = self._info(executed_action=executed_action)
+        if self.render_mode == "human":
+            self.render()
+        return observation, float(reward), terminated, truncated, info
 
-    def _get_direction(self, action):
-        if action == 0:  # 左转
+    def teacher_action(self) -> int:
+        """Return a deterministic safe action for optional behavior cloning.
+
+        The teacher never changes actions inside :meth:`step`. Training code must
+        explicitly request this action and pass the same action to the environment.
+        """
+
+        candidates: list[tuple[float, int]] = []
+        for action in range(self.action_space.n):
+            trial_head = self.snake[0] + self._get_direction(action)
+            if self._is_safe(trial_head) and self._bfs_safe_path(trial_head):
+                distance = float(np.abs(trial_head - self.food_pos).sum())
+                candidates.append((distance, action))
+        if not candidates:
+            return 2
+        return min(candidates)[1]
+
+    def _info(self, executed_action: int | None) -> dict[str, Any]:
+        return {
+            "score": self.score,
+            "length": len(self.snake),
+            "steps": self.step_count,
+            "executed_action": executed_action,
+        }
+
+    def _is_safe(self, position: np.ndarray) -> bool:
+        if np.any(position < 0) or np.any(position >= self.grid_size):
+            return False
+        return tuple(position) not in map(tuple, self.snake[1:])
+
+    def _bfs_safe_path(self, position: np.ndarray, depth: int = 11) -> bool:
+        directions = (
+            np.array([-1, 0]),
+            np.array([1, 0]),
+            np.array([0, -1]),
+            np.array([0, 1]),
+        )
+        queue: deque[np.ndarray] = deque([position])
+        blocked = set(map(tuple, self.snake[1:]))
+        visited = {tuple(position)}
+        required_cells = min(depth, self.grid_size * self.grid_size - len(blocked))
+        while queue:
+            current = queue.popleft()
+            if len(visited) >= required_cells:
+                return True
+            for direction in directions:
+                candidate = current + direction
+                candidate_key = tuple(candidate)
+                in_bounds = np.all(candidate >= 0) and np.all(candidate < self.grid_size)
+                if in_bounds and candidate_key not in blocked and candidate_key not in visited:
+                    queue.append(candidate)
+                    visited.add(candidate_key)
+        return False
+
+    def _get_direction(self, action: int) -> np.ndarray:
+        if action == 0:
             return np.array([-self.current_direction[1], self.current_direction[0]])
-        elif action == 1:  # 右转
+        if action == 1:
             return np.array([self.current_direction[1], -self.current_direction[0]])
-        return self.current_direction  # 直行
+        return self.current_direction.copy()
 
-    def _calculate_potential_reward(self, new_head):
-        # 这里简单地使用与食物距离的倒数作为潜在奖励
-        # 实际应用中可以根据需要调整奖励的计算方式
-        distance_to_food = np.linalg.norm(new_head - self.food_pos)
-        return 1 / (distance_to_food + 1)  # 加1避免除以0
-
-    def _calculate_reward(self, new_head):
+    def _calculate_reward(self, new_head: np.ndarray) -> float:
         distance_before = np.abs(self.snake[0] - self.food_pos).sum()
         distance_after = np.abs(new_head - self.food_pos).sum()
+        reward = 0.2 if distance_after < distance_before else -0.1
 
-        if distance_after < distance_before:
-            self.reward += 0.2  # 靠近食物奖励
-        else:
-            self.reward -= 0.1
-
-        if tuple(self.snake[0]) not in self.visited:
-            self.reward += 0.2  # 探索新格子奖励
-            self.visited.add(tuple(self.snake[0]))
-
+        if tuple(new_head) not in self.visited:
+            reward += 0.2
+            self.visited.add(tuple(new_head))
         if self._check_repeated_visit():
-            self.reward -= 0.4  # 重复访问格子惩罚
+            reward -= 0.4
+        return reward
 
-    def _update_snake_and_food(self, new_head):
+    def _update_snake_and_food(self, new_head: np.ndarray) -> tuple[float, bool]:
         self.snake.insert(0, new_head)
-        if all(new_head == self.food_pos):
+        reward = 0.0
+        if np.array_equal(new_head, self.food_pos):
             self.score += 1
             self.food_pos = self._generate_food()
-            self.reward += 10
+            reward += 10.0
         else:
             self.snake.pop()
-            self.reward += -0.01
+            reward -= 0.01
 
-        self.visited_positions.append(new_head)  # 更新访问记录
+        self.visited_positions.append(new_head.copy())
+        terminated = len(self.snake) >= self.end_score
+        if terminated:
+            reward += 100.0
+        return reward, terminated
 
-        if len(self.snake) >= self.end_score:
-            self.reward += 1000
-            self.game_over = True
-            return True
-        else:
-            return False
-
-    def _check_repeated_visit(self):
+    def _check_repeated_visit(self) -> bool:
         if len(self.visited_positions) < 5:
             return False
+        counts = Counter(map(tuple, self.visited_positions[-5:]))
+        return any(count >= 2 for count in counts.values())
 
-        recent_positions = self.visited_positions[-5:]
-        visited_counts = Counter(map(tuple, recent_positions))
-        for pos, count in visited_counts.items():
-            if count >= 2:
-                return True
-        return False
-
-    def _get_observation(self):
-        grid = np.zeros((3, self.grid_size, self.grid_size))
+    def _get_observation(self) -> np.ndarray:
+        grid = np.zeros((7, self.grid_size, self.grid_size), dtype=np.float32)
         for segment in self.snake:
-            grid[0, tuple(segment)] = 1  # 蛇的位置
-        grid[1, tuple(self.food_pos)] = 0.5  # 食物的位置
-        grid[2, :, :] = 1  # 边界信息
-        grid[2, 1:-1, 1:-1] = 0  # 内部格子为0
+            grid[0, tuple(segment)] = 1.0
+        grid[1, tuple(self.food_pos)] = 1.0
+        grid[2, :, :] = 1.0
+        grid[2, 1:-1, 1:-1] = 0.0
+        direction_channel = self.direction_channels[tuple(self.current_direction)]
+        grid[direction_channel, :, :] = 1.0
         return grid
 
-    def _is_collision(self, position):
-        if any(position < 0) or any(position >= self.grid_size):
+    def _is_collision(self, position: np.ndarray) -> bool:
+        if np.any(position < 0) or np.any(position >= self.grid_size):
             return True
-        position = tuple(position)
-        for part in self.snake[1:]:
-            if position == tuple(part):
-                return True
-        return False
+        return tuple(position) in map(tuple, self.snake[1:])
 
-    def _generate_food(self):
-        while True:
-            food_position = np.random.randint(0, self.grid_size, size=2)
-            if not any(np.array_equal(food_position, segment) for segment in self.snake):
-                return food_position
+    def _generate_food(self) -> np.ndarray:
+        occupied = set(map(tuple, self.snake))
+        free_cells = [
+            (row, column)
+            for row in range(self.grid_size)
+            for column in range(self.grid_size)
+            if (row, column) not in occupied
+        ]
+        index = int(self.np_random.integers(len(free_cells)))
+        return np.array(free_cells[index], dtype=np.int64)
 
-    def _get_center_position(self):
-        return np.array([self.grid_size // 2, self.grid_size // 2])
+    def _get_center_position(self) -> np.ndarray:
+        return np.array([self.grid_size // 2, self.grid_size // 2], dtype=np.int64)
 
-    def render(self, mode='human', fps=1000):
-
-        if not hasattr(self, 'screen'):
+    def render(self, fps: int | None = None) -> None:
+        if self.render_mode != "human":
+            return
+        if self.window is None:
             pygame.init()
             self.cell_size = 20
-            self.screen_width = self.grid_size * self.cell_size
-            self.screen_height = self.grid_size * self.cell_size
-            self.screen = pygame.display.set_mode((self.screen_width, self.screen_height))
+            self.window = pygame.display.set_mode(
+                (self.grid_size * self.cell_size, self.grid_size * self.cell_size)
+            )
+            pygame.display.set_caption("RL Snake")
             self.clock = pygame.time.Clock()
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                pygame.quit()
+                self.closed = True
+                self.close()
                 return
 
-        self.screen.fill((0, 0, 0))  # 背景设为黑色
+        self.window.fill((18, 18, 18))
+        for row in range(self.grid_size):
+            for column in range(self.grid_size):
+                rect = pygame.Rect(
+                    column * self.cell_size,
+                    row * self.cell_size,
+                    self.cell_size,
+                    self.cell_size,
+                )
+                pygame.draw.rect(self.window, (48, 48, 48), rect, 1)
 
-        # 绘制网格
-        for x in range(0, self.screen_width, self.cell_size):
-            for y in range(0, self.screen_height, self.cell_size):
-                rect = pygame.Rect(x, y, self.cell_size, self.cell_size)
-                pygame.draw.rect(self.screen, (50, 50, 50), rect, 1)  # 网格颜色较深
+        food_row, food_column = self.food_pos
+        pygame.draw.rect(
+            self.window,
+            (62, 201, 111),
+            pygame.Rect(
+                food_column * self.cell_size,
+                food_row * self.cell_size,
+                self.cell_size,
+                self.cell_size,
+            ),
+        )
+        for index, (row, column) in enumerate(self.snake):
+            color = (235, 87, 87) if index == 0 else (224, 132, 79)
+            pygame.draw.rect(
+                self.window,
+                color,
+                pygame.Rect(
+                    column * self.cell_size,
+                    row * self.cell_size,
+                    self.cell_size,
+                    self.cell_size,
+                ),
+            )
+        pygame.display.flip()
+        if self.clock is not None:
+            self.clock.tick(fps or self.metadata["render_fps"])
 
-        # 绘制食物
-        food_x, food_y = self.food_pos
-        pygame.draw.rect(self.screen, (0, 255, 0),
-                         (food_x * self.cell_size, food_y * self.cell_size, self.cell_size, self.cell_size))
-
-        # 绘制蛇
-        # 蛇头
-        head_color = (255, 0, 0)  # 蛇头颜色，例如红色
-        head_x, head_y = self.snake[0]
-        head_rect = (head_x * self.cell_size, head_y * self.cell_size, self.cell_size, self.cell_size)
-        self._draw_head(self.screen, head_rect, head_color)
-
-        # 蛇身
-        for segment in self.snake[1:]:
-            x, y = segment
-            pygame.draw.rect(self.screen, (255, 0, 0),
-                             (x * self.cell_size, y * self.cell_size, self.cell_size, self.cell_size))
-
-        # 结束标志
-        if self.game_over:
-            if len(self.snake) >= self.end_score:
-                string = "YOU ARE WIN!"
-            else:
-                string = "YOU ARE LOST!"
-            if mode == 'human':
-                print(string)
-                # 显示"WIN!"
-                font = pygame.font.Font(None, 36)
-                text = font.render(string, True, (255, 255, 255))
-                text_rect = text.get_rect(center=(self.screen_width // 2, self.screen_height // 2))
-                self.screen.blit(text, text_rect)
-                # 停止游戏更新，但保持渲染
-                while True:
-                    for event in pygame.event.get():
-                        if event.type == pygame.QUIT:
-                            pygame.quit()
-                            return
-                    self.clock.tick(fps)  # 控制帧率
-                    pygame.display.flip()
-        else:
-            pygame.display.flip()
-            self.clock.tick(fps)  # 控制帧率
-
-    def _draw_head(self, screen, rect, color):
-        # 绘制圆形蛇头
-        pygame.draw.circle(screen, color, (rect[0] + self.cell_size // 2, rect[1] + self.cell_size // 2),
-                           self.cell_size // 2)
-
-        # 根据蛇头方向绘制眼睛
-        eye_color = (0, 0, 0)  # 眼睛颜色，例如黑色
-        if self.current_direction[0] > 0:  # 向右
-            eye_pos = (rect[0] + self.cell_size // 4, rect[1] + self.cell_size // 4)
-        elif self.current_direction[0] < 0:  # 向左
-            eye_pos = (rect[0] + 3 * self.cell_size // 4, rect[1] + self.cell_size // 4)
-        elif self.current_direction[1] > 0:  # 向下
-            eye_pos = (rect[0] + self.cell_size // 4, rect[1] + 3 * self.cell_size // 4)
-        else:  # 向上
-            eye_pos = (rect[0] + 3 * self.cell_size // 4, rect[1] + 3 * self.cell_size // 4)
-
-        # 绘制两个眼睛
-        pygame.draw.circle(screen, eye_color, eye_pos, self.cell_size // 8)
-        pygame.draw.circle(screen, eye_color, (eye_pos[0], eye_pos[1] + self.cell_size // 2), self.cell_size // 8)
-
-    def close(self):
-        if hasattr(self, 'screen'):
-            pygame.quit()
+    def close(self) -> None:
+        if self.window is not None:
+            pygame.display.quit()
+            self.window = None
+        pygame.quit()

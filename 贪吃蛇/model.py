@@ -1,60 +1,169 @@
+"""Small convolutional Actor-Critic network used by the Snake lesson."""
+
+from __future__ import annotations
+
+from pathlib import Path
+from typing import Any
+
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
 
 class ConvActorCritic(nn.Module):
-    def __init__(self, input_channels, output_dim, grid_size, lr=1e-3, weight_decay=1e-5):
-        super(ConvActorCritic, self).__init__()
-        self.conv1 = 8
-        self.conv2 = 16
+    """A compact shared encoder with categorical actor and state-value critic."""
+
+    def __init__(
+        self,
+        input_channels: int,
+        output_dim: int,
+        grid_size: int,
+        lr: float = 1e-4,
+        weight_decay: float = 1e-5,
+        entropy_coef: float = 0.01,
+    ) -> None:
+        super().__init__()
+        self.input_channels = input_channels
+        self.output_dim = output_dim
+        self.grid_size = grid_size
+        self.entropy_coef = entropy_coef
+        feature_dim = 16 * grid_size * grid_size
         self.feature_extractor = nn.Sequential(
-            nn.Conv2d(input_channels, self.conv1, kernel_size=3, stride=1, padding=1),
-            # nn.MaxPool2d(2, 2),  # 下采样使用一次，保证grid_size能被整除
+            nn.Conv2d(input_channels, 16, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
-            # nn.Conv2d(self.conv1, self.conv2, kernel_size=3, stride=1, padding=1),
-            # nn.MaxPool2d(2, 2),  # 下采样
-            # nn.ReLU(),
-            nn.Flatten()
+            nn.Flatten(),
+        )
+        self.actor = nn.Linear(feature_dim, output_dim)
+        self.critic = nn.Linear(feature_dim, 1)
+        self.optimizer = torch.optim.Adam(
+            self.parameters(),
+            lr=lr,
+            weight_decay=weight_decay,
         )
 
-        reduced_grid_size = grid_size // 1  # 下采样后，特征边缘缩小2倍
-        self.actor = nn.Sequential(
-            nn.Linear(self.conv1 * reduced_grid_size * reduced_grid_size, output_dim),
-            nn.Softmax(dim=-1)
-        )
-        self.critic = nn.Linear(self.conv1 * reduced_grid_size * reduced_grid_size, 1)
-        self.optimizer = torch.optim.Adam(self.parameters(), lr, weight_decay=weight_decay)
-
-    def forward(self, x):
-        features = self.feature_extractor(x)
-        action_probs = self.actor(features)
+    def forward(self, observation: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
+        features = self.feature_extractor(observation)
+        logits = self.actor(features)
         value = self.critic(features).squeeze(-1)
-        return action_probs, value
+        return logits, value
 
-    def update(self, state, action, reward, next_state, done, gamma=0.99):
-        current_probs, current_value = self(state)
-        _, next_value = self(next_state)
+    @torch.no_grad()
+    def predict(self, observation: torch.Tensor, deterministic: bool = False) -> int:
+        logits, _ = self(observation)
+        distribution = torch.distributions.Categorical(logits=logits)
+        action = torch.argmax(logits, dim=-1) if deterministic else distribution.sample()
+        return int(action.item())
 
-        td_target = reward + (1 - int(done)) * gamma * next_value
-        td_error = td_target - current_value
+    def update(
+        self,
+        state: torch.Tensor,
+        action: int | torch.Tensor,
+        reward: float,
+        next_state: torch.Tensor,
+        done: bool,
+        gamma: float = 0.99,
+    ) -> dict[str, float]:
+        """Apply one correct one-step Actor-Critic update."""
 
-        dist = torch.distributions.Categorical(current_probs)
-        log_prob = dist.log_prob(action)
-        actor_loss = -(log_prob * td_error.detach()).mean()
-        critic_loss = 0.5 * td_error.pow(2).mean()
-        total_loss = actor_loss + critic_loss
+        logits, value = self(state)
+        with torch.no_grad():
+            _, next_value = self(next_state)
+            target = torch.as_tensor(reward, dtype=value.dtype, device=value.device)
+            if not done:
+                target = target + gamma * next_value
+
+        action_tensor = torch.as_tensor(action, dtype=torch.long, device=value.device).reshape(-1)
+        distribution = torch.distributions.Categorical(logits=logits)
+        log_probability = distribution.log_prob(action_tensor)
+        advantage = target - value
+        actor_loss = -(log_probability * advantage.detach()).mean()
+        critic_loss = 0.5 * advantage.square().mean()
+        entropy = distribution.entropy().mean()
+        loss = actor_loss + critic_loss - self.entropy_coef * entropy
 
         self.optimizer.zero_grad()
-        total_loss.backward()
+        loss.backward()
+        nn.utils.clip_grad_norm_(self.parameters(), max_norm=1.0)
         self.optimizer.step()
+        return {
+            "loss": float(loss.detach()),
+            "actor_loss": float(actor_loss.detach()),
+            "critic_loss": float(critic_loss.detach()),
+            "entropy": float(entropy.detach()),
+        }
 
-    def save_model(self, model, filename="model.pth"):
-        torch.save({
-            'model_state_dict': model.state_dict(),
-            'optimizer_state_dict': self.optimizer.state_dict()
-        }, filename)
+    def imitation_update(
+        self,
+        state: torch.Tensor,
+        teacher_action: int | torch.Tensor,
+    ) -> float:
+        """Learn an explicitly supplied teacher action with behavior cloning."""
 
-    def load_model(self, model, filename="model.pth"):
-        checkpoint = torch.load(filename)
-        model.load_state_dict(checkpoint['model_state_dict'])
-        self.optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+        logits, _ = self(state)
+        target = torch.as_tensor(
+            teacher_action,
+            dtype=torch.long,
+            device=logits.device,
+        ).reshape(-1)
+        loss = F.cross_entropy(logits, target)
+        self.optimizer.zero_grad()
+        loss.backward()
+        nn.utils.clip_grad_norm_(self.parameters(), max_norm=1.0)
+        self.optimizer.step()
+        return float(loss.detach())
+
+    def value_update(
+        self,
+        state: torch.Tensor,
+        reward: float,
+        next_state: torch.Tensor,
+        done: bool,
+        gamma: float = 0.99,
+    ) -> float:
+        """Train the critic on a teacher transition without a policy-gradient update."""
+
+        _, value = self(state)
+        with torch.no_grad():
+            _, next_value = self(next_state)
+            target = torch.as_tensor(reward, dtype=value.dtype, device=value.device)
+            if not done:
+                target = target + gamma * next_value
+        loss = 0.5 * (target - value).square().mean()
+        self.optimizer.zero_grad()
+        loss.backward()
+        nn.utils.clip_grad_norm_(self.parameters(), max_norm=1.0)
+        self.optimizer.step()
+        return float(loss.detach())
+
+    def save_checkpoint(
+        self,
+        filename: str | Path,
+        *,
+        episode: int,
+        config: dict[str, Any],
+    ) -> None:
+        path = Path(filename)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        torch.save(
+            {
+                "model_state_dict": self.state_dict(),
+                "optimizer_state_dict": self.optimizer.state_dict(),
+                "episode": episode,
+                "config": config,
+            },
+            path,
+        )
+
+    def load_checkpoint(self, filename: str | Path) -> dict[str, Any]:
+        checkpoint = torch.load(filename, map_location=self.device, weights_only=True)
+        self.load_state_dict(checkpoint["model_state_dict"])
+        if "optimizer_state_dict" in checkpoint:
+            self.optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
+        return {
+            "episode": int(checkpoint.get("episode", -1)),
+            "config": dict(checkpoint.get("config", {})),
+        }
+
+    @property
+    def device(self) -> torch.device:
+        return next(self.parameters()).device

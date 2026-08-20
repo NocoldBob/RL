@@ -1,54 +1,82 @@
-# -*- coding: utf-8 -*-
+"""Render a trained Snake agent without teacher assistance."""
 
-"""
-Project: sanck_sac
-Author: fastbiubiu@163.com
-Date: 2024/5/9
-Description: 
-"""
+from __future__ import annotations
+
+import argparse
+from pathlib import Path
+
 import torch
-from environment import SnakeEnv  # 确保这是你的环境
-from model import ConvActorCritic  # 确保这是你的模型定义
-import numpy as np
+from environment import SnakeEnv
+from main import as_tensor, choose_device
+from model import ConvActorCritic
 
 
-def load_model(model, model_path):
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    checkpoint = torch.load(model_path, map_location=device)
-    model.load_state_dict(checkpoint['model_state_dict'])
+def play_game(
+    model_path: Path,
+    *,
+    device_name: str = "auto",
+    seed: int = 42,
+    fps: int = 15,
+) -> None:
+    device = choose_device(device_name)
+    checkpoint = torch.load(model_path, map_location=device, weights_only=True)
+    config = dict(checkpoint.get("config", {}))
+    grid_size = int(config.get("grid_size", 6))
+    end_score = int(config.get("end_score", 4))
+    max_steps = int(config.get("max_steps", 100))
+
+    env = SnakeEnv(
+        grid_size=grid_size,
+        end_score=end_score,
+        max_steps=max_steps,
+        render_mode="human",
+    )
+    model = ConvActorCritic(
+        input_channels=env.observation_space.shape[0],
+        output_dim=env.action_space.n,
+        grid_size=grid_size,
+        lr=float(config.get("learning_rate", 1e-4)),
+        weight_decay=float(config.get("weight_decay", 1e-5)),
+        entropy_coef=float(config.get("entropy_coef", 0.01)),
+    ).to(device)
+    model.load_checkpoint(model_path)
     model.eval()
-    return model
+
+    observation, _ = env.reset(seed=seed)
+    try:
+        while not env.closed:
+            action = model.predict(as_tensor(observation, device), deterministic=True)
+            observation, _, terminated, truncated, info = env.step(action)
+            env.render(fps=fps)
+            if terminated or truncated:
+                print(
+                    f"episode finished: score={info['score']} "
+                    f"steps={info['steps']} terminated={terminated}"
+                )
+                break
+    finally:
+        env.close()
 
 
-def play_game(model_path):
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-    # 初始化环境和模型
-    grid_size = 20
-    end_score = 80
-    env = SnakeEnv(grid_size=grid_size, end_score=end_score)
-    input_channels = 3
-    output_dim = env.action_space.n
-
-    model = ConvActorCritic(input_channels, output_dim, grid_size).to(device)
-
-    # 加载训练好的模型
-    model = load_model(model, model_path)
-
-    state = env.reset()
-    done = False
-
-    while not done:
-        state = torch.tensor(state, dtype=torch.float).unsqueeze(0).to(device)
-        with torch.no_grad():
-            action_probs, _ = model(state)
-        action = torch.argmax(action_probs).item()  # 选择概率最高的动作
-
-        state, _, done, _ = env.step(action)
-        env.render(fps=1000)  # 展示游戏动画
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Play a trained Snake checkpoint")
+    parser.add_argument(
+        "checkpoint",
+        type=Path,
+        nargs="?",
+        default=Path("runs/snake/checkpoints/best.pt"),
+    )
+    parser.add_argument("--device", default="auto")
+    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--fps", type=int, default=15)
+    arguments = parser.parse_args()
+    play_game(
+        arguments.checkpoint,
+        device_name=arguments.device,
+        seed=arguments.seed,
+        fps=arguments.fps,
+    )
 
 
 if __name__ == "__main__":
-    model_path = 'save_model/best_model.pth'  # 修改为你的模型路径
-    # model_path = 'save_model/model_500.pth'  # 修改为你的模型路径
-    play_game(model_path)
+    main()
