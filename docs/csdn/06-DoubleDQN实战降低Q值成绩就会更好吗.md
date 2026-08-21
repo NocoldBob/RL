@@ -10,7 +10,7 @@
 >
 > 第四篇：[DQN 实战：四种策略同场对照](https://blog.csdn.net/bobwww123/article/details/163925932)
 >
-> 第五篇：[PPO 实战：从单步更新到稳定策略优化](05-PPO实战从单步更新到稳定策略优化.md)
+> 第五篇：[PPO 实战：从单步更新到稳定策略优化](https://blog.csdn.net/bobwww123/article/details/163926240)
 
 ![Double DQN 实战](../assets/csdn-06/cover.png)
 
