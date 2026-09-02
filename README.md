@@ -1,4 +1,4 @@
-# RL 从零开始：低算力贪吃蛇强化学习
+# RL 从零开始：低算力强化学习实践
 
 [![CI](https://github.com/NocoldBob/RL/actions/workflows/ci.yml/badge.svg)](https://github.com/NocoldBob/RL/actions/workflows/ci.yml)
 
@@ -25,6 +25,9 @@ Double TD 目标，并记录状态价值、动作优势、动作间隔、参数�
 第八篇不再增加算法，而是让六个模型读取四个完全相同的固定局面，检查动作选择、立即碰撞
 风险、策略概率、Q 值以及 Dueling Network 的状态价值与动作优势，完成离散控制阶段复盘。
 
+第九篇使用连续山地车开启新阶段，把动作从三个固定选项扩展为 `[-1, 1]` 连续油门，并通过
+四种规则基线比较成功率、速度与动作成本，为连续 PPO 和 SAC 建立评估基准。
+
 ## 当前版本带来了什么
 
 - 环境严格执行智能体传入的动作，让动作、奖励和下一状态保持一致。
@@ -36,6 +39,7 @@ Double TD 目标，并记录状态价值、动作优势、动作间隔、参数�
 - 增加依赖清单、自动测试、GitHub CI 和短训练冒烟测试。
 - 增加 DQN、Double DQN、Dueling DQN、PPO、独立播放程序和可导出 JSON/CSV 的基准工具。
 - 增加固定局面决策检查，可生成机器可读报告和教程配图。
+- 增加连续山地车环境的四种基线、配对评估、轨迹记录与可视化。
 
 ## 环境要求
 
@@ -212,6 +216,26 @@ python .\贪吃蛇\inspect_decisions.py
 [`docs/experiments/08-decision-inspection.json`](docs/experiments/08-decision-inspection.json)。固定状态
 检查用于解释具体选择，不替代多随机种子的完整游戏评估。
 
+## 连续控制入门
+
+第九篇使用 Gymnasium 的 `MountainCarContinuous-v0`。动作是 `[-1, 1]` 之间的连续油门，
+现有依赖可以直接运行：
+
+```powershell
+python .\连续控制\benchmark_baselines.py
+```
+
+命令会评估零油门、随机油门、全油门惯性和平滑惯性四种规则基线，同时生成 JSON、CSV 和
+教程配图。播放单条策略：
+
+```powershell
+python .\连续控制\play_baseline.py smooth_momentum
+```
+
+原始数据保存在
+[`docs/experiments/09-continuous-baselines.json`](docs/experiments/09-continuous-baselines.json) 和
+[`docs/experiments/09-continuous-baselines.csv`](docs/experiments/09-continuous-baselines.csv)。
+
 ## 可复现验证样例
 
 在 Windows CPU、`seed=42` 的默认小网格配置下，发布前实测 500 Episode 的最后一轮
@@ -258,6 +282,11 @@ TD 误差同时更新策略和价值网络，并用少量熵奖励保持探索�
   benchmark_double_dqn.py # DQN/Double DQN 配对评估和 Q 值诊断
   benchmark_dueling_dqn.py # 四种 DQN 组合的全因子评估和表征诊断
   inspect_decisions.py # 六种模型的固定状态决策检查与可视化
+连续控制/
+  mountain_car_baselines.py # 连续山地车规则基线与回合评估
+  benchmark_baselines.py # 100 个配对起点的统一实验入口
+  play_baseline.py # 播放指定规则策略
+  visualize_baselines.py # 实验结果与轨迹配图
 tutorials/        # 各篇教程的独立代码快照与运行入口
 tests/            # 环境、模型、检查点和短训练测试
 docs/csdn/        # 可发布到 CSDN 的后续教程
@@ -285,14 +314,15 @@ python -m pytest
 - [第六篇：Double DQN 实战，降低 Q 值成绩就会更好吗](https://blog.csdn.net/bobwww123/article/details/163937191) · [对应代码](tutorials/06-double-dqn/)
 - [第七篇：Dueling DQN 实战，先判断局面，再选择动作](https://blog.csdn.net/bobwww123/article/details/163937626) · [对应代码](tutorials/07-dueling-dqn/)
 - [第八篇：同一局面，六种模型会怎么走？](https://blog.csdn.net/bobwww123/article/details/164296013) · [对应代码](tutorials/08-decision-inspection/)
+- 第九篇：油门不是开关，第一次走进连续动作空间 · [对应代码](tutorials/09-continuous-action-basics/)（正式文章发布后补链接）
 
 [查看教程与代码的完整索引](tutorials/README.md)
 
 ## 后续路线
 
-1. 以新的连续控制环境开启下一阶段，先说明连续动作与离散动作的差别。
-2. 建立随机策略、规则基线与 PPO 基线，继续使用统一评估方法。
-3. 在连续动作课程中逐步引入 SAC，并与 PPO 做受控比较。
+1. 实现连续动作 PPO，与第九篇规则基线使用相同起点和指标比较。
+2. 逐步引入 SAC，并拆解双 Q 网络、经验回放与温度参数。
+3. 在连续山地车完成受控比较后，再进入二维动作的 LunarLander 综合项目。
 
 ## License
 
