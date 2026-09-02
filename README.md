@@ -284,7 +284,7 @@ python -m pytest
 - [第五篇：PPO 实战，从单步更新到稳定策略优化](https://blog.csdn.net/bobwww123/article/details/163926240) · [对应代码](tutorials/05-ppo/)
 - [第六篇：Double DQN 实战，降低 Q 值成绩就会更好吗](https://blog.csdn.net/bobwww123/article/details/163937191) · [对应代码](tutorials/06-double-dqn/)
 - [第七篇：Dueling DQN 实战，先判断局面，再选择动作](https://blog.csdn.net/bobwww123/article/details/163937626) · [对应代码](tutorials/07-dueling-dqn/)
-- 第八篇：七篇之后，我们到底学会了什么 · [对应代码](tutorials/08-decision-inspection/)（正式文章发布后补链接）
+- 第八篇：同一局面，六种模型会怎么走？ · [对应代码](tutorials/08-decision-inspection/)（正式文章发布后补链接）
 
 [查看教程与代码的完整索引](tutorials/README.md)
 

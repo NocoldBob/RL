@@ -524,7 +524,7 @@ def plot_cover(output: Path) -> None:
     axis.text(
         0.07,
         0.58,
-        "FROM SCORES\nTO DECISIONS",
+        "SAME STATE\nSIX MODELS",
         transform=axis.transAxes,
         color="white",
         fontsize=34,
@@ -534,7 +534,7 @@ def plot_cover(output: Path) -> None:
     axis.text(
         0.07,
         0.24,
-        "LESSON 08  /  DISCRETE CONTROL STAGE FINALE",
+        "LESSON 08  /  WHAT WOULD THEY DO?",
         transform=axis.transAxes,
         color="#cbd5e1",
         fontsize=13,
