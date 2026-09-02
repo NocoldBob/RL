@@ -12,7 +12,7 @@
 | 05 | PPO、Rollout 与 GAE | [PPO 实战](https://blog.csdn.net/bobwww123/article/details/163926240) | [`05-ppo/`](05-ppo/) |
 | 06 | Double DQN 与 Q 值诊断 | [Double DQN 实战](https://blog.csdn.net/bobwww123/article/details/163937191) | [`06-double-dqn/`](06-double-dqn/) |
 | 07 | Dueling Network 全因子实验 | [Dueling DQN 实战](https://blog.csdn.net/bobwww123/article/details/163937626) | [`07-dueling-dqn/`](07-dueling-dqn/) |
-| 08 | 同一局面，六种模型会怎么走？ | 正式文章发布后补充 | [`08-decision-inspection/`](08-decision-inspection/) |
+| 08 | 同一局面，六种模型会怎么走？ | [固定局面决策检查](https://blog.csdn.net/bobwww123/article/details/164296013) | [`08-decision-inspection/`](08-decision-inspection/) |
 
 ## 使用方法
 

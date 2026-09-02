@@ -1,6 +1,6 @@
 # 第八篇：同一局面，六种模型会怎么走？
 
-- CSDN 正式文章发布后补充链接
+- [阅读 CSDN 正式文章](https://blog.csdn.net/bobwww123/article/details/164296013)
 - 重点文件：`inspect_decisions.py`
 
 这一篇不增加新算法，而是让六个已训练模型读取四个完全相同的固定局面，比较它们选择的
