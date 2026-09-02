@@ -1,0 +1,573 @@
+{
+  "inspection_scope": {
+    "training_seed": 42,
+    "grid_size": 6,
+    "scenario_count": 4,
+    "model_count": 6,
+    "note": "Policy probabilities and Q values use different scales and must not be compared numerically across algorithm families."
+  },
+  "models": [
+    {
+      "name": "Actor-Critic",
+      "family": "actor_critic",
+      "checkpoint": "runs\\benchmark-ppo\\seed-42\\actor-critic\\checkpoints\\latest.pt"
+    },
+    {
+      "name": "PPO",
+      "family": "ppo",
+      "checkpoint": "runs\\benchmark-ppo\\seed-42\\ppo\\checkpoints\\latest.pt"
+    },
+    {
+      "name": "DQN",
+      "family": "dqn",
+      "checkpoint": "runs\\dueling-dqn-benchmark\\seed-42\\dqn\\checkpoints\\latest.pt"
+    },
+    {
+      "name": "Double DQN",
+      "family": "dqn",
+      "checkpoint": "runs\\dueling-dqn-benchmark\\seed-42\\double-dqn\\checkpoints\\latest.pt"
+    },
+    {
+      "name": "Dueling DQN",
+      "family": "dqn",
+      "checkpoint": "runs\\dueling-dqn-benchmark\\seed-42\\dueling-dqn\\checkpoints\\latest.pt"
+    },
+    {
+      "name": "Dueling Double DQN",
+      "family": "dqn",
+      "checkpoint": "runs\\dueling-dqn-benchmark\\seed-42\\dueling-double-dqn\\checkpoints\\latest.pt"
+    }
+  ],
+  "summary": {
+    "safe_immediate_selections": 19,
+    "total_selections": 24,
+    "safe_immediate_selection_rate": 0.7916666666666666,
+    "scenarios_with_model_disagreement": 4
+  },
+  "scenarios": [
+    {
+      "name": "food_ahead",
+      "title": "Food ahead",
+      "description": "Open board with food two cells in front of the head.",
+      "snake": [
+        [
+          3,
+          3
+        ]
+      ],
+      "food": [
+        3,
+        5
+      ],
+      "direction": [
+        0,
+        1
+      ],
+      "immediate_action_safety": {
+        "left": true,
+        "right": true,
+        "straight": true
+      },
+      "teacher_action": "straight",
+      "unique_model_actions": 2,
+      "models": {
+        "Actor-Critic": {
+          "score_type": "probability",
+          "scores": [
+            0.2717297077178955,
+            0.5187198519706726,
+            0.20955044031143188
+          ],
+          "selected_action": 1,
+          "margin": 0.2469901442527771,
+          "state_value": 7.160847187042236,
+          "selected_action_name": "right",
+          "selected_action_immediately_safe": true
+        },
+        "PPO": {
+          "score_type": "probability",
+          "scores": [
+            0.059163354337215424,
+            0.6864743232727051,
+            0.2543622851371765
+          ],
+          "selected_action": 1,
+          "margin": 0.43211203813552856,
+          "state_value": 1.2196614742279053,
+          "selected_action_name": "right",
+          "selected_action_immediately_safe": true
+        },
+        "DQN": {
+          "score_type": "q_value",
+          "scores": [
+            11.746025085449219,
+            11.758747100830078,
+            11.706355094909668
+          ],
+          "selected_action": 1,
+          "margin": 0.012722015380859375,
+          "selected_action_name": "right",
+          "selected_action_immediately_safe": true
+        },
+        "Double DQN": {
+          "score_type": "q_value",
+          "scores": [
+            8.971781730651855,
+            8.934892654418945,
+            9.424935340881348
+          ],
+          "selected_action": 2,
+          "margin": 0.4531536102294922,
+          "selected_action_name": "straight",
+          "selected_action_immediately_safe": true
+        },
+        "Dueling DQN": {
+          "score_type": "q_value",
+          "scores": [
+            10.513824462890625,
+            10.74720287322998,
+            10.587215423583984
+          ],
+          "selected_action": 1,
+          "margin": 0.1599874496459961,
+          "state_value": 10.616081237792969,
+          "raw_advantages": [
+            -0.3776831030845642,
+            -0.1443040668964386,
+            -0.30429190397262573
+          ],
+          "centered_advantages": [
+            -0.10225674510002136,
+            0.13112229108810425,
+            -0.028865545988082886
+          ],
+          "selected_action_name": "right",
+          "selected_action_immediately_safe": true
+        },
+        "Dueling Double DQN": {
+          "score_type": "q_value",
+          "scores": [
+            8.712284088134766,
+            9.094079971313477,
+            8.65649127960205
+          ],
+          "selected_action": 1,
+          "margin": 0.38179588317871094,
+          "state_value": 8.820951461791992,
+          "raw_advantages": [
+            -0.16151541471481323,
+            0.22028076648712158,
+            -0.21730834245681763
+          ],
+          "centered_advantages": [
+            -0.10866774618625641,
+            0.2731284201145172,
+            -0.1644606739282608
+          ],
+          "selected_action_name": "right",
+          "selected_action_immediately_safe": true
+        }
+      }
+    },
+    {
+      "name": "wall_ahead",
+      "title": "Wall ahead",
+      "description": "Moving straight collides with the right boundary.",
+      "snake": [
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "food": [
+        0,
+        0
+      ],
+      "direction": [
+        0,
+        1
+      ],
+      "immediate_action_safety": {
+        "left": true,
+        "right": true,
+        "straight": false
+      },
+      "teacher_action": "left",
+      "unique_model_actions": 2,
+      "models": {
+        "Actor-Critic": {
+          "score_type": "probability",
+          "scores": [
+            0.1700163185596466,
+            0.7455235719680786,
+            0.08446011692285538
+          ],
+          "selected_action": 1,
+          "margin": 0.5755072832107544,
+          "state_value": 6.845688343048096,
+          "selected_action_name": "right",
+          "selected_action_immediately_safe": true
+        },
+        "PPO": {
+          "score_type": "probability",
+          "scores": [
+            0.005092275328934193,
+            0.9787920713424683,
+            0.016115620732307434
+          ],
+          "selected_action": 1,
+          "margin": 0.962676465511322,
+          "state_value": 0.550990104675293,
+          "selected_action_name": "right",
+          "selected_action_immediately_safe": true
+        },
+        "DQN": {
+          "score_type": "q_value",
+          "scores": [
+            10.22988510131836,
+            10.50512981414795,
+            -5.361484527587891
+          ],
+          "selected_action": 1,
+          "margin": 0.27524471282958984,
+          "selected_action_name": "right",
+          "selected_action_immediately_safe": true
+        },
+        "Double DQN": {
+          "score_type": "q_value",
+          "scores": [
+            8.138782501220703,
+            8.156414031982422,
+            -4.850348949432373
+          ],
+          "selected_action": 1,
+          "margin": 0.01763153076171875,
+          "selected_action_name": "right",
+          "selected_action_immediately_safe": true
+        },
+        "Dueling DQN": {
+          "score_type": "q_value",
+          "scores": [
+            9.612276077270508,
+            8.03787612915039,
+            -4.8353495597839355
+          ],
+          "selected_action": 0,
+          "margin": 1.5743999481201172,
+          "state_value": 4.27160120010376,
+          "raw_advantages": [
+            5.763015270233154,
+            4.188615798950195,
+            -8.684610366821289
+          ],
+          "centered_advantages": [
+            5.340674877166748,
+            3.766275405883789,
+            -9.106950759887695
+          ],
+          "selected_action_name": "left",
+          "selected_action_immediately_safe": true
+        },
+        "Dueling Double DQN": {
+          "score_type": "q_value",
+          "scores": [
+            9.688241004943848,
+            8.84033489227295,
+            -2.1862151622772217
+          ],
+          "selected_action": 0,
+          "margin": 0.8479061126708984,
+          "state_value": 5.44745397567749,
+          "raw_advantages": [
+            4.587824821472168,
+            3.7399182319641113,
+            -7.286632061004639
+          ],
+          "centered_advantages": [
+            4.240787506103516,
+            3.392881155014038,
+            -7.633669376373291
+          ],
+          "selected_action_name": "left",
+          "selected_action_immediately_safe": true
+        }
+      }
+    },
+    {
+      "name": "body_turn",
+      "title": "Body turn",
+      "description": "A bent body makes the local geometry visible to the policy.",
+      "snake": [
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "food": [
+        4,
+        2
+      ],
+      "direction": [
+        0,
+        1
+      ],
+      "immediate_action_safety": {
+        "left": true,
+        "right": true,
+        "straight": true
+      },
+      "teacher_action": "right",
+      "unique_model_actions": 3,
+      "models": {
+        "Actor-Critic": {
+          "score_type": "probability",
+          "scores": [
+            0.2511008083820343,
+            0.6505862474441528,
+            0.09831291437149048
+          ],
+          "selected_action": 1,
+          "margin": 0.39948543906211853,
+          "state_value": 7.027451992034912,
+          "selected_action_name": "right",
+          "selected_action_immediately_safe": true
+        },
+        "PPO": {
+          "score_type": "probability",
+          "scores": [
+            0.07594411075115204,
+            0.2689730226993561,
+            0.6550829410552979
+          ],
+          "selected_action": 2,
+          "margin": 0.3861099183559418,
+          "state_value": 1.6240074634552002,
+          "selected_action_name": "straight",
+          "selected_action_immediately_safe": true
+        },
+        "DQN": {
+          "score_type": "q_value",
+          "scores": [
+            12.39859390258789,
+            12.431373596191406,
+            12.71908187866211
+          ],
+          "selected_action": 2,
+          "margin": 0.2877082824707031,
+          "selected_action_name": "straight",
+          "selected_action_immediately_safe": true
+        },
+        "Double DQN": {
+          "score_type": "q_value",
+          "scores": [
+            7.894567012786865,
+            8.326103210449219,
+            8.801115989685059
+          ],
+          "selected_action": 2,
+          "margin": 0.47501277923583984,
+          "selected_action_name": "straight",
+          "selected_action_immediately_safe": true
+        },
+        "Dueling DQN": {
+          "score_type": "q_value",
+          "scores": [
+            11.851997375488281,
+            11.399931907653809,
+            11.542484283447266
+          ],
+          "selected_action": 0,
+          "margin": 0.3095130920410156,
+          "state_value": 11.598137855529785,
+          "raw_advantages": [
+            -0.10606904327869415,
+            -0.5581338405609131,
+            -0.4155821204185486
+          ],
+          "centered_advantages": [
+            0.253859281539917,
+            -0.19820550084114075,
+            -0.055653780698776245
+          ],
+          "selected_action_name": "left",
+          "selected_action_immediately_safe": true
+        },
+        "Dueling Double DQN": {
+          "score_type": "q_value",
+          "scores": [
+            9.176424980163574,
+            9.265398979187012,
+            9.520676612854004
+          ],
+          "selected_action": 2,
+          "margin": 0.2552776336669922,
+          "state_value": 9.320833206176758,
+          "raw_advantages": [
+            -0.3498256206512451,
+            -0.26085174083709717,
+            -0.005574522539973259
+          ],
+          "centered_advantages": [
+            -0.14440833032131195,
+            -0.055434450507164,
+            0.19984276592731476
+          ],
+          "selected_action_name": "straight",
+          "selected_action_immediately_safe": true
+        }
+      }
+    },
+    {
+      "name": "narrow_escape",
+      "title": "Narrow escape",
+      "description": "Turning right hits the body; left and straight remain immediately safe.",
+      "snake": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "food": [
+        0,
+        5
+      ],
+      "direction": [
+        -1,
+        0
+      ],
+      "immediate_action_safety": {
+        "left": true,
+        "right": false,
+        "straight": true
+      },
+      "teacher_action": "straight",
+      "unique_model_actions": 2,
+      "models": {
+        "Actor-Critic": {
+          "score_type": "probability",
+          "scores": [
+            0.3336796164512634,
+            0.6262946724891663,
+            0.04002578929066658
+          ],
+          "selected_action": 1,
+          "margin": 0.29261505603790283,
+          "state_value": 7.122351169586182,
+          "selected_action_name": "right",
+          "selected_action_immediately_safe": false
+        },
+        "PPO": {
+          "score_type": "probability",
+          "scores": [
+            0.19957755506038666,
+            0.47472643852233887,
+            0.3256959915161133
+          ],
+          "selected_action": 1,
+          "margin": 0.14903044700622559,
+          "state_value": 0.7031097412109375,
+          "selected_action_name": "right",
+          "selected_action_immediately_safe": false
+        },
+        "DQN": {
+          "score_type": "q_value",
+          "scores": [
+            10.098424911499023,
+            10.57986831665039,
+            10.378819465637207
+          ],
+          "selected_action": 1,
+          "margin": 0.2010488510131836,
+          "selected_action_name": "right",
+          "selected_action_immediately_safe": false
+        },
+        "Double DQN": {
+          "score_type": "q_value",
+          "scores": [
+            7.767202377319336,
+            7.883782863616943,
+            8.201169967651367
+          ],
+          "selected_action": 2,
+          "margin": 0.31738710403442383,
+          "selected_action_name": "straight",
+          "selected_action_immediately_safe": true
+        },
+        "Dueling DQN": {
+          "score_type": "q_value",
+          "scores": [
+            9.452628135681152,
+            9.533895492553711,
+            9.430009841918945
+          ],
+          "selected_action": 1,
+          "margin": 0.0812673568725586,
+          "state_value": 9.472177505493164,
+          "raw_advantages": [
+            -0.08891411125659943,
+            -0.007646707817912102,
+            -0.11153239011764526
+          ],
+          "centered_advantages": [
+            -0.01954970508813858,
+            0.061717696487903595,
+            -0.04216798394918442
+          ],
+          "selected_action_name": "right",
+          "selected_action_immediately_safe": false
+        },
+        "Dueling Double DQN": {
+          "score_type": "q_value",
+          "scores": [
+            7.933224678039551,
+            7.949182510375977,
+            7.597752094268799
+          ],
+          "selected_action": 1,
+          "margin": 0.01595783233642578,
+          "state_value": 7.826719760894775,
+          "raw_advantages": [
+            0.010272502899169922,
+            0.026230331510305405,
+            -0.3252001404762268
+          ],
+          "centered_advantages": [
+            0.10650493949651718,
+            0.12246276438236237,
+            -0.22896769642829895
+          ],
+          "selected_action_name": "right",
+          "selected_action_immediately_safe": false
+        }
+      }
+    }
+  ]
+}

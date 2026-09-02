@@ -22,6 +22,9 @@ Actor-Critic、DQN 四种方法的多随机种子统一评估。
 第七篇增加 Dueling Q 网络，通过 `2×2` 全因子实验同时比较普通/Dueling 网络结构和普通/
 Double TD 目标，并记录状态价值、动作优势、动作间隔、参数量与交互效应。
 
+第八篇不再增加算法，而是让六个模型读取四个完全相同的固定局面，检查动作选择、立即碰撞
+风险、策略概率、Q 值以及 Dueling Network 的状态价值与动作优势，完成离散控制阶段复盘。
+
 ## 当前版本带来了什么
 
 - 环境严格执行智能体传入的动作，让动作、奖励和下一状态保持一致。
@@ -32,6 +35,7 @@ Double TD 目标，并记录状态价值、动作优势、动作间隔、参数�
 - 检查点保存模型、优化器、训练轮次和环境配置，可以恢复训练并直接播放。
 - 增加依赖清单、自动测试、GitHub CI 和短训练冒烟测试。
 - 增加 DQN、Double DQN、Dueling DQN、PPO、独立播放程序和可导出 JSON/CSV 的基准工具。
+- 增加固定局面决策检查，可生成机器可读报告和教程配图。
 
 ## 环境要求
 
@@ -186,6 +190,28 @@ python .\贪吃蛇\benchmark_dueling_dqn.py --seeds 7 42 2026 `
 第七篇原始结果保存在
 [`docs/experiments/07-dueling-dqn-benchmark.json`](docs/experiments/07-dueling-dqn-benchmark.json)。
 
+## 固定局面决策检查
+
+第八篇使用第 5 篇和第 7 篇生成的 `seed=42` 检查点。若尚未训练，先运行：
+
+```powershell
+python .\贪吃蛇\benchmark.py --seeds 7 42 2026 --episodes 1000 `
+  --eval-episodes 100 --device cpu --torch-threads 1 `
+  --output-dir runs\benchmark-ppo
+python .\贪吃蛇\benchmark_dueling_dqn.py --seeds 7 42 2026 `
+  --episodes 1000 --eval-episodes 100 --device cpu --torch-threads 1
+```
+
+然后让六个模型读取四个固定状态并生成报告与配图：
+
+```powershell
+python .\贪吃蛇\inspect_decisions.py
+```
+
+原始决策报告保存在
+[`docs/experiments/08-decision-inspection.json`](docs/experiments/08-decision-inspection.json)。固定状态
+检查用于解释具体选择，不替代多随机种子的完整游戏评估。
+
 ## 可复现验证样例
 
 在 Windows CPU、`seed=42` 的默认小网格配置下，发布前实测 500 Episode 的最后一轮
@@ -231,7 +257,8 @@ TD 误差同时更新策略和价值网络，并用少量熵奖励保持探索�
   benchmark.py    # 五种策略的多随机种子统一评估
   benchmark_double_dqn.py # DQN/Double DQN 配对评估和 Q 值诊断
   benchmark_dueling_dqn.py # 四种 DQN 组合的全因子评估和表征诊断
-tutorials/        # 第一至第七篇教程的独立代码快照与运行入口
+  inspect_decisions.py # 六种模型的固定状态决策检查与可视化
+tutorials/        # 各篇教程的独立代码快照与运行入口
 tests/            # 环境、模型、检查点和短训练测试
 docs/csdn/        # 可发布到 CSDN 的后续教程
 ```
@@ -257,14 +284,15 @@ python -m pytest
 - [第五篇：PPO 实战，从单步更新到稳定策略优化](https://blog.csdn.net/bobwww123/article/details/163926240) · [对应代码](tutorials/05-ppo/)
 - [第六篇：Double DQN 实战，降低 Q 值成绩就会更好吗](https://blog.csdn.net/bobwww123/article/details/163937191) · [对应代码](tutorials/06-double-dqn/)
 - [第七篇：Dueling DQN 实战，先判断局面，再选择动作](https://blog.csdn.net/bobwww123/article/details/163937626) · [对应代码](tutorials/07-dueling-dqn/)
+- 第八篇：七篇之后，我们到底学会了什么 · [对应代码](tutorials/08-decision-inspection/)（正式文章发布后补链接）
 
-[查看七篇教程与代码的完整索引](tutorials/README.md)
+[查看教程与代码的完整索引](tutorials/README.md)
 
 ## 后续路线
 
-1. 增加障碍地图和课程难度，比较算法的泛化能力。
-2. 增加逐状态的价值与动作优势可视化，帮助理解模型决策。
-3. 在连续动作环境中单独讲解完整 SAC。
+1. 以新的连续控制环境开启下一阶段，先说明连续动作与离散动作的差别。
+2. 建立随机策略、规则基线与 PPO 基线，继续使用统一评估方法。
+3. 在连续动作课程中逐步引入 SAC，并与 PPO 做受控比较。
 
 ## License
 
