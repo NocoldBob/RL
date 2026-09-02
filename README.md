@@ -28,6 +28,9 @@ Double TD 目标，并记录状态价值、动作优势、动作间隔、参数�
 第九篇使用连续山地车开启新阶段，把动作从三个固定选项扩展为 `[-1, 1]` 连续油门，并通过
 四种规则基线比较成功率、速度与动作成本，为连续 PPO 和 SAC 建立评估基准。
 
+第十篇将 PPO 改为带 `tanh` 压缩和概率修正的高斯策略，使用三个训练种子学习连续油门。
+实验同时保留两个成功模型和一个零油门局部最优，展示连续 PPO 的能力与随机种子敏感性。
+
 ## 当前版本带来了什么
 
 - 环境严格执行智能体传入的动作，让动作、奖励和下一状态保持一致。
@@ -40,6 +43,7 @@ Double TD 目标，并记录状态价值、动作优势、动作间隔、参数�
 - 增加 DQN、Double DQN、Dueling DQN、PPO、独立播放程序和可导出 JSON/CSV 的基准工具。
 - 增加固定局面决策检查，可生成机器可读报告和教程配图。
 - 增加连续山地车环境的四种基线、配对评估、轨迹记录与可视化。
+- 增加连续动作 PPO、正确的截断自举、多训练种子评估和规则基线对照。
 
 ## 环境要求
 
@@ -236,6 +240,29 @@ python .\连续控制\play_baseline.py smooth_momentum
 [`docs/experiments/09-continuous-baselines.json`](docs/experiments/09-continuous-baselines.json) 和
 [`docs/experiments/09-continuous-baselines.csv`](docs/experiments/09-continuous-baselines.csv)。
 
+## 连续 PPO 实验
+
+训练单个种子：
+
+```powershell
+python .\连续控制\train_continuous_ppo.py --seed 42
+```
+
+使用 `7、42、2026` 三个训练种子完成实验，并与第九篇规则基线比较：
+
+```powershell
+python .\连续控制\benchmark_continuous_ppo.py
+```
+
+每个种子默认训练 5 万步，最终在相同的 100 个初始状态上进行确定性评估。实验数据保存在
+[`docs/experiments/10-continuous-ppo.json`](docs/experiments/10-continuous-ppo.json) 和
+[`docs/experiments/10-continuous-ppo.csv`](docs/experiments/10-continuous-ppo.csv)。播放检查点：
+
+```powershell
+python .\连续控制\play_continuous_ppo.py `
+  .\runs\continuous-ppo\seed-42\checkpoints\best.pt
+```
+
 ## 可复现验证样例
 
 在 Windows CPU、`seed=42` 的默认小网格配置下，发布前实测 500 Episode 的最后一轮
@@ -287,6 +314,11 @@ TD 误差同时更新策略和价值网络，并用少量熵奖励保持探索�
   benchmark_baselines.py # 100 个配对起点的统一实验入口
   play_baseline.py # 播放指定规则策略
   visualize_baselines.py # 实验结果与轨迹配图
+  continuous_ppo.py # 高斯策略、连续 GAE 与 PPO 更新
+  train_continuous_ppo.py # 单种子训练、评估和检查点
+  benchmark_continuous_ppo.py # 三种子实验与规则基线比较
+  play_continuous_ppo.py # 播放连续 PPO 检查点
+  visualize_continuous_ppo.py # 第十篇实验配图
 tutorials/        # 各篇教程的独立代码快照与运行入口
 tests/            # 环境、模型、检查点和短训练测试
 docs/csdn/        # 可发布到 CSDN 的后续教程
@@ -314,14 +346,15 @@ python -m pytest
 - [第六篇：Double DQN 实战，降低 Q 值成绩就会更好吗](https://blog.csdn.net/bobwww123/article/details/163937191) · [对应代码](tutorials/06-double-dqn/)
 - [第七篇：Dueling DQN 实战，先判断局面，再选择动作](https://blog.csdn.net/bobwww123/article/details/163937626) · [对应代码](tutorials/07-dueling-dqn/)
 - [第八篇：同一局面，六种模型会怎么走？](https://blog.csdn.net/bobwww123/article/details/164296013) · [对应代码](tutorials/08-decision-inspection/)
-- 第九篇：油门不是开关，第一次走进连续动作空间 · [对应代码](tutorials/09-continuous-action-basics/)（正式文章发布后补链接）
+- [第九篇：油门不是开关，第一次走进连续动作空间](https://blog.csdn.net/bobwww123/article/details/164314437) · [对应代码](tutorials/09-continuous-action-basics/)
+- [第十篇：油门到底该踩多少？用 PPO 学会连续控制](https://blog.csdn.net/bobwww123/article/details/164314648) · [对应代码](tutorials/10-continuous-ppo/)
 
 [查看教程与代码的完整索引](tutorials/README.md)
 
 ## 后续路线
 
-1. 实现连续动作 PPO，与第九篇规则基线使用相同起点和指标比较。
-2. 逐步引入 SAC，并拆解双 Q 网络、经验回放与温度参数。
+1. 引入 SAC，并拆解双 Q 网络、经验回放与温度参数。
+2. 用相同训练种子和测试起点比较 PPO 与 SAC 的稳定性和样本效率。
 3. 在连续山地车完成受控比较后，再进入二维动作的 LunarLander 综合项目。
 
 ## License

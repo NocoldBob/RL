@@ -13,7 +13,8 @@
 | 06 | Double DQN 与 Q 值诊断 | [Double DQN 实战](https://blog.csdn.net/bobwww123/article/details/163937191) | [`06-double-dqn/`](06-double-dqn/) |
 | 07 | Dueling Network 全因子实验 | [Dueling DQN 实战](https://blog.csdn.net/bobwww123/article/details/163937626) | [`07-dueling-dqn/`](07-dueling-dqn/) |
 | 08 | 同一局面，六种模型会怎么走？ | [固定局面决策检查](https://blog.csdn.net/bobwww123/article/details/164296013) | [`08-decision-inspection/`](08-decision-inspection/) |
-| 09 | 油门不是开关：连续动作入门 | 正式文章发布后补充 | [`09-continuous-action-basics/`](09-continuous-action-basics/) |
+| 09 | 油门不是开关：连续动作入门 | [CSDN 正式文章](https://blog.csdn.net/bobwww123/article/details/164314437) | [`09-continuous-action-basics/`](09-continuous-action-basics/) |
+| 10 | 油门到底该踩多少？连续 PPO | [CSDN 正式文章](https://blog.csdn.net/bobwww123/article/details/164314648) | [`10-continuous-ppo/`](10-continuous-ppo/) |
 
 ## 使用方法
 
@@ -35,5 +36,6 @@ python -m pip install -r requirements.txt
 - 第 4 至第 7 篇保留该算法加入课程时的代码范围，便于逐步观察 DQN、PPO、Double DQN 和
   Dueling DQN 分别增加了什么；第 8 篇保留完整离散控制实现，用于统一检查六种模型的决策。
 - 第 9 篇开启连续控制阶段，先建立环境、规则基线和统一指标，不提前引入新的训练算法。
+- 第 10 篇把 PPO 扩展到连续动作，并保留多随机种子下成功与失败的真实结果。
 - [`../贪吃蛇/`](../贪吃蛇/) 和 [`../连续控制/`](../连续控制/) 保存各阶段持续更新的实现；
   教程快照只为配合文章阅读，不会随以后章节的功能继续变化。

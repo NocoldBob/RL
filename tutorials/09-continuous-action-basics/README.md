@@ -1,6 +1,6 @@
 # 第九篇：油门不是开关，第一次走进连续动作空间
 
-- CSDN 正式文章发布后补充链接
+- [CSDN 正式文章](https://blog.csdn.net/bobwww123/article/details/164314437)
 - 环境：`MountainCarContinuous-v0`
 - 重点文件：`mountain_car_baselines.py`、`benchmark_baselines.py`
 
