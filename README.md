@@ -231,9 +231,13 @@ TD 误差同时更新策略和价值网络，并用少量熵奖励保持探索�
   benchmark.py    # 五种策略的多随机种子统一评估
   benchmark_double_dqn.py # DQN/Double DQN 配对评估和 Q 值诊断
   benchmark_dueling_dqn.py # 四种 DQN 组合的全因子评估和表征诊断
+tutorials/        # 第一至第七篇教程的独立代码快照与运行入口
 tests/            # 环境、模型、检查点和短训练测试
 docs/csdn/        # 可发布到 CSDN 的后续教程
 ```
+
+不熟悉 Git 的读者可以直接进入 [`tutorials/`](tutorials/README.md)，按文章编号找到对应代码，
+不需要从提交历史中还原旧版本。根目录 [`贪吃蛇/`](贪吃蛇/) 始终保留项目的最新完整实现。
 
 ## 测试
 
@@ -246,12 +250,15 @@ python -m pytest
 
 ## 教程
 
-- [第一篇：RL 强化学习从小白到老鸟（一）——速通贪吃蛇游戏](https://blog.csdn.net/bobwww123/article/details/138722671)
-- [第二篇：RL 强化学习从小白到老鸟（二）——手撕 GPT](https://blog.csdn.net/bobwww123/article/details/138948884)
-- [第三篇：让贪吃蛇训练更稳定、更容易复现](https://blog.csdn.net/bobwww123/article/details/163925583)
-- [第四篇：DQN 实战，四种策略同场对照](https://blog.csdn.net/bobwww123/article/details/163925932)
-- [第五篇：PPO 实战，从单步更新到稳定策略优化](https://blog.csdn.net/bobwww123/article/details/163926240)
-- [第六篇：Double DQN 实战，降低 Q 值成绩就会更好吗](https://blog.csdn.net/bobwww123/article/details/163937191)
+- [第一篇：速通贪吃蛇游戏](https://blog.csdn.net/bobwww123/article/details/138722671) · [对应代码](tutorials/01-snake-game/)
+- [第二篇：手撕 GPT（零基础保姆级教学）](https://blog.csdn.net/bobwww123/article/details/138948884) · [对应代码](tutorials/02-actor-critic/)
+- [第三篇：让贪吃蛇训练更稳定、更容易复现](https://blog.csdn.net/bobwww123/article/details/163925583) · [对应代码](tutorials/03-stable-training/)
+- [第四篇：DQN 实战，四种策略同场对照](https://blog.csdn.net/bobwww123/article/details/163925932) · [对应代码](tutorials/04-dqn/)
+- [第五篇：PPO 实战，从单步更新到稳定策略优化](https://blog.csdn.net/bobwww123/article/details/163926240) · [对应代码](tutorials/05-ppo/)
+- [第六篇：Double DQN 实战，降低 Q 值成绩就会更好吗](https://blog.csdn.net/bobwww123/article/details/163937191) · [对应代码](tutorials/06-double-dqn/)
+- [第七篇：Dueling DQN 实战，先判断局面，再选择动作](https://blog.csdn.net/bobwww123/article/details/163937626) · [对应代码](tutorials/07-dueling-dqn/)
+
+[查看七篇教程与代码的完整索引](tutorials/README.md)
 
 ## 后续路线
 
