@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "status": "diagnostic_complete",
+  "environment": "LunarLanderContinuous-v3",
+  "training_seed": 42,
+  "evaluation_episodes": 20,
+  "shared_encoder_ppo": {
+    "configuration": "MountainCar PPO transferred with 0.01 reward scaling",
+    "evaluations": [
+      {"step": 100000, "average_return": -324.7, "landing_rate": 0.00},
+      {"step": 200000, "average_return": -62.9, "landing_rate": 0.00},
+      {"step": 300000, "average_return": -92.1, "landing_rate": 0.15},
+      {"step": 400000, "average_return": -64.6, "landing_rate": 0.15},
+      {"step": 500000, "average_return": -145.3, "landing_rate": 0.00},
+      {"step": 600000, "average_return": -106.4, "landing_rate": 0.00},
+      {"step": 700000, "average_return": -94.5, "landing_rate": 0.00},
+      {"step": 800000, "average_return": -98.9, "landing_rate": 0.00},
+      {"step": 900000, "average_return": -99.7, "landing_rate": 0.00},
+      {"step": 1000000, "average_return": -107.8, "landing_rate": 0.00}
+    ]
+  },
+  "separate_encoder_ppo": {
+    "configuration": "Separate actor/critic encoders with orthogonal initialization",
+    "evaluations": [
+      {"step": 50000, "average_return": -84.0, "landing_rate": 0.20, "entropy": 2.870, "approx_kl": 0.00515, "clip_fraction": 0.061},
+      {"step": 100000, "average_return": -54.5, "landing_rate": 0.00, "entropy": 2.618, "approx_kl": 0.00591, "clip_fraction": 0.073},
+      {"step": 150000, "average_return": -94.1, "landing_rate": 0.10, "entropy": 2.192, "approx_kl": 0.00738, "clip_fraction": 0.093},
+      {"step": 200000, "average_return": 10.2, "landing_rate": 0.55, "entropy": 1.902, "approx_kl": 0.00724, "clip_fraction": 0.088},
+      {"step": 250000, "average_return": -82.6, "landing_rate": 0.00, "entropy": 1.678, "approx_kl": 0.00746, "clip_fraction": 0.092},
+      {"step": 300000, "average_return": -8.2, "landing_rate": 0.10, "entropy": 1.446, "approx_kl": 0.00737, "clip_fraction": 0.090},
+      {"step": 350000, "average_return": -31.9, "landing_rate": 0.00, "entropy": 1.217, "approx_kl": 0.00816, "clip_fraction": 0.103},
+      {"step": 400000, "average_return": -104.0, "landing_rate": 0.10, "entropy": 0.963, "approx_kl": 0.00875, "clip_fraction": 0.111},
+      {"step": 450000, "average_return": -106.0, "landing_rate": 0.05, "entropy": 0.855, "approx_kl": 0.00863, "clip_fraction": 0.111},
+      {"step": 500000, "average_return": -14.5, "landing_rate": 0.35, "entropy": 0.778, "approx_kl": 0.00797, "clip_fraction": 0.100}
+    ]
+  },
+  "sac_probes": [
+    {"configuration": "0.01 reward scale, 64x64 networks", "stopped_at": 150000, "best_step": 50000, "best_average_return": -49.0, "best_landing_rate": 0.0},
+    {"configuration": "raw reward, Q learning rate 1e-3", "stopped_at": 200000, "best_step": 50000, "best_average_return": -11.8, "best_landing_rate": 0.0}
+  ],
+  "conclusion": "Direct algorithm transfer runs but does not produce a stable solved policy. More steps alone do not fix policy collapse."
+}

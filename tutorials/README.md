@@ -15,6 +15,13 @@
 | 08 | 同一局面，六种模型会怎么走？ | [固定局面决策检查](https://blog.csdn.net/bobwww123/article/details/164296013) | [`08-decision-inspection/`](08-decision-inspection/) |
 | 09 | 油门不是开关：连续动作入门 | [CSDN 正式文章](https://blog.csdn.net/bobwww123/article/details/164314437) | [`09-continuous-action-basics/`](09-continuous-action-basics/) |
 | 10 | 油门到底该踩多少？连续 PPO | [CSDN 正式文章](https://blog.csdn.net/bobwww123/article/details/164314648) | [`10-continuous-ppo/`](10-continuous-ppo/) |
+| 11 | 经验也能反复学习：第一次实现 SAC | [文章草稿](../docs/csdn/11-经验也能反复学习第一次实现SAC.md) | [`11-sac/`](11-sac/) |
+| 12 | PPO 还是 SAC：同样 5 万步结果为什么不同 | [文章草稿](../docs/csdn/12-PPO还是SAC同样5万步结果为什么不同.md) | [`12-ppo-vs-sac/`](12-ppo-vs-sac/) |
+| 13 | 一根油门不够了：走进二维连续动作 | [文章草稿](../docs/csdn/13-一根油门不够了走进二维连续动作.md) | [`13-lunar-baselines/`](13-lunar-baselines/) |
+| 14 | 代码能运行，为什么月球还是落不下来 | [文章草稿](../docs/csdn/14-代码能运行为什么月球还是落不下来.md) | [`14-lunar-transfer-diagnostics/`](14-lunar-transfer-diagnostics/) |
+| 15 | 一次成功不算稳定：三随机种子检验 PPO | [文章草稿](../docs/csdn/15-一次成功不算稳定用三随机种子检验PPO.md) | [`15-stable-lunar-ppo/`](15-stable-lunar-ppo/) |
+| 16 | 网络更大、探索更多，SAC 就一定会着陆吗 | [文章草稿](../docs/csdn/16-网络更大探索更多SAC就一定会着陆吗.md) | [`16-lunar-sac-stability/`](16-lunar-sac-stability/) |
+| 17 | PPO 还是 SAC：同预算与固定危险场景复盘 | [文章草稿](../docs/csdn/17-PPO还是SAC同预算与固定危险场景复盘.md) | [`17-lunar-ppo-vs-sac/`](17-lunar-ppo-vs-sac/) |
 
 ## 使用方法
 
@@ -37,5 +44,12 @@ python -m pip install -r requirements.txt
   Dueling DQN 分别增加了什么；第 8 篇保留完整离散控制实现，用于统一检查六种模型的决策。
 - 第 9 篇开启连续控制阶段，先建立环境、规则基线和统一指标，不提前引入新的训练算法。
 - 第 10 篇把 PPO 扩展到连续动作，并保留多随机种子下成功与失败的真实结果。
+- 第 11 篇加入 SAC，并通过时间相关随机探索解决惯性任务难以发现稀疏奖励的问题。
+- 第 12 篇读取两份原始报告，在相同环境步数、训练种子和测试起点下比较 PPO 与 SAC。
+- 第 13 篇切换到 LunarLander，用环境语义与四种基线开启二维连续控制阶段。
+- 第 14 篇保留 PPO/SAC 直接迁移失败和策略崩塌，建立后续稳定化诊断基线。
+- 第 15 篇加入价值裁剪、目标 KL 和完整更新诊断，并用三随机种子揭示剩余敏感性。
+- 第 16 篇扩大 SAC 网络并检查目标熵与双 Q 分歧，保留“回报改善但未着陆”的负结果。
+- 第 17 篇区分共同预算与最佳部署口径，并用固定危险状态解释 PPO/SAC 的行为差异。
 - [`../贪吃蛇/`](../贪吃蛇/) 和 [`../连续控制/`](../连续控制/) 保存各阶段持续更新的实现；
   教程快照只为配合文章阅读，不会随以后章节的功能继续变化。

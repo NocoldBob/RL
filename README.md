@@ -31,6 +31,20 @@ Double TD 目标，并记录状态价值、动作优势、动作间隔、参数�
 第十篇将 PPO 改为带 `tanh` 压缩和概率修正的高斯策略，使用三个训练种子学习连续油门。
 实验同时保留两个成功模型和一个零油门局部最优，展示连续 PPO 的能力与随机种子敏感性。
 
+第十一篇引入 SAC 的经验回放、双 Q 网络、目标网络软更新和自动温度参数。实验发现逐步独立
+随机动作无法在惯性任务中找到终点，改用保持 10 步的时间相关随机探索后，三个训练种子的
+最终测试成功率分别达到 `95%`、`100%` 和 `100%`。
+
+第十二篇读取 PPO 与 SAC 的原始实验报告进行配对比较。相同 5 万环境步下，PPO 在成功种子上
+学得更早且动作成本更低，SAC 最终对三个训练种子都可靠、到达终点更快，但训练计算量更大。
+
+第十三篇结束连续山地车阶段，进入 `LunarLanderContinuous-v3`。课程先拆解 8 维状态、主/侧
+发动机的二维连续动作与死区，并用零推力、随机控制、规则控制和带噪规则建立训练前基线。
+
+第十四篇把 PPO 与 SAC 迁移到二维动作后保留失败结果。共享网络 PPO 即使训练 100 万步仍未
+稳定着陆；拆分 Actor/Critic 后一度达到 `55%` 着陆率，随后再次崩塌，由此转入可观测的稳定化
+实验，而不是继续盲目增加训练步数。
+
 ## 当前版本带来了什么
 
 - 环境严格执行智能体传入的动作，让动作、奖励和下一状态保持一致。
@@ -44,6 +58,8 @@ Double TD 目标，并记录状态价值、动作优势、动作间隔、参数�
 - 增加固定局面决策检查，可生成机器可读报告和教程配图。
 - 增加连续山地车环境的四种基线、配对评估、轨迹记录与可视化。
 - 增加连续动作 PPO、正确的截断自举、多训练种子评估和规则基线对照。
+- 增加 SAC、经验回放、双 Q 网络、自动温度调整和时间相关探索实验。
+- 增加 LunarLander 二维连续动作环境、规则基线、着陆指标和轨迹可视化。
 
 ## 环境要求
 
@@ -263,6 +279,57 @@ python .\连续控制\play_continuous_ppo.py `
   .\runs\continuous-ppo\seed-42\checkpoints\best.pt
 ```
 
+## SAC 实验
+
+训练单个 SAC 种子：
+
+```powershell
+python .\连续控制\train_sac.py --seed 42
+```
+
+使用三个训练种子和 100 个固定测试起点完成实验：
+
+```powershell
+python .\连续控制\benchmark_sac.py
+```
+
+实验数据保存在 [`docs/experiments/11-sac.json`](docs/experiments/11-sac.json) 和
+[`docs/experiments/11-sac.csv`](docs/experiments/11-sac.csv)。播放检查点：
+
+```powershell
+python .\连续控制\play_sac.py .\runs\sac\seed-42\checkpoints\best.pt
+```
+
+## PPO 与 SAC 对照
+
+读取第十、十一篇已经保存的原始报告并生成配对比较：
+
+```powershell
+python .\连续控制\compare_ppo_sac.py
+```
+
+对照数据保存在
+[`docs/experiments/12-ppo-vs-sac.json`](docs/experiments/12-ppo-vs-sac.json) 和
+[`docs/experiments/12-ppo-vs-sac.csv`](docs/experiments/12-ppo-vs-sac.csv)。
+
+## 二维连续动作入门
+
+LunarLander 需要 Box2D，安装 `requirements.txt` 会自动安装对应扩展。运行四种基线：
+
+```powershell
+python .\月球着陆\benchmark_lunar_baselines.py
+```
+
+播放规则控制器：
+
+```powershell
+python .\月球着陆\play_lunar_baseline.py heuristic --seed 42
+```
+
+原始结果保存在
+[`docs/experiments/13-lunar-baselines.json`](docs/experiments/13-lunar-baselines.json) 和
+[`docs/experiments/13-lunar-baselines.csv`](docs/experiments/13-lunar-baselines.csv)。
+
 ## 可复现验证样例
 
 在 Windows CPU、`seed=42` 的默认小网格配置下，发布前实测 500 Episode 的最后一轮
@@ -319,6 +386,28 @@ TD 误差同时更新策略和价值网络，并用少量熵奖励保持探索�
   benchmark_continuous_ppo.py # 三种子实验与规则基线比较
   play_continuous_ppo.py # 播放连续 PPO 检查点
   visualize_continuous_ppo.py # 第十篇实验配图
+  sac.py # 回放池、连续 Actor、双 Q 网络和 SAC 更新
+  train_sac.py # 单种子 SAC 训练与固定起点评估
+  benchmark_sac.py # 三种子实验与时间相关探索对照
+  play_sac.py # 播放 SAC 检查点
+  visualize_sac.py # 第十一篇实验配图
+  compare_ppo_sac.py # 校验并比较 PPO/SAC 原始实验报告
+  visualize_ppo_sac.py # 第十二篇对照配图
+月球着陆/
+  lunar_baselines.py # 二维动作规则与随机基线
+  benchmark_lunar_baselines.py # 固定起点实验和报告导出
+  play_lunar_baseline.py # 图形化播放基线
+  visualize_lunar_baselines.py # 第十三篇实验配图
+  lunar_agents.py # 二维 PPO/SAC Agent 与观测归一化
+  train_lunar_ppo.py # PPO 迁移训练与增量诊断
+  train_lunar_sac.py # SAC 迁移训练与增量诊断
+  visualize_lunar_diagnostics.py # 第十四篇失败诊断配图
+  benchmark_lunar_ppo_stability.py # 第十五篇三种子稳定性汇总
+  visualize_lunar_ppo_stability.py # 第十五篇实验配图
+  benchmark_lunar_sac_stability.py # 第十六篇 SAC 容量与目标熵消融
+  visualize_lunar_sac_stability.py # 第十六篇实验配图
+  compare_lunar_agents.py # 第十七篇共同预算与固定场景比较
+  visualize_lunar_comparison.py # 第十七篇实验配图
 tutorials/        # 各篇教程的独立代码快照与运行入口
 tests/            # 环境、模型、检查点和短训练测试
 docs/csdn/        # 可发布到 CSDN 的后续教程
@@ -348,14 +437,21 @@ python -m pytest
 - [第八篇：同一局面，六种模型会怎么走？](https://blog.csdn.net/bobwww123/article/details/164296013) · [对应代码](tutorials/08-decision-inspection/)
 - [第九篇：油门不是开关，第一次走进连续动作空间](https://blog.csdn.net/bobwww123/article/details/164314437) · [对应代码](tutorials/09-continuous-action-basics/)
 - [第十篇：油门到底该踩多少？用 PPO 学会连续控制](https://blog.csdn.net/bobwww123/article/details/164314648) · [对应代码](tutorials/10-continuous-ppo/)
+- 第十一篇：经验也能反复学习，第一次实现 SAC · [文章草稿](docs/csdn/11-经验也能反复学习第一次实现SAC.md) · [对应代码](tutorials/11-sac/)
+- 第十二篇：PPO 还是 SAC？同样 5 万步结果为什么不同 · [文章草稿](docs/csdn/12-PPO还是SAC同样5万步结果为什么不同.md) · [对应代码](tutorials/12-ppo-vs-sac/)
+- 第十三篇：一根油门不够了，走进二维连续动作 · [文章草稿](docs/csdn/13-一根油门不够了走进二维连续动作.md) · [对应代码](tutorials/13-lunar-baselines/)
+- 第十四篇：代码能运行，为什么月球还是落不下来 · [文章草稿](docs/csdn/14-代码能运行为什么月球还是落不下来.md) · [对应代码](tutorials/14-lunar-transfer-diagnostics/)
+- 第十五篇：一次成功不算稳定，用三随机种子检验 PPO · [文章草稿](docs/csdn/15-一次成功不算稳定用三随机种子检验PPO.md) · [对应代码](tutorials/15-stable-lunar-ppo/)
+- 第十六篇：网络更大、探索更多，SAC 就一定会着陆吗 · [文章草稿](docs/csdn/16-网络更大探索更多SAC就一定会着陆吗.md) · [对应代码](tutorials/16-lunar-sac-stability/)
+- 第十七篇：PPO 还是 SAC？同预算与固定危险场景复盘 · [文章草稿](docs/csdn/17-PPO还是SAC同预算与固定危险场景复盘.md) · [对应代码](tutorials/17-lunar-ppo-vs-sac/)
 
 [查看教程与代码的完整索引](tutorials/README.md)
 
 ## 后续路线
 
-1. 引入 SAC，并拆解双 Q 网络、经验回放与温度参数。
-2. 用相同训练种子和测试起点比较 PPO 与 SAC 的稳定性和样本效率。
-3. 在连续山地车完成受控比较后，再进入二维动作的 LunarLander 综合项目。
+LunarLander 项目牵引的连续控制主线到第十七篇阶段性结束。下一阶段应切换到带来新问题的
+项目，例如图像观测、稀疏奖励、多智能体协作或真实设备约束，而不是继续围绕同一环境堆叠
+调参文章。
 
 ## License
 

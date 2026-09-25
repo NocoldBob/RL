@@ -7,3 +7,5 @@ SOURCE_DIR = Path(__file__).resolve().parents[1] / "贪吃蛇"
 sys.path.insert(0, str(SOURCE_DIR))
 CONTINUOUS_DIR = Path(__file__).resolve().parents[1] / "连续控制"
 sys.path.insert(0, str(CONTINUOUS_DIR))
+LUNAR_DIR = Path(__file__).resolve().parents[1] / "月球着陆"
+sys.path.insert(0, str(LUNAR_DIR))
