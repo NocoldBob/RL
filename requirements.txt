@@ -1,5 +1,6 @@
 gymnasium[box2d]>=1.0,<2.0
 matplotlib>=3.8,<4.0
+minigrid>=3.0,<4.0
 numpy>=1.26,<3.0
 pygame>=2.6,<3.0
 tensorboard>=2.17,<3.0

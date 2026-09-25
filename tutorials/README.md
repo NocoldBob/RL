@@ -22,6 +22,13 @@
 | 15 | 一次成功不算稳定：三随机种子检验 PPO | [文章草稿](../docs/csdn/15-一次成功不算稳定用三随机种子检验PPO.md) | [`15-stable-lunar-ppo/`](15-stable-lunar-ppo/) |
 | 16 | 网络更大、探索更多，SAC 就一定会着陆吗 | [文章草稿](../docs/csdn/16-网络更大探索更多SAC就一定会着陆吗.md) | [`16-lunar-sac-stability/`](16-lunar-sac-stability/) |
 | 17 | PPO 还是 SAC：同预算与固定危险场景复盘 | [文章草稿](../docs/csdn/17-PPO还是SAC同预算与固定危险场景复盘.md) | [`17-lunar-ppo-vs-sac/`](17-lunar-ppo-vs-sac/) |
+| 18 | DoorKey 环境与规则专家基线 | [文章草稿](../docs/csdn/18-门就在眼前为什么没有钥匙还是过不去.md) | [`18-doorkey-baselines/`](18-doorkey-baselines/) |
+| 19 | 完整地图 DQN 与稀疏奖励 | [文章草稿](../docs/csdn/19-看见完整地图DQN就能稳定学会开门吗.md) | [`19-full-observation-dqn/`](19-full-observation-dqn/) |
+| 20 | 局部观测与观测别名 | [文章草稿](../docs/csdn/20-视野缩小以后同一画面可能需要不同动作.md) | [`20-partial-observation/`](20-partial-observation/) |
+| 21 | GRU 记忆与截断 BPTT | [文章草稿](../docs/csdn/21-记忆不是自动学会的GRU与PPO对照.md) | [`21-memory-ppo/`](21-memory-ppo/) |
+| 22 | 访问计数与课程学习 | [文章草稿](../docs/csdn/22-探索范围不等于任务进展课程学习解决稀疏奖励.md) | [`22-curriculum-exploration/`](22-curriculum-exploration/) |
+| 23 | 行为克隆与参考 KL 微调 | [文章草稿](../docs/csdn/23-示范是起点不是免疫牌行为克隆与保守微调.md) | [`23-imitation-ppo/`](23-imitation-ppo/) |
+| 24 | DoorKey 跨尺寸泛化 | [文章草稿](../docs/csdn/24-训练成功不等于泛化成功DoorKey跨尺寸评估.md) | [`24-generalization/`](24-generalization/) |
 
 ## 使用方法
 
@@ -51,5 +58,12 @@ python -m pip install -r requirements.txt
 - 第 15 篇加入价值裁剪、目标 KL 和完整更新诊断，并用三随机种子揭示剩余敏感性。
 - 第 16 篇扩大 SAC 网络并检查目标熵与双 Q 分歧，保留“回报改善但未着陆”的负结果。
 - 第 17 篇区分共同预算与最佳部署口径，并用固定危险状态解释 PPO/SAC 的行为差异。
+- 第 18 篇建立 DoorKey 环境、搜索专家和随机基线。
+- 第 19 篇先用完整地图 DQN 分离规划与感知难点。
+- 第 20 篇切换局部观测，统计同一画面对应多个动作的观测别名。
+- 第 21 篇加入 GRU 与截断 BPTT，验证记忆结构不会自动产生记忆行为。
+- 第 22 篇比较访问计数和课程学习，展示课程学习如何解决 8×8 稀疏奖励。
+- 第 23 篇从专家轨迹行为克隆，再用参考策略 KL 抑制 PPO 灾难性遗忘。
+- 第 24 篇在未见地图尺寸和随机种子上评估泛化能力。
 - [`../贪吃蛇/`](../贪吃蛇/) 和 [`../连续控制/`](../连续控制/) 保存各阶段持续更新的实现；
   教程快照只为配合文章阅读，不会随以后章节的功能继续变化。

@@ -1,0 +1,171 @@
+{
+  "experiment": "lesson-24-doorkey-generalization",
+  "evaluation_seeds": [
+    70000,
+    70001,
+    70002,
+    70003,
+    70004,
+    70005,
+    70006,
+    70007,
+    70008,
+    70009,
+    70010,
+    70011,
+    70012,
+    70013,
+    70014,
+    70015,
+    70016,
+    70017,
+    70018,
+    70019
+  ],
+  "results": [
+    {
+      "variant": "ppo-5x5",
+      "checkpoint_step": 90000,
+      "size": 5,
+      "episodes": 20,
+      "success_rate": 1.0,
+      "average_return": 0.95932,
+      "average_steps": 11.3
+    },
+    {
+      "variant": "ppo-5x5",
+      "checkpoint_step": 90000,
+      "size": 6,
+      "episodes": 20,
+      "success_rate": 0.6,
+      "average_return": 0.5803750000000001,
+      "average_steps": 151.85
+    },
+    {
+      "variant": "ppo-5x5",
+      "checkpoint_step": 90000,
+      "size": 8,
+      "episodes": 20,
+      "success_rate": 0.0,
+      "average_return": 0.0,
+      "average_steps": 640.0
+    },
+    {
+      "variant": "ppo-5x5",
+      "checkpoint_step": 90000,
+      "size": 16,
+      "episodes": 20,
+      "success_rate": 0.0,
+      "average_return": 0.0,
+      "average_steps": 2560.0
+    },
+    {
+      "variant": "curriculum-8x8",
+      "checkpoint_step": 100000,
+      "size": 5,
+      "episodes": 20,
+      "success_rate": 1.0,
+      "average_return": 0.95932,
+      "average_steps": 11.3
+    },
+    {
+      "variant": "curriculum-8x8",
+      "checkpoint_step": 100000,
+      "size": 6,
+      "episodes": 20,
+      "success_rate": 1.0,
+      "average_return": 0.9678749999999997,
+      "average_steps": 12.85
+    },
+    {
+      "variant": "curriculum-8x8",
+      "checkpoint_step": 100000,
+      "size": 8,
+      "episodes": 20,
+      "success_rate": 0.8,
+      "average_return": 0.7769375,
+      "average_steps": 144.4
+    },
+    {
+      "variant": "curriculum-8x8",
+      "checkpoint_step": 100000,
+      "size": 16,
+      "episodes": 20,
+      "success_rate": 0.1,
+      "average_return": 0.09785546875,
+      "average_steps": 2310.1
+    },
+    {
+      "variant": "behavior-cloning",
+      "checkpoint_step": 15,
+      "size": 5,
+      "episodes": 20,
+      "success_rate": 0.9,
+      "average_return": 0.8656200000000002,
+      "average_steps": 34.55
+    },
+    {
+      "variant": "behavior-cloning",
+      "checkpoint_step": 15,
+      "size": 6,
+      "episodes": 20,
+      "success_rate": 0.75,
+      "average_return": 0.7285,
+      "average_steps": 98.6
+    },
+    {
+      "variant": "behavior-cloning",
+      "checkpoint_step": 15,
+      "size": 8,
+      "episodes": 20,
+      "success_rate": 0.8,
+      "average_return": 0.7788359375,
+      "average_steps": 143.05
+    },
+    {
+      "variant": "behavior-cloning",
+      "checkpoint_step": 15,
+      "size": 16,
+      "episodes": 20,
+      "success_rate": 0.3,
+      "average_return": 0.29634375,
+      "average_steps": 1802.4
+    },
+    {
+      "variant": "bc-reference-kl",
+      "checkpoint_step": 18000,
+      "size": 5,
+      "episodes": 20,
+      "success_rate": 0.9,
+      "average_return": 0.8656200000000002,
+      "average_steps": 34.55
+    },
+    {
+      "variant": "bc-reference-kl",
+      "checkpoint_step": 18000,
+      "size": 6,
+      "episodes": 20,
+      "success_rate": 0.7,
+      "average_return": 0.679875,
+      "average_steps": 116.05
+    },
+    {
+      "variant": "bc-reference-kl",
+      "checkpoint_step": 18000,
+      "size": 8,
+      "episodes": 20,
+      "success_rate": 0.8,
+      "average_return": 0.7795390624999999,
+      "average_steps": 142.55
+    },
+    {
+      "variant": "bc-reference-kl",
+      "checkpoint_step": 18000,
+      "size": 16,
+      "episodes": 20,
+      "success_rate": 0.2,
+      "average_return": 0.197609375,
+      "average_steps": 2054.8
+    }
+  ]
+}

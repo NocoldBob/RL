@@ -408,6 +408,13 @@ TD 误差同时更新策略和价值网络，并用少量熵奖励保持探索�
   visualize_lunar_sac_stability.py # 第十六篇实验配图
   compare_lunar_agents.py # 第十七篇共同预算与固定场景比较
   visualize_lunar_comparison.py # 第十七篇实验配图
+迷你网格/
+  doorkey_env.py # DoorKey 环境、专家搜索与统一评估
+  doorkey_dqn.py # 完整/局部观测 DQN
+  doorkey_ppo.py # 前馈 PPO 与 GRU PPO
+  train_doorkey_ppo.py # 课程学习、计数奖励与保守微调
+  train_doorkey_imitation.py # 专家行为克隆
+  benchmark_doorkey_generalization.py # 跨尺寸泛化评估
 tutorials/        # 各篇教程的独立代码快照与运行入口
 tests/            # 环境、模型、检查点和短训练测试
 docs/csdn/        # 可发布到 CSDN 的后续教程
@@ -444,14 +451,21 @@ python -m pytest
 - 第十五篇：一次成功不算稳定，用三随机种子检验 PPO · [文章草稿](docs/csdn/15-一次成功不算稳定用三随机种子检验PPO.md) · [对应代码](tutorials/15-stable-lunar-ppo/)
 - 第十六篇：网络更大、探索更多，SAC 就一定会着陆吗 · [文章草稿](docs/csdn/16-网络更大探索更多SAC就一定会着陆吗.md) · [对应代码](tutorials/16-lunar-sac-stability/)
 - 第十七篇：PPO 还是 SAC？同预算与固定危险场景复盘 · [文章草稿](docs/csdn/17-PPO还是SAC同预算与固定危险场景复盘.md) · [对应代码](tutorials/17-lunar-ppo-vs-sac/)
+- 第十八篇：门就在眼前，为什么没有钥匙还是过不去 · [文章草稿](docs/csdn/18-门就在眼前为什么没有钥匙还是过不去.md) · [对应代码](tutorials/18-doorkey-baselines/)
+- 第十九篇：看见完整地图，DQN 就能稳定学会开门吗 · [文章草稿](docs/csdn/19-看见完整地图DQN就能稳定学会开门吗.md) · [对应代码](tutorials/19-full-observation-dqn/)
+- 第二十篇：视野缩小以后，同一画面可能需要不同动作 · [文章草稿](docs/csdn/20-视野缩小以后同一画面可能需要不同动作.md) · [对应代码](tutorials/20-partial-observation/)
+- 第二十一篇：记忆不是自动学会的：GRU 与 PPO 对照 · [文章草稿](docs/csdn/21-记忆不是自动学会的GRU与PPO对照.md) · [对应代码](tutorials/21-memory-ppo/)
+- 第二十二篇：探索范围不等于任务进展：课程学习解决稀疏奖励 · [文章草稿](docs/csdn/22-探索范围不等于任务进展课程学习解决稀疏奖励.md) · [对应代码](tutorials/22-curriculum-exploration/)
+- 第二十三篇：示范是起点，不是免疫牌：行为克隆与保守微调 · [文章草稿](docs/csdn/23-示范是起点不是免疫牌行为克隆与保守微调.md) · [对应代码](tutorials/23-imitation-ppo/)
+- 第二十四篇：训练成功不等于泛化成功：DoorKey 跨尺寸评估 · [文章草稿](docs/csdn/24-训练成功不等于泛化成功DoorKey跨尺寸评估.md) · [对应代码](tutorials/24-generalization/)
 
 [查看教程与代码的完整索引](tutorials/README.md)
 
 ## 后续路线
 
-LunarLander 项目牵引的连续控制主线到第十七篇阶段性结束。下一阶段应切换到带来新问题的
-项目，例如图像观测、稀疏奖励、多智能体协作或真实设备约束，而不是继续围绕同一环境堆叠
-调参文章。
+MiniGrid DoorKey 项目在第二十四篇完成了从环境基线、完整地图、局部观测、GRU、课程学习、
+行为克隆到跨尺寸泛化的闭环。下一阶段可切换到真正 RGB 图像、多智能体协作或真实设备约束，
+不再继续围绕 DoorKey 堆叠调参文章。
 
 ## License
 

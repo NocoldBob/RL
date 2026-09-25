@@ -9,3 +9,5 @@ CONTINUOUS_DIR = Path(__file__).resolve().parents[1] / "连续控制"
 sys.path.insert(0, str(CONTINUOUS_DIR))
 LUNAR_DIR = Path(__file__).resolve().parents[1] / "月球着陆"
 sys.path.insert(0, str(LUNAR_DIR))
+MINIGRID_DIR = Path(__file__).resolve().parents[1] / "迷你网格"
+sys.path.insert(0, str(MINIGRID_DIR))
