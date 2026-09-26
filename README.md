@@ -415,6 +415,13 @@ TD 误差同时更新策略和价值网络，并用少量熵奖励保持探索�
   train_doorkey_ppo.py # 课程学习、计数奖励与保守微调
   train_doorkey_imitation.py # 专家行为克隆
   benchmark_doorkey_generalization.py # 跨尺寸泛化评估
+视觉驾驶/
+  carracing_env.py # RGB 预处理、帧堆叠、动作映射与统一评估
+  cnn_encoder.py # DQN/PPO 共享卷积编码器
+  carracing_dqn.py # 离散动作视觉 Double DQN
+  carracing_ppo.py # 连续动作视觉 PPO
+  benchmark_visual_robustness.py # 图像扰动评估
+  benchmark_visual_reliability.py # 未见赛道与尾部风险审计
 tutorials/        # 各篇教程的独立代码快照与运行入口
 tests/            # 环境、模型、检查点和短训练测试
 docs/csdn/        # 可发布到 CSDN 的后续教程
@@ -458,14 +465,21 @@ python -m pytest
 - 第二十二篇：探索范围不等于任务进展：课程学习解决稀疏奖励 · [文章草稿](docs/csdn/22-探索范围不等于任务进展课程学习解决稀疏奖励.md) · [对应代码](tutorials/22-curriculum-exploration/)
 - 第二十三篇：示范是起点，不是免疫牌：行为克隆与保守微调 · [文章草稿](docs/csdn/23-示范是起点不是免疫牌行为克隆与保守微调.md) · [对应代码](tutorials/23-imitation-ppo/)
 - 第二十四篇：训练成功不等于泛化成功：DoorKey 跨尺寸评估 · [文章草稿](docs/csdn/24-训练成功不等于泛化成功DoorKey跨尺寸评估.md) · [对应代码](tutorials/24-generalization/)
+- 第二十五篇：从状态向量到 RGB 图像：CarRacing 视觉输入管线 · [文章草稿](docs/csdn/25-从状态向量到RGB图像CarRacing视觉输入管线.md) · [对应代码](tutorials/25-visual-input-pipeline/)
+- 第二十六篇：一张图够不够判断车辆状态：单帧与帧堆叠 · [文章草稿](docs/csdn/26-一张图够不够判断车辆状态单帧与帧堆叠.md) · [对应代码](tutorials/26-frame-stacking/)
+- 第二十七篇：离散化方向盘后，DQN 能学会开车吗 · [文章草稿](docs/csdn/27-离散化方向盘后DQN能学会开车吗.md) · [对应代码](tutorials/27-discrete-dqn-driving/)
+- 第二十八篇：连续动作 PPO 如何同时控制转向、油门和刹车 · [文章草稿](docs/csdn/28-连续动作PPO如何同时控制转向油门和刹车.md) · [对应代码](tutorials/28-continuous-ppo-driving/)
+- 第二十九篇：奖励越精细，驾驶就一定越好吗 · [文章草稿](docs/csdn/29-奖励越精细驾驶就一定越好吗.md) · [对应代码](tutorials/29-driving-reward-design/)
+- 第三十篇：画面变暗以后，策略还认识赛道吗 · [文章草稿](docs/csdn/30-画面变暗以后策略还认识赛道吗.md) · [对应代码](tutorials/30-visual-robustness/)
+- 第三十一篇：训练成功不等于可靠驾驶：视觉控制最终复盘 · [文章草稿](docs/csdn/31-训练成功不等于可靠驾驶视觉控制最终复盘.md) · [对应代码](tutorials/31-driving-reliability/)
 
 [查看教程与代码的完整索引](tutorials/README.md)
 
 ## 后续路线
 
-MiniGrid DoorKey 项目在第二十四篇完成了从环境基线、完整地图、局部观测、GRU、课程学习、
-行为克隆到跨尺寸泛化的闭环。下一阶段可切换到真正 RGB 图像、多智能体协作或真实设备约束，
-不再继续围绕 DoorKey 堆叠调参文章。
+MiniGrid DoorKey 项目在第二十四篇闭环；第二十五至三十一篇转向 CarRacing，完成从 RGB 输入、
+时间表示、离散/连续动作、奖励设计到视觉扰动和尾部风险的闭环。下一阶段可进入多智能体协作，
+依次讨论独立学习、参数共享、集中训练分散执行与信用分配。
 
 ## License
 

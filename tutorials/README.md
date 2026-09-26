@@ -29,6 +29,13 @@
 | 22 | 访问计数与课程学习 | [文章草稿](../docs/csdn/22-探索范围不等于任务进展课程学习解决稀疏奖励.md) | [`22-curriculum-exploration/`](22-curriculum-exploration/) |
 | 23 | 行为克隆与参考 KL 微调 | [文章草稿](../docs/csdn/23-示范是起点不是免疫牌行为克隆与保守微调.md) | [`23-imitation-ppo/`](23-imitation-ppo/) |
 | 24 | DoorKey 跨尺寸泛化 | [文章草稿](../docs/csdn/24-训练成功不等于泛化成功DoorKey跨尺寸评估.md) | [`24-generalization/`](24-generalization/) |
+| 25 | CarRacing RGB 输入管线与基线 | [文章草稿](../docs/csdn/25-从状态向量到RGB图像CarRacing视觉输入管线.md) | [`25-visual-input-pipeline/`](25-visual-input-pipeline/) |
+| 26 | 单帧与 4 帧堆叠 | [文章草稿](../docs/csdn/26-一张图够不够判断车辆状态单帧与帧堆叠.md) | [`26-frame-stacking/`](26-frame-stacking/) |
+| 27 | 离散动作视觉 Double DQN | [文章草稿](../docs/csdn/27-离散化方向盘后DQN能学会开车吗.md) | [`27-discrete-dqn-driving/`](27-discrete-dqn-driving/) |
+| 28 | 连续动作视觉 PPO | [文章草稿](../docs/csdn/28-连续动作PPO如何同时控制转向油门和刹车.md) | [`28-continuous-ppo-driving/`](28-continuous-ppo-driving/) |
+| 29 | 驾驶奖励设计 | [文章草稿](../docs/csdn/29-奖励越精细驾驶就一定越好吗.md) | [`29-driving-reward-design/`](29-driving-reward-design/) |
+| 30 | 视觉扰动与数据增强 | [文章草稿](../docs/csdn/30-画面变暗以后策略还认识赛道吗.md) | [`30-visual-robustness/`](30-visual-robustness/) |
+| 31 | 未见赛道与可靠性审计 | [文章草稿](../docs/csdn/31-训练成功不等于可靠驾驶视觉控制最终复盘.md) | [`31-driving-reliability/`](31-driving-reliability/) |
 
 ## 使用方法
 
@@ -65,5 +72,12 @@ python -m pip install -r requirements.txt
 - 第 22 篇比较访问计数和课程学习，展示课程学习如何解决 8×8 稀疏奖励。
 - 第 23 篇从专家轨迹行为克隆，再用参考策略 KL 抑制 PPO 灾难性遗忘。
 - 第 24 篇在未见地图尺寸和随机种子上评估泛化能力。
+- 第 25 篇建立 RGB 裁剪、缩放、帧跳过、动作映射和非学习基线。
+- 第 26 篇在相同 Double DQN 预算下比较单帧与 4 帧时间表示。
+- 第 27 篇拆解九动作视觉 Double DQN 的能力和动作精度上限。
+- 第 28 篇改用三维连续高斯策略与 CNN-PPO。
+- 第 29 篇比较原始奖励和行为塑形，并统一按环境原始回报评价。
+- 第 30 篇加入训练时图像增强，并在五类受控像素扰动下测试。
+- 第 31 篇使用未见赛道、尾部回报、越界率、动作抖动和延迟统一复盘。
 - [`../贪吃蛇/`](../贪吃蛇/) 和 [`../连续控制/`](../连续控制/) 保存各阶段持续更新的实现；
   教程快照只为配合文章阅读，不会随以后章节的功能继续变化。

@@ -1,0 +1,260 @@
+{
+  "experiment": "25-visual-input-pipeline",
+  "episodes_per_policy": 5,
+  "seed": 1000,
+  "preprocessing": {
+    "source_shape": [
+      96,
+      96,
+      3
+    ],
+    "crop": "top 84 rows",
+    "target_shape": [
+      4,
+      64,
+      64
+    ],
+    "grayscale": true,
+    "frame_skip": 4
+  },
+  "summaries": {
+    "idle": {
+      "episodes": 5.0,
+      "average_return": -93.2226003375637,
+      "return_std": 0.28253005007276133,
+      "success_rate": 0.0,
+      "average_steps": 250.0,
+      "offroad_rate": 0.028000000000000004,
+      "action_jitter": 0.0
+    },
+    "straight": {
+      "episodes": 5.0,
+      "average_return": -24.366510009982896,
+      "return_std": 41.589472924994524,
+      "success_rate": 0.0,
+      "average_steps": 57.4,
+      "offroad_rate": 0.6218772589536709,
+      "action_jitter": 0.004191498441901762
+    },
+    "random": {
+      "episodes": 5.0,
+      "average_return": -23.419253704431334,
+      "return_std": 5.4581624768977735,
+      "success_rate": 0.0,
+      "average_steps": 250.0,
+      "offroad_rate": 0.0776,
+      "action_jitter": 0.44661061978936195
+    },
+    "privileged_local_follower": {
+      "episodes": 5.0,
+      "average_return": 251.50845057088867,
+      "return_std": 174.55452747451733,
+      "success_rate": 0.6,
+      "average_steps": 250.0,
+      "offroad_rate": 0.6032,
+      "action_jitter": 0.03969822561958702
+    }
+  },
+  "episodes": [
+    {
+      "policy": "idle",
+      "seed": 1000,
+      "return": -93.17406143344607,
+      "learning_return": -93.17406143344607,
+      "steps": 250,
+      "success": false,
+      "offroad_rate": 0.028,
+      "action_jitter": 0.0
+    },
+    {
+      "policy": "idle",
+      "seed": 1001,
+      "return": -93.58974358974254,
+      "learning_return": -93.58974358974254,
+      "steps": 250,
+      "success": false,
+      "offroad_rate": 0.028,
+      "action_jitter": 0.0
+    },
+    {
+      "policy": "idle",
+      "seed": 1002,
+      "return": -92.72727272727172,
+      "learning_return": -92.72727272727172,
+      "steps": 250,
+      "success": false,
+      "offroad_rate": 0.028,
+      "action_jitter": 0.0
+    },
+    {
+      "policy": "idle",
+      "seed": 1003,
+      "return": -93.3333333333323,
+      "learning_return": -93.3333333333323,
+      "steps": 250,
+      "success": false,
+      "offroad_rate": 0.028,
+      "action_jitter": 0.0
+    },
+    {
+      "policy": "idle",
+      "seed": 1004,
+      "return": -93.28859060402581,
+      "learning_return": -93.28859060402581,
+      "steps": 250,
+      "success": false,
+      "offroad_rate": 0.028,
+      "action_jitter": 0.0
+    },
+    {
+      "policy": "straight",
+      "seed": 1000,
+      "return": 47.735494880546725,
+      "learning_return": 47.735494880546725,
+      "steps": 49,
+      "success": false,
+      "offroad_rate": 0.3673469387755102,
+      "action_jitter": 0.0047619047821784504
+    },
+    {
+      "policy": "straight",
+      "seed": 1001,
+      "return": -58.492307692307996,
+      "learning_return": -58.492307692307996,
+      "steps": 65,
+      "success": false,
+      "offroad_rate": 0.7692307692307693,
+      "action_jitter": 0.003589743605026832
+    },
+    {
+      "policy": "straight",
+      "seed": 1002,
+      "return": -49.23636363636367,
+      "learning_return": -49.23636363636367,
+      "steps": 65,
+      "success": false,
+      "offroad_rate": 0.7538461538461538,
+      "action_jitter": 0.003589743605026832
+    },
+    {
+      "policy": "straight",
+      "seed": 1003,
+      "return": -59.033333333333616,
+      "learning_return": -59.033333333333616,
+      "steps": 65,
+      "success": false,
+      "offroad_rate": 0.7538461538461538,
+      "action_jitter": 0.003589743605026832
+    },
+    {
+      "policy": "straight",
+      "seed": 1004,
+      "return": -2.8060402684559307,
+      "learning_return": -2.8060402684559307,
+      "steps": 43,
+      "success": false,
+      "offroad_rate": 0.46511627906976744,
+      "action_jitter": 0.005426356612249862
+    },
+    {
+      "policy": "random",
+      "seed": 1000,
+      "return": -21.501706484641705,
+      "learning_return": -21.501706484641705,
+      "steps": 250,
+      "success": false,
+      "offroad_rate": 0.028,
+      "action_jitter": 0.456752279907465
+    },
+    {
+      "policy": "random",
+      "seed": 1001,
+      "return": -29.487179487179546,
+      "learning_return": -29.487179487179546,
+      "steps": 250,
+      "success": false,
+      "offroad_rate": 0.1,
+      "action_jitter": 0.4418018558174372
+    },
+    {
+      "policy": "random",
+      "seed": 1002,
+      "return": -19.99999999999994,
+      "learning_return": -19.99999999999994,
+      "steps": 250,
+      "success": false,
+      "offroad_rate": 0.136,
+      "action_jitter": 0.422461343690753
+    },
+    {
+      "policy": "random",
+      "seed": 1003,
+      "return": -30.00000000000012,
+      "learning_return": -30.00000000000012,
+      "steps": 250,
+      "success": false,
+      "offroad_rate": 0.096,
+      "action_jitter": 0.45996130745112895
+    },
+    {
+      "policy": "random",
+      "seed": 1004,
+      "return": -16.10738255033537,
+      "learning_return": -16.10738255033537,
+      "steps": 250,
+      "success": false,
+      "offroad_rate": 0.028,
+      "action_jitter": 0.4520763120800257
+    },
+    {
+      "policy": "privileged_local_follower",
+      "seed": 1000,
+      "return": 94.53924914676284,
+      "learning_return": 94.53924914676284,
+      "steps": 250,
+      "success": false,
+      "offroad_rate": 0.808,
+      "action_jitter": 0.006360658763068386
+    },
+    {
+      "policy": "privileged_local_follower",
+      "seed": 1001,
+      "return": 101.92307692308194,
+      "learning_return": 101.92307692308194,
+      "steps": 250,
+      "success": false,
+      "offroad_rate": 0.764,
+      "action_jitter": 0.022583850235857426
+    },
+    {
+      "policy": "privileged_local_follower",
+      "seed": 1002,
+      "return": 201.81818181818386,
+      "learning_return": 201.81818181818386,
+      "steps": 250,
+      "success": true,
+      "offroad_rate": 0.636,
+      "action_jitter": 0.03866711403565796
+    },
+    {
+      "policy": "privileged_local_follower",
+      "seed": 1003,
+      "return": 569.999999999984,
+      "learning_return": 569.999999999984,
+      "steps": 250,
+      "success": true,
+      "offroad_rate": 0.316,
+      "action_jitter": 0.07667373203469709
+    },
+    {
+      "policy": "privileged_local_follower",
+      "seed": 1004,
+      "return": 289.26174496643085,
+      "learning_return": 289.26174496643085,
+      "steps": 250,
+      "success": true,
+      "offroad_rate": 0.492,
+      "action_jitter": 0.054205773028654224
+    }
+  ]
+}
