@@ -422,6 +422,13 @@ TD 误差同时更新策略和价值网络，并用少量熵奖励保持探索�
   carracing_ppo.py # 连续动作视觉 PPO
   benchmark_visual_robustness.py # 图像扰动评估
   benchmark_visual_reliability.py # 未见赛道与尾部风险审计
+多智能体/
+  spread_env.py # Simple Spread 环境、指标与规则基线
+  value_agents.py # IQL、参数共享、VDN 与 QMIX
+  ppo_agents.py # IPPO、MAPPO 与可微通信
+  train_value_agents.py # 价值学习统一训练入口
+  train_marl_ppo.py # 多智能体 PPO 统一训练入口
+  benchmark_marl_reliability.py # 噪声与单体失效审计
 tutorials/        # 各篇教程的独立代码快照与运行入口
 tests/            # 环境、模型、检查点和短训练测试
 docs/csdn/        # 可发布到 CSDN 的后续教程
@@ -472,14 +479,22 @@ python -m pytest
 - 第二十九篇：奖励越精细，驾驶就一定越好吗 · [文章草稿](docs/csdn/29-奖励越精细驾驶就一定越好吗.md) · [对应代码](tutorials/29-driving-reward-design/)
 - 第三十篇：画面变暗以后，策略还认识赛道吗 · [文章草稿](docs/csdn/30-画面变暗以后策略还认识赛道吗.md) · [对应代码](tutorials/30-visual-robustness/)
 - 第三十一篇：训练成功不等于可靠驾驶：视觉控制最终复盘 · [文章草稿](docs/csdn/31-训练成功不等于可靠驾驶视觉控制最终复盘.md) · [对应代码](tutorials/31-driving-reliability/)
+- 第三十二篇：一个奖励，多个智能体该怎么分工 · [文章草稿](docs/csdn/32-一个奖励多个智能体该怎么分工.md) · [对应代码](tutorials/32-multi-agent-baselines/)
+- 第三十三篇：两个 DQN 一起训练，环境为什么一直在变 · [文章草稿](docs/csdn/33-两个DQN一起训练环境为什么一直在变.md) · [对应代码](tutorials/33-independent-dqn/)
+- 第三十四篇：多个智能体应该共用一个大脑吗 · [文章草稿](docs/csdn/34-多个智能体应该共用一个大脑吗.md) · [对应代码](tutorials/34-parameter-sharing/)
+- 第三十五篇：团队得分应该由谁负责：VDN 与信用分配 · [文章草稿](docs/csdn/35-团队得分应该由谁负责VDN与信用分配.md) · [对应代码](tutorials/35-vdn-credit-assignment/)
+- 第三十六篇：VDN 不够灵活时，QMIX 如何混合价值 · [文章草稿](docs/csdn/36-VDN不够灵活时QMIX如何混合价值.md) · [对应代码](tutorials/36-qmix/)
+- 第三十七篇：集中训练、分散执行：从 IPPO 到 MAPPO · [文章草稿](docs/csdn/37-集中训练分散执行从IPPO到MAPPO.md) · [对应代码](tutorials/37-ippo-vs-mappo/)
+- 第三十八篇：没有通信，局部观测下如何配合 · [文章草稿](docs/csdn/38-没有通信局部观测下如何配合.md) · [对应代码](tutorials/38-learned-communication/)
+- 第三十九篇：训练成功不等于团队可靠：多智能体最终审计 · [文章草稿](docs/csdn/39-训练成功不等于团队可靠多智能体最终审计.md) · [对应代码](tutorials/39-marl-reliability/)
 
 [查看教程与代码的完整索引](tutorials/README.md)
 
 ## 后续路线
 
-MiniGrid DoorKey 项目在第二十四篇闭环；第二十五至三十一篇转向 CarRacing，完成从 RGB 输入、
-时间表示、离散/连续动作、奖励设计到视觉扰动和尾部风险的闭环。下一阶段可进入多智能体协作，
-依次讨论独立学习、参数共享、集中训练分散执行与信用分配。
+MiniGrid DoorKey 项目在第二十四篇闭环；第二十五至三十一篇完成视觉驾驶；第三十二至三十九篇
+完成 Simple Spread 多智能体协作，包括 IQL、参数共享、VDN、QMIX、MAPPO、通信消融与故障审计。
+下一阶段可转向离线强化学习、模型式强化学习，或真实设备与算力约束。
 
 ## License
 

@@ -13,3 +13,5 @@ MINIGRID_DIR = Path(__file__).resolve().parents[1] / "迷你网格"
 sys.path.insert(0, str(MINIGRID_DIR))
 VISUAL_DRIVING_DIR = Path(__file__).resolve().parents[1] / "视觉驾驶"
 sys.path.insert(0, str(VISUAL_DRIVING_DIR))
+MULTI_AGENT_DIR = Path(__file__).resolve().parents[1] / "多智能体"
+sys.path.insert(0, str(MULTI_AGENT_DIR))

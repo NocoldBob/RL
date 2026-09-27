@@ -1,0 +1,3033 @@
+{
+  "experiment": "32-spread-baselines",
+  "agents": 3,
+  "episodes_per_policy": 100,
+  "summaries": {
+    "random": {
+      "average_team_return": -25.866936827130033,
+      "average_coverage": 0.03666666666666666,
+      "average_full_coverage": 0.0,
+      "average_mean_landmark_distance": 0.7486966693401337,
+      "average_collision_rate": 0.018400000000000003,
+      "average_steps": 25.0
+    },
+    "nearest": {
+      "average_team_return": -17.26811267819559,
+      "average_coverage": 0.19666666666666666,
+      "average_full_coverage": 0.0,
+      "average_mean_landmark_distance": 0.3377839808911085,
+      "average_collision_rate": 0.10239999999999999,
+      "average_steps": 25.0
+    },
+    "assignment": {
+      "average_team_return": -13.126058626831739,
+      "average_coverage": 0.22333333333333333,
+      "average_full_coverage": 0.01,
+      "average_mean_landmark_distance": 0.24860689789056778,
+      "average_collision_rate": 0.0404,
+      "average_steps": 25.0
+    }
+  },
+  "episodes": [
+    {
+      "policy": "random",
+      "seed": 10000,
+      "team_return": -12.648160224309729,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.4487277567386627,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10001,
+      "team_return": -28.16686741428765,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.8081900477409363,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10002,
+      "team_return": -22.12623546907659,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.491469144821167,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10003,
+      "team_return": -11.395237078307762,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.43991076946258545,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10004,
+      "team_return": -28.185746969899338,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 1.1668390035629272,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10005,
+      "team_return": -36.059046415257356,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 1.1893094778060913,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10006,
+      "team_return": -24.8484804501888,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.8107816576957703,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10007,
+      "team_return": -45.42740790666729,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 1.4718412160873413,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10008,
+      "team_return": -31.745805976928704,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.5627650618553162,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10009,
+      "team_return": -23.82912842596644,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.5140458941459656,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10010,
+      "team_return": -50.038200308339036,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 1.707302451133728,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10011,
+      "team_return": -27.69139324122077,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.9269101619720459,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10012,
+      "team_return": -25.960141403725146,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.8000327944755554,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10013,
+      "team_return": -24.90074289187552,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.8285112380981445,
+      "collision_rate": 0.16,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10014,
+      "team_return": -33.77257593673555,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 1.016583800315857,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10015,
+      "team_return": -21.089391625542298,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.5030491352081299,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10016,
+      "team_return": -13.705512300220303,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.3978744447231293,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10017,
+      "team_return": -18.63677119461518,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.4885740578174591,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10018,
+      "team_return": -21.983339064982204,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.32595327496528625,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10019,
+      "team_return": -43.02485519466153,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 1.5234330892562866,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10020,
+      "team_return": -20.271176799373524,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.5898533463478088,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10021,
+      "team_return": -22.99682106782425,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.5350759625434875,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10022,
+      "team_return": -15.667301517207708,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.36307492852211,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10023,
+      "team_return": -19.678634852606116,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.4685923159122467,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10024,
+      "team_return": -22.94322419631338,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.4827938973903656,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10025,
+      "team_return": -22.397556825174362,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.7275993227958679,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10026,
+      "team_return": -24.79973592096946,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.4754209518432617,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10027,
+      "team_return": -23.385644560300044,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.6647894978523254,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10028,
+      "team_return": -27.254768873209876,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.74130779504776,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10029,
+      "team_return": -26.74003413448398,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.6347666382789612,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10030,
+      "team_return": -13.310710424379641,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.6510149836540222,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10031,
+      "team_return": -29.814009485762035,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.7536340355873108,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10032,
+      "team_return": -30.887970938398755,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 1.173652172088623,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10033,
+      "team_return": -20.65099986724094,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.6802337765693665,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10034,
+      "team_return": -25.370799941812805,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.6599312424659729,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10035,
+      "team_return": -22.49277783434773,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.7604302763938904,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10036,
+      "team_return": -20.938779731065193,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.6618824005126953,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10037,
+      "team_return": -33.210144008434575,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 1.0078097581863403,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10038,
+      "team_return": -39.153453906618324,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.44938597083091736,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10039,
+      "team_return": -29.874016872852522,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.6471359133720398,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10040,
+      "team_return": -19.87281987781509,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.5061659812927246,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10041,
+      "team_return": -23.71819783018489,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.6873264908790588,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10042,
+      "team_return": -20.905597443471308,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.6098587512969971,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10043,
+      "team_return": -24.41784253037224,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.378785640001297,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10044,
+      "team_return": -21.53306589599024,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.5972270369529724,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10045,
+      "team_return": -25.060465048458084,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.8872103691101074,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10046,
+      "team_return": -51.763289824938845,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 1.5886932611465454,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10047,
+      "team_return": -25.20202337729986,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.49853622913360596,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10048,
+      "team_return": -18.61284494322427,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.43490108847618103,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10049,
+      "team_return": -19.772558581789717,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.50327068567276,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10050,
+      "team_return": -34.52365574475338,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.8633017539978027,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10051,
+      "team_return": -23.44795980256279,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.764441192150116,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10052,
+      "team_return": -17.192298217055278,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.624168336391449,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10053,
+      "team_return": -18.428894362031965,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.43314632773399353,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10054,
+      "team_return": -27.45677197880725,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.6260360479354858,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10055,
+      "team_return": -36.18001683291182,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.6751196980476379,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10056,
+      "team_return": -20.173448130722768,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.7512430548667908,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10057,
+      "team_return": -29.17197041390309,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 1.244512915611267,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10058,
+      "team_return": -37.89452067862103,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 1.4597415924072266,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10059,
+      "team_return": -17.319483871154944,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.41968250274658203,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10060,
+      "team_return": -16.085257037992868,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.6616463661193848,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10061,
+      "team_return": -25.201449611663946,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.7527546286582947,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10062,
+      "team_return": -29.69919880080976,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.8566240668296814,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10063,
+      "team_return": -17.763112741900198,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.47449931502342224,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10064,
+      "team_return": -17.50517552247695,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.3421812951564789,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10065,
+      "team_return": -32.23494501567091,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 1.0724455118179321,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10066,
+      "team_return": -29.001556664338555,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 1.080745816230774,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10067,
+      "team_return": -23.88412264508313,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.6374719738960266,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10068,
+      "team_return": -25.538971709015897,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.868421733379364,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10069,
+      "team_return": -18.53227997599254,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.6799397468566895,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10070,
+      "team_return": -24.50487797843323,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.6633846163749695,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10071,
+      "team_return": -34.071007041235184,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 1.0953936576843262,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10072,
+      "team_return": -14.062636571301917,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.26356378197669983,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10073,
+      "team_return": -32.84086680953785,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 1.1358975172042847,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10074,
+      "team_return": -32.76190753182357,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 1.2210954427719116,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10075,
+      "team_return": -35.75766687290339,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.9325806498527527,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10076,
+      "team_return": -22.91318795140838,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.756956160068512,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10077,
+      "team_return": -21.5911610552064,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.49386295676231384,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10078,
+      "team_return": -18.026830049755752,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.5191190242767334,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10079,
+      "team_return": -19.813191291192553,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.34713637828826904,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10080,
+      "team_return": -26.568320593450007,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.6988980174064636,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10081,
+      "team_return": -24.763205831363667,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.7771589159965515,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10082,
+      "team_return": -29.938938819106305,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.7266204953193665,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10083,
+      "team_return": -25.69672290281065,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.9213786721229553,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10084,
+      "team_return": -25.488716572836985,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.6996349692344666,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10085,
+      "team_return": -22.666342236424097,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.5863761305809021,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10086,
+      "team_return": -25.56840713872376,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.6098201870918274,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10087,
+      "team_return": -40.21442411993122,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 1.3278627395629883,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10088,
+      "team_return": -33.28703344482816,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.80955570936203,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10089,
+      "team_return": -21.58398887253858,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.6572465896606445,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10090,
+      "team_return": -22.179486363122628,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.6058165431022644,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10091,
+      "team_return": -24.711679615934948,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.8770741820335388,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10092,
+      "team_return": -27.224714017458222,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.8427011370658875,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10093,
+      "team_return": -23.124868760211687,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.7342765927314758,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10094,
+      "team_return": -37.30217662248407,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 1.5435699224472046,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10095,
+      "team_return": -16.691712968098248,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.28965142369270325,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10096,
+      "team_return": -25.68756479531568,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.6730840802192688,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10097,
+      "team_return": -31.375331103922246,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 1.15605628490448,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10098,
+      "team_return": -31.775600857713602,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.7536725997924805,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "random",
+      "seed": 10099,
+      "team_return": -29.33371756173434,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.6196324825286865,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10000,
+      "team_return": -7.43487770810542,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.10909843444824219,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10001,
+      "team_return": -19.15067300354578,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.16654379665851593,
+      "collision_rate": 0.16,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10002,
+      "team_return": -11.865378897014427,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.24461786448955536,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10003,
+      "team_return": -10.17804725000853,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.17893390357494354,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10004,
+      "team_return": -13.543235432214805,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.22202281653881073,
+      "collision_rate": 0.16,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10005,
+      "team_return": -14.08830603277799,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.2389906644821167,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10006,
+      "team_return": -17.81819009723437,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.22851204872131348,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10007,
+      "team_return": -18.44109009508509,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.311410516500473,
+      "collision_rate": 0.16,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10008,
+      "team_return": -21.845164662138956,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.30949750542640686,
+      "collision_rate": 0.28,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10009,
+      "team_return": -16.327735820294482,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.21813957393169403,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10010,
+      "team_return": -17.70980122761107,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.28979265689849854,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10011,
+      "team_return": -17.504731576152,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.2497757077217102,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10012,
+      "team_return": -18.422687803245914,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.47706571221351624,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10013,
+      "team_return": -21.927768866160033,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.42678675055503845,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10014,
+      "team_return": -17.139215667256337,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.205083429813385,
+      "collision_rate": 0.2,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10015,
+      "team_return": -18.66556175541694,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.82684326171875,
+      "collision_rate": 0.2,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10016,
+      "team_return": -12.486300969768655,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.625358521938324,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10017,
+      "team_return": -18.729527855271883,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.4758017063140869,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10018,
+      "team_return": -13.19473110223231,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.2503591477870941,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10019,
+      "team_return": -18.62427598026187,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.18927042186260223,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10020,
+      "team_return": -11.277905045651899,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.20472459495067596,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10021,
+      "team_return": -18.379936796565154,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.365034818649292,
+      "collision_rate": 0.16,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10022,
+      "team_return": -9.479450906571847,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.18076454102993011,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10023,
+      "team_return": -24.339472147494526,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.5002379417419434,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10024,
+      "team_return": -18.57340449782367,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.39897504448890686,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10025,
+      "team_return": -16.472561843831773,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.5574606657028198,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10026,
+      "team_return": -16.46758624181396,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.3027067184448242,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10027,
+      "team_return": -27.36364722794727,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.5130080580711365,
+      "collision_rate": 0.16,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10028,
+      "team_return": -17.777277133891207,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.4187884032726288,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10029,
+      "team_return": -21.763607549669246,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.4704580307006836,
+      "collision_rate": 0.16,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10030,
+      "team_return": -10.608415245095518,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.1810699850320816,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10031,
+      "team_return": -21.210478149138527,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.48823681473731995,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10032,
+      "team_return": -14.723059666066463,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.12426374107599258,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10033,
+      "team_return": -9.796623427694065,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.1383362114429474,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10034,
+      "team_return": -18.61175908191325,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.49927785992622375,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10035,
+      "team_return": -20.025580584055092,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.4509604871273041,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10036,
+      "team_return": -16.230213037851776,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.3994596302509308,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10037,
+      "team_return": -18.476118641269107,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.2806481420993805,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10038,
+      "team_return": -21.380607616282997,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.4134678840637207,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10039,
+      "team_return": -17.617412755920924,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.16690735518932343,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10040,
+      "team_return": -14.90972501183278,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.15330494940280914,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10041,
+      "team_return": -17.720942553110742,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.5007482171058655,
+      "collision_rate": 0.16,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10042,
+      "team_return": -11.832872686064514,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.1335146576166153,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10043,
+      "team_return": -17.63646668963825,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.30075517296791077,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10044,
+      "team_return": -21.4232381330371,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.36378800868988037,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10045,
+      "team_return": -11.619911023619453,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.19098418951034546,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10046,
+      "team_return": -24.841653629895468,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.5057170987129211,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10047,
+      "team_return": -14.029135747371452,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.1526811122894287,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10048,
+      "team_return": -14.044534555990818,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.18719370663166046,
+      "collision_rate": 0.16,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10049,
+      "team_return": -24.47655904120187,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.43672117590904236,
+      "collision_rate": 0.2,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10050,
+      "team_return": -17.246299058581098,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.29665932059288025,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10051,
+      "team_return": -14.3508493424548,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.2754327356815338,
+      "collision_rate": 0.16,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10052,
+      "team_return": -13.49038260833761,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.19471712410449982,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10053,
+      "team_return": -13.061155663806797,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.17318731546401978,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10054,
+      "team_return": -17.20666962009251,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.4897034168243408,
+      "collision_rate": 0.2,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10055,
+      "team_return": -37.92410879174602,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.745208740234375,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10056,
+      "team_return": -8.963275905311434,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.20681296288967133,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10057,
+      "team_return": -15.39751910162185,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.19634820520877838,
+      "collision_rate": 0.2,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10058,
+      "team_return": -14.239545885358568,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.18901045620441437,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10059,
+      "team_return": -10.021487376297864,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.2036508321762085,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10060,
+      "team_return": -10.042423442540318,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.23878657817840576,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10061,
+      "team_return": -11.523719656618981,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.21538424491882324,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10062,
+      "team_return": -22.746315147698045,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.3109245300292969,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10063,
+      "team_return": -7.142696963218618,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.17551399767398834,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10064,
+      "team_return": -18.60522563873601,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.37834131717681885,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10065,
+      "team_return": -21.18826019380219,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.5290798544883728,
+      "collision_rate": 0.16,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10066,
+      "team_return": -18.51362565900133,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.317767858505249,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10067,
+      "team_return": -19.44068104508485,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.47896209359169006,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10068,
+      "team_return": -16.098081465662474,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.1695677489042282,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10069,
+      "team_return": -10.638865376241592,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.25462380051612854,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10070,
+      "team_return": -8.1794155663348,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.21263866126537323,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10071,
+      "team_return": -28.06536110346713,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.45375189185142517,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10072,
+      "team_return": -14.663183771839002,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.284778356552124,
+      "collision_rate": 0.16,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10073,
+      "team_return": -16.514967094358653,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.2881757915019989,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10074,
+      "team_return": -10.279627422242239,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.2626364529132843,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10075,
+      "team_return": -21.986069055536458,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.24000076949596405,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10076,
+      "team_return": -25.97054307557404,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.5467426180839539,
+      "collision_rate": 0.28,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10077,
+      "team_return": -19.774021275656327,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.27707937359809875,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10078,
+      "team_return": -14.185485815645379,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.5035202503204346,
+      "collision_rate": 0.16,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10079,
+      "team_return": -16.237677610608795,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.1993580460548401,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10080,
+      "team_return": -15.040166969988693,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.4677344858646393,
+      "collision_rate": 0.16,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10081,
+      "team_return": -20.182817073171822,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.12546993792057037,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10082,
+      "team_return": -26.650619063766793,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.5350846648216248,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10083,
+      "team_return": -16.98532856979473,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.290425568819046,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10084,
+      "team_return": -13.945746215761796,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.2005089372396469,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10085,
+      "team_return": -17.566445492806988,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.22856588661670685,
+      "collision_rate": 0.2,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10086,
+      "team_return": -28.915662938855338,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.6513845920562744,
+      "collision_rate": 0.32,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10087,
+      "team_return": -20.94230490407395,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.2153877168893814,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10088,
+      "team_return": -18.09336944316142,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.4475441873073578,
+      "collision_rate": 0.16,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10089,
+      "team_return": -17.75070856973416,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.314703106880188,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10090,
+      "team_return": -20.24548156012693,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.3953343629837036,
+      "collision_rate": 0.2,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10091,
+      "team_return": -12.493275667964348,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.2785604000091553,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10092,
+      "team_return": -14.203498779900885,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.43265628814697266,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10093,
+      "team_return": -15.37966495456698,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.38315728306770325,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10094,
+      "team_return": -20.356504995123604,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.5724923014640808,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10095,
+      "team_return": -13.149114056786772,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.3980051577091217,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10096,
+      "team_return": -40.192663196619925,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 1.1576025485992432,
+      "collision_rate": 0.2,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10097,
+      "team_return": -13.67205973117446,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.29993900656700134,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10098,
+      "team_return": -16.041651369499114,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.3716013729572296,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "nearest",
+      "seed": 10099,
+      "team_return": -23.09918606309695,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.4797752797603607,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10000,
+      "team_return": -7.43487770810542,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.10909843444824219,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10001,
+      "team_return": -15.774729755340468,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.18423645198345184,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10002,
+      "team_return": -12.875759557252593,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.13949520885944366,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10003,
+      "team_return": -10.273838004930182,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.17075218260288239,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10004,
+      "team_return": -14.325175225337077,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.187418594956398,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10005,
+      "team_return": -10.084596750055734,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.14843980967998505,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10006,
+      "team_return": -11.385680364070712,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.18789875507354736,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10007,
+      "team_return": -20.44145701992247,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.7576425075531006,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10008,
+      "team_return": -17.063454832844204,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.2141745686531067,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10009,
+      "team_return": -11.355148849113126,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.2707613408565521,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10010,
+      "team_return": -15.623653460243117,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.43026793003082275,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10011,
+      "team_return": -11.676525770882016,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.14450599253177643,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10012,
+      "team_return": -10.191244687278694,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.20699994266033173,
+      "collision_rate": 0.16,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10013,
+      "team_return": -20.23126721309574,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.26507166028022766,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10014,
+      "team_return": -14.044407369767889,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.24830098450183868,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10015,
+      "team_return": -10.826445940171478,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.21233616769313812,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10016,
+      "team_return": -11.376956949514646,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.22461606562137604,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10017,
+      "team_return": -14.219536257946666,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.32927313446998596,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10018,
+      "team_return": -19.53448640393667,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.35309919714927673,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10019,
+      "team_return": -14.19561311366413,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.1799229383468628,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10020,
+      "team_return": -11.04383701129997,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.15475700795650482,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10021,
+      "team_return": -19.70037402168627,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.31582650542259216,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10022,
+      "team_return": -9.479450906571847,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.18076454102993011,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10023,
+      "team_return": -13.618251318119015,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.1890532374382019,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10024,
+      "team_return": -17.246978317449816,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.2399858683347702,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10025,
+      "team_return": -15.634321355878768,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.4971388876438141,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10026,
+      "team_return": -15.67812188179509,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.25116166472435,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10027,
+      "team_return": -9.663585432294065,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.17944121360778809,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10028,
+      "team_return": -11.119642677324453,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.1855381280183792,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10029,
+      "team_return": -12.37632984093681,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.18783147633075714,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10030,
+      "team_return": -18.227824833032653,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.4787544012069702,
+      "collision_rate": 0.24,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10031,
+      "team_return": -13.873635183419584,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.41690731048583984,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10032,
+      "team_return": -11.43720071511832,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.19662749767303467,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10033,
+      "team_return": -10.00884078389246,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.21145057678222656,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10034,
+      "team_return": -11.411095473900268,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.18830187618732452,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10035,
+      "team_return": -9.904596209552455,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.19771377742290497,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10036,
+      "team_return": -9.317821755739072,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.16817839443683624,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10037,
+      "team_return": -14.309511313847729,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.21927869319915771,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10038,
+      "team_return": -19.171353946283766,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.2183070182800293,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10039,
+      "team_return": -14.55548668495132,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.21409165859222412,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10040,
+      "team_return": -13.879770702453696,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.15381298959255219,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10041,
+      "team_return": -10.93739230464293,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.23789246380329132,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10042,
+      "team_return": -7.462404263810578,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.1407461315393448,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10043,
+      "team_return": -17.63646668963825,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.30075517296791077,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10044,
+      "team_return": -13.265303552731183,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.14967463910579681,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10045,
+      "team_return": -11.619911023619453,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.19098418951034546,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10046,
+      "team_return": -26.218748068380307,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.38609281182289124,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10047,
+      "team_return": -19.359309579432942,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.4811069965362549,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10048,
+      "team_return": -13.829112668326596,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.5198565125465393,
+      "collision_rate": 0.16,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10049,
+      "team_return": -9.315507554085288,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.14932888746261597,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10050,
+      "team_return": -12.71181392441652,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.15118472278118134,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10051,
+      "team_return": -8.95414731435433,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.1290772408246994,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10052,
+      "team_return": -20.118948218947196,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.2570106089115143,
+      "collision_rate": 0.12,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10053,
+      "team_return": -19.54772641840267,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.7829594612121582,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10054,
+      "team_return": -15.695219107021964,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.4995967447757721,
+      "collision_rate": 0.2,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10055,
+      "team_return": -22.86185349449143,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.41824403405189514,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10056,
+      "team_return": -8.963275905311434,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.20681296288967133,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10057,
+      "team_return": -13.283088503407527,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.0953395888209343,
+      "collision_rate": 0.16,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10058,
+      "team_return": -14.514582791296647,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.18855297565460205,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10059,
+      "team_return": -10.107442231736846,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.20244021713733673,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10060,
+      "team_return": -10.042423442540318,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.23878657817840576,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10061,
+      "team_return": -9.348188190182293,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.24028609693050385,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10062,
+      "team_return": -13.031617177036116,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.16787345707416534,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10063,
+      "team_return": -7.142696963218618,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.17551399767398834,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10064,
+      "team_return": -11.231316552350586,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.20489627122879028,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10065,
+      "team_return": -11.289308093827959,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.2030499428510666,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10066,
+      "team_return": -13.060480003035426,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.16162250936031342,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10067,
+      "team_return": -12.15569348638551,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.1634191870689392,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10068,
+      "team_return": -17.602185099106613,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.18305979669094086,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10069,
+      "team_return": -10.473720074141406,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.11366375535726547,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10070,
+      "team_return": -8.1794155663348,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.21263866126537323,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10071,
+      "team_return": -14.004923791897198,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.23215781152248383,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10072,
+      "team_return": -15.831010577140496,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.4253852367401123,
+      "collision_rate": 0.16,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10073,
+      "team_return": -16.12415626210212,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.5509803891181946,
+      "collision_rate": 0.16,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10074,
+      "team_return": -10.279627422242239,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.2626364529132843,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10075,
+      "team_return": -15.553723199576273,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.1895790845155716,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10076,
+      "team_return": -7.59472473292085,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.1707024723291397,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10077,
+      "team_return": -11.049325875647302,
+      "coverage": 1.0,
+      "full_coverage": 1.0,
+      "mean_landmark_distance": 0.07434707880020142,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10078,
+      "team_return": -7.932435280648742,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.21864072978496552,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10079,
+      "team_return": -14.36541273682715,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.2486715316772461,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10080,
+      "team_return": -10.015184575331915,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.15018902719020844,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10081,
+      "team_return": -10.198189726835862,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.1424960345029831,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10082,
+      "team_return": -14.743039704836841,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.24395982921123505,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10083,
+      "team_return": -8.924408002772697,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.16199259459972382,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10084,
+      "team_return": -13.945746215761796,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.2005089372396469,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10085,
+      "team_return": -14.131272786813028,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.40128064155578613,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10086,
+      "team_return": -10.488457895414868,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.1975824385881424,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10087,
+      "team_return": -15.058501892771156,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.13560916483402252,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10088,
+      "team_return": -14.44342037607473,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.2034679800271988,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10089,
+      "team_return": -11.33699079531041,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.12246128171682358,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10090,
+      "team_return": -8.987783838099615,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.14386767148971558,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10091,
+      "team_return": -10.510870371300204,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.17115026712417603,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10092,
+      "team_return": -15.336228958345028,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.49984481930732727,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10093,
+      "team_return": -10.11373941896236,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.2249978631734848,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10094,
+      "team_return": -8.915582414137782,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.22642700374126434,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10095,
+      "team_return": -13.066559057125378,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.8161962032318115,
+      "collision_rate": 0.08,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10096,
+      "team_return": -14.03057951587719,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.2000652402639389,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10097,
+      "team_return": -12.052809354156524,
+      "coverage": 0.3333333333333333,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.22947187721729279,
+      "collision_rate": 0.0,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10098,
+      "team_return": -14.96494441248855,
+      "coverage": 0.0,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.330120712518692,
+      "collision_rate": 0.04,
+      "steps": 25
+    },
+    {
+      "policy": "assignment",
+      "seed": 10099,
+      "team_return": -14.05402963052126,
+      "coverage": 0.6666666666666666,
+      "full_coverage": 0.0,
+      "mean_landmark_distance": 0.12419820576906204,
+      "collision_rate": 0.0,
+      "steps": 25
+    }
+  ]
+}

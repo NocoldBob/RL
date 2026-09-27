@@ -1,0 +1,3458 @@
+{
+  "experiment": "39-marl-reliability",
+  "episodes_per_condition": 30,
+  "results": {
+    "iql": {
+      "checkpoint_step": 20000,
+      "conditions": {
+        "clean": {
+          "summary": {
+            "average_team_return": -21.53373461310859,
+            "average_coverage": 0.04444444444444444,
+            "average_full_coverage": 0.0,
+            "average_mean_landmark_distance": 0.548810812830925,
+            "average_collision_rate": 0.029333333333333333,
+            "average_steps": 25.0
+          },
+          "median_return": -20.973037632572755,
+          "p10_return": -27.23172189210284,
+          "worst_return": -36.02190464853668,
+          "inference_ms": 0.1085880002938211,
+          "episodes": [
+            {
+              "seed": 91000,
+              "team_return": -13.205022961770009,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.3285695016384125,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91001,
+              "team_return": -20.19034108279006,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.3754579722881317,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91002,
+              "team_return": -18.964434870207683,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.330586701631546,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91003,
+              "team_return": -21.267914079936798,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4552525281906128,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91004,
+              "team_return": -16.483544103326384,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.41931745409965515,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91005,
+              "team_return": -18.756387830609704,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.42594942450523376,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91006,
+              "team_return": -21.067985673409197,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4286399781703949,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91007,
+              "team_return": -23.19621913431731,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.3905024826526642,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91008,
+              "team_return": -22.122648857220952,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.690090000629425,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91009,
+              "team_return": -18.34233825891503,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5729641318321228,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91010,
+              "team_return": -19.522187689174736,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.42315471172332764,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91011,
+              "team_return": -30.414715894164168,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8161380887031555,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91012,
+              "team_return": -21.21614091916559,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5077683925628662,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91013,
+              "team_return": -17.81027996224854,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4821726381778717,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91014,
+              "team_return": -25.348318345617905,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6066904067993164,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91015,
+              "team_return": -12.493089148389874,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.3050173223018646,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91016,
+              "team_return": -17.910283410179602,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.3022127151489258,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91017,
+              "team_return": -20.254171974696845,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.3305564224720001,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91018,
+              "team_return": -26.878055891873803,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.208499789237976,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91019,
+              "team_return": -15.4734784682589,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.375180721282959,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91020,
+              "team_return": -16.714046458109216,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.527622401714325,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91021,
+              "team_return": -21.4063667751738,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6079646944999695,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91022,
+              "team_return": -26.275203019838806,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9100587964057922,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91023,
+              "team_return": -21.64607696441809,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.809487521648407,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91024,
+              "team_return": -23.828504304461685,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.46295166015625,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91025,
+              "team_return": -35.466627762029624,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7234411239624023,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91026,
+              "team_return": -20.715549012180954,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5545762181282043,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91027,
+              "team_return": -36.02190464853668,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9943553805351257,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91028,
+              "team_return": -22.14211130049939,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6358622908592224,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91029,
+              "team_return": -20.878089591736316,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.46328291296958923,
+              "collision_rate": 0.0,
+              "steps": 25
+            }
+          ]
+        },
+        "noise": {
+          "summary": {
+            "average_team_return": -21.899241764182143,
+            "average_coverage": 0.05555555555555555,
+            "average_full_coverage": 0.0,
+            "average_mean_landmark_distance": 0.5619743973016739,
+            "average_collision_rate": 0.030666666666666665,
+            "average_steps": 25.0
+          },
+          "median_return": -20.98310920616326,
+          "p10_return": -28.586939965986698,
+          "worst_return": -37.684045780834566,
+          "inference_ms": 0.11671500047668815,
+          "episodes": [
+            {
+              "seed": 91000,
+              "team_return": -14.307532913175374,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.29655346274375916,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91001,
+              "team_return": -21.260201421327093,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.38868629932403564,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91002,
+              "team_return": -20.706016990999426,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.31502556800842285,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91003,
+              "team_return": -23.556446470678114,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.55222088098526,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91004,
+              "team_return": -18.510495960317048,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.3917195796966553,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91005,
+              "team_return": -19.287439536653082,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5818364024162292,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91006,
+              "team_return": -28.318142365990322,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.372044175863266,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91007,
+              "team_return": -23.89957772396948,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5380017161369324,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91008,
+              "team_return": -18.935132607832152,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6139630675315857,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91009,
+              "team_return": -20.56702548873054,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7336276173591614,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91010,
+              "team_return": -18.71525257749932,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.46660366654396057,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91011,
+              "team_return": -31.006118365954094,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8251374363899231,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91012,
+              "team_return": -22.571865936792648,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5618811249732971,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91013,
+              "team_return": -17.892741532865887,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4709543287754059,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91014,
+              "team_return": -24.233752488169326,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5418730974197388,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91015,
+              "team_return": -14.373684333834284,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4075133502483368,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91016,
+              "team_return": -18.383037954616825,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4620538651943207,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91017,
+              "team_return": -18.61028358384313,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.32689812779426575,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91018,
+              "team_return": -19.301723572071566,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6451281905174255,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91019,
+              "team_return": -12.438069217479034,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.2885099947452545,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91020,
+              "team_return": -18.52956588454688,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5702986717224121,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91021,
+              "team_return": -20.032272909050526,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.43925967812538147,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91022,
+              "team_return": -24.89621222380956,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9399216771125793,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91023,
+              "team_return": -21.376831033237707,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7328183054924011,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91024,
+              "team_return": -25.126652004751858,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5745278000831604,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91025,
+              "team_return": -34.64299348735005,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7953614592552185,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91026,
+              "team_return": -22.514623992991854,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5433527827262878,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91027,
+              "team_return": -37.684045780834566,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9904897212982178,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91028,
+              "team_return": -23.925873850168117,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8787195086479187,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91029,
+              "team_return": -21.373640715924505,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6142503619194031,
+              "collision_rate": 0.0,
+              "steps": 25
+            }
+          ]
+        },
+        "agent_failure": {
+          "summary": {
+            "average_team_return": -22.441456472822015,
+            "average_coverage": 0.04444444444444444,
+            "average_full_coverage": 0.0,
+            "average_mean_landmark_distance": 0.5763079499204954,
+            "average_collision_rate": 0.008,
+            "average_steps": 25.0
+          },
+          "median_return": -20.241023623208733,
+          "p10_return": -34.07480929261338,
+          "worst_return": -40.64994249980111,
+          "inference_ms": 0.10421900078654289,
+          "episodes": [
+            {
+              "seed": 91000,
+              "team_return": -18.395599635334722,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.42577019333839417,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91001,
+              "team_return": -25.66225205093434,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6900568008422852,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91002,
+              "team_return": -34.00141289974871,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9801943302154541,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91003,
+              "team_return": -19.354947298493286,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4819560945034027,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91004,
+              "team_return": -23.521995049760474,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5769149661064148,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91005,
+              "team_return": -20.41025831279013,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4705733060836792,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91006,
+              "team_return": -18.486822717072535,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4380457103252411,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91007,
+              "team_return": -16.785808868996476,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4155397117137909,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91008,
+              "team_return": -23.21248522142479,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.3566496670246124,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91009,
+              "team_return": -19.779154976464987,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6670141220092773,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91010,
+              "team_return": -18.82551246494916,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.48960089683532715,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91011,
+              "team_return": -34.7761566269008,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9674105644226074,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91012,
+              "team_return": -17.3100739212898,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4727230966091156,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91013,
+              "team_return": -22.659280767862857,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5837718844413757,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91014,
+              "team_return": -28.675430305091517,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7442499995231628,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91015,
+              "team_return": -14.514534562555028,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4523409903049469,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91016,
+              "team_return": -17.15997055255837,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4351721704006195,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91017,
+              "team_return": -16.95688520480565,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.3674505949020386,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91018,
+              "team_return": -22.64868253629962,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7501401901245117,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91019,
+              "team_return": -13.646251868769559,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.30080413818359375,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91020,
+              "team_return": -20.071788933627335,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5322813391685486,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91021,
+              "team_return": -23.416056814098457,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5276637673377991,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91022,
+              "team_return": -27.2210124432956,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.892508327960968,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91023,
+              "team_return": -14.88806273835188,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4363265931606293,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91024,
+              "team_return": -28.22638515645259,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8340325355529785,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91025,
+              "team_return": -40.64994249980111,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9642881751060486,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91026,
+              "team_return": -23.42085263365918,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.44759342074394226,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91027,
+              "team_return": -34.73537682839546,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.847804844379425,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91028,
+              "team_return": -19.674340514979008,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.502694845199585,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91029,
+              "team_return": -14.156359779897022,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.23766522109508514,
+              "collision_rate": 0.0,
+              "steps": 25
+            }
+          ]
+        }
+      }
+    },
+    "qmix": {
+      "checkpoint_step": 5000,
+      "conditions": {
+        "clean": {
+          "summary": {
+            "average_team_return": -32.66489758325597,
+            "average_coverage": 0.0,
+            "average_full_coverage": 0.0,
+            "average_mean_landmark_distance": 1.403979660073916,
+            "average_collision_rate": 0.022666666666666665,
+            "average_steps": 25.0
+          },
+          "median_return": -30.30632509729658,
+          "p10_return": -46.59145902043236,
+          "worst_return": -56.66943406232008,
+          "inference_ms": 0.10861200047656894,
+          "episodes": [
+            {
+              "seed": 91000,
+              "team_return": -47.8261208607868,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 2.219743013381958,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91001,
+              "team_return": -29.016973881792318,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.1384434700012207,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91002,
+              "team_return": -46.45427437150409,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 2.7413017749786377,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91003,
+              "team_return": -29.843657561043283,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.6593869924545288,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91004,
+              "team_return": -20.504497011550914,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5799930095672607,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91005,
+              "team_return": -38.69973026751071,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7806065678596497,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91006,
+              "team_return": -31.722290135053882,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.2054415941238403,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91007,
+              "team_return": -30.20077287524264,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8971168398857117,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91008,
+              "team_return": -27.485438695858438,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.1095348596572876,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91009,
+              "team_return": -32.26163156235389,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.9708176851272583,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91010,
+              "team_return": -21.101651663877846,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6609470248222351,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91011,
+              "team_return": -38.058565155259,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.1593769788742065,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91012,
+              "team_return": -27.925389134264176,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.5062235593795776,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91013,
+              "team_return": -32.45887099436906,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.35189688205719,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91014,
+              "team_return": -24.08660029119475,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6009495258331299,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91015,
+              "team_return": -22.42126636345809,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.3969005346298218,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91016,
+              "team_return": -23.667249965895355,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8576321601867676,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91017,
+              "team_return": -37.887728172523154,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 2.0846025943756104,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91018,
+              "team_return": -37.029878891088536,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 2.2257778644561768,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91019,
+              "team_return": -56.367316992253706,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 2.878643035888672,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91020,
+              "team_return": -24.645514336091136,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.343030333518982,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91021,
+              "team_return": -56.66943406232008,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 2.251019239425659,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91022,
+              "team_return": -11.530228952767903,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.37196633219718933,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91023,
+              "team_return": -29.27873214585234,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.2332327365875244,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91024,
+              "team_return": -37.63146336888984,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.724032998085022,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91025,
+              "team_return": -38.835440696847726,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 2.0178120136260986,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91026,
+              "team_return": -45.961537990186095,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.7648687362670898,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91027,
+              "team_return": -30.41187731935052,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8033141493797302,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91028,
+              "team_return": -22.449803186344447,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9599752426147461,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91029,
+              "team_return": -27.51299059214854,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6248020529747009,
+              "collision_rate": 0.0,
+              "steps": 25
+            }
+          ]
+        },
+        "noise": {
+          "summary": {
+            "average_team_return": -31.124248769313578,
+            "average_coverage": 0.0,
+            "average_full_coverage": 0.0,
+            "average_mean_landmark_distance": 1.2117797970771789,
+            "average_collision_rate": 0.018666666666666668,
+            "average_steps": 25.0
+          },
+          "median_return": -29.26461083846798,
+          "p10_return": -42.81753617639789,
+          "worst_return": -55.44535878874415,
+          "inference_ms": 0.11723500210791826,
+          "episodes": [
+            {
+              "seed": 91000,
+              "team_return": -42.31637580523637,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.752202033996582,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91001,
+              "team_return": -30.22898814374022,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.070961833000183,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91002,
+              "team_return": -38.19766809407978,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.8145498037338257,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91003,
+              "team_return": -20.29904371737109,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6881210207939148,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91004,
+              "team_return": -28.33568825591794,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.2425674200057983,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91005,
+              "team_return": -38.2646132850067,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7416238784790039,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91006,
+              "team_return": -27.980672946437263,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9900107383728027,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91007,
+              "team_return": -29.28108870792776,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9611155390739441,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91008,
+              "team_return": -33.98751279733212,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9877141118049622,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91009,
+              "team_return": -42.354304652719506,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 2.6963322162628174,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91010,
+              "team_return": -21.75202845665823,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6370975971221924,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91011,
+              "team_return": -38.03376651746341,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.1593769788742065,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91012,
+              "team_return": -29.2481329690082,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.466122031211853,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91013,
+              "team_return": -18.506384850830788,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6096891760826111,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91014,
+              "team_return": -23.65677847754854,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5501864552497864,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91015,
+              "team_return": -20.540441877548286,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8295195698738098,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91016,
+              "team_return": -23.488883411910376,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8448064923286438,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91017,
+              "team_return": -28.964051207651405,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9087104797363281,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91018,
+              "team_return": -38.739309976860596,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 2.3536288738250732,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91019,
+              "team_return": -55.44535878874415,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 2.808116912841797,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91020,
+              "team_return": -19.96032815461749,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6140550971031189,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91021,
+              "team_return": -51.57816363905807,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.833935260772705,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91022,
+              "team_return": -15.726525605584094,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8872479796409607,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91023,
+              "team_return": -21.867937884286448,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7012004256248474,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91024,
+              "team_return": -32.037788355509164,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.2260223627090454,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91025,
+              "team_return": -37.150585563797804,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.5278348922729492,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91026,
+              "team_return": -46.98661988950333,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.8629299402236938,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91027,
+              "team_return": -31.285298709313007,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.0644158124923706,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91028,
+              "team_return": -22.608719104065376,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8652976155281067,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91029,
+              "team_return": -24.90440323367985,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6580013632774353,
+              "collision_rate": 0.0,
+              "steps": 25
+            }
+          ]
+        },
+        "agent_failure": {
+          "summary": {
+            "average_team_return": -28.841975854208936,
+            "average_coverage": 0.03333333333333333,
+            "average_full_coverage": 0.0,
+            "average_mean_landmark_distance": 1.0138169507185617,
+            "average_collision_rate": 0.025333333333333333,
+            "average_steps": 25.0
+          },
+          "median_return": -29.356188689482863,
+          "p10_return": -38.47177896254336,
+          "worst_return": -53.21565295271118,
+          "inference_ms": 0.10761499870568514,
+          "episodes": [
+            {
+              "seed": 91000,
+              "team_return": -38.21790293734286,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.1699589490890503,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91001,
+              "team_return": -37.84685496855927,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.6136428117752075,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91002,
+              "team_return": -40.756663189347826,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.6952368021011353,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91003,
+              "team_return": -25.95782683728633,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.0284749269485474,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91004,
+              "team_return": -17.450714749564906,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4073544442653656,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91005,
+              "team_return": -29.358466286758578,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8448379039764404,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91006,
+              "team_return": -24.638630989311768,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.0672643184661865,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91007,
+              "team_return": -18.07725980096957,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.41354623436927795,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91008,
+              "team_return": -34.23282123960909,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.5609790086746216,
+              "collision_rate": 0.16,
+              "steps": 25
+            },
+            {
+              "seed": 91009,
+              "team_return": -36.76075226440588,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.6986666917800903,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91010,
+              "team_return": -21.15166797243823,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5199757218360901,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91011,
+              "team_return": -33.99221194315922,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9193225502967834,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91012,
+              "team_return": -16.942894096778133,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4480850398540497,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91013,
+              "team_return": -30.63097372918132,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.3054243326187134,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91014,
+              "team_return": -29.35391109220715,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.2609728574752808,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91015,
+              "team_return": -26.71411112907133,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.0947006940841675,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91016,
+              "team_return": -23.930461254617878,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6361749768257141,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91017,
+              "team_return": -29.984608956228207,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9652110934257507,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91018,
+              "team_return": -23.807168627592578,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7501401901245117,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91019,
+              "team_return": -14.124504384486956,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.37665343284606934,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91020,
+              "team_return": -30.32703138946424,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9946497082710266,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91021,
+              "team_return": -27.56658507245483,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7265258431434631,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91022,
+              "team_return": -10.56539976065847,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.2817440330982208,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91023,
+              "team_return": -25.45371844276464,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.258097529411316,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91024,
+              "team_return": -41.21699581587171,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.4329899549484253,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91025,
+              "team_return": -53.21565295271118,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 2.222583055496216,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91026,
+              "team_return": -26.133154603571562,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7076416015625,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91027,
+              "team_return": -30.944792266535785,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7269282341003418,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91028,
+              "team_return": -33.50463256985348,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.3109740018844604,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91029,
+              "team_return": -32.40090630346502,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9757515788078308,
+              "collision_rate": 0.0,
+              "steps": 25
+            }
+          ]
+        }
+      }
+    },
+    "mappo": {
+      "checkpoint_step": 10000,
+      "conditions": {
+        "clean": {
+          "summary": {
+            "average_team_return": -23.85642744373017,
+            "average_coverage": 0.08888888888888888,
+            "average_full_coverage": 0.0,
+            "average_mean_landmark_distance": 0.6353017359972,
+            "average_collision_rate": 0.06266666666666666,
+            "average_steps": 25.0
+          },
+          "median_return": -23.257607481471133,
+          "p10_return": -32.5964617220309,
+          "worst_return": -37.30877982000035,
+          "inference_ms": 0.24165800074115396,
+          "episodes": [
+            {
+              "seed": 91000,
+              "team_return": -17.778137228933257,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.33344507217407227,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91001,
+              "team_return": -32.51961464075992,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9440686106681824,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91002,
+              "team_return": -34.806084735189785,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.0099493265151978,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91003,
+              "team_return": -20.823477744434182,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5517754554748535,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91004,
+              "team_return": -20.46770578313878,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5678927302360535,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91005,
+              "team_return": -23.9011581721822,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7600934505462646,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91006,
+              "team_return": -33.28808545346978,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.965384304523468,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91007,
+              "team_return": -28.534527634989132,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8811892867088318,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91008,
+              "team_return": -29.151983258037383,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6342718601226807,
+              "collision_rate": 0.16,
+              "steps": 25
+            },
+            {
+              "seed": 91009,
+              "team_return": -28.850166173199113,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.743187427520752,
+              "collision_rate": 0.24,
+              "steps": 25
+            },
+            {
+              "seed": 91010,
+              "team_return": -27.841224095687075,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8618584275245667,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91011,
+              "team_return": -37.30877982000035,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.0859074592590332,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91012,
+              "team_return": -18.38894049821145,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.43550023436546326,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91013,
+              "team_return": -19.0510297397871,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4279763698577881,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91014,
+              "team_return": -24.718139812758917,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7064668536186218,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91015,
+              "team_return": -12.68777978659764,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.27615606784820557,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91016,
+              "team_return": -18.78150666201169,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5614773631095886,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91017,
+              "team_return": -16.848061225491712,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.40609943866729736,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91018,
+              "team_return": -31.949509402951456,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.0598039627075195,
+              "collision_rate": 0.16,
+              "steps": 25
+            },
+            {
+              "seed": 91019,
+              "team_return": -15.168073583563741,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6634294390678406,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91020,
+              "team_return": -18.659540002012697,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.44113650918006897,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91021,
+              "team_return": -20.312349226135467,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5871363282203674,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91022,
+              "team_return": -24.618657979303357,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7534547448158264,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91023,
+              "team_return": -18.11836370002828,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.530906081199646,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91024,
+              "team_return": -24.262383134493394,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.40589427947998047,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91025,
+              "team_return": -26.42080637853188,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.3817157745361328,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91026,
+              "team_return": -21.005693372440387,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.38114047050476074,
+              "collision_rate": 0.16,
+              "steps": 25
+            },
+            {
+              "seed": 91027,
+              "team_return": -24.477648227453706,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4904889166355133,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91028,
+              "team_return": -22.33933904935111,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6103196144104004,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91029,
+              "team_return": -22.61405679076007,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6009262204170227,
+              "collision_rate": 0.0,
+              "steps": 25
+            }
+          ]
+        },
+        "noise": {
+          "summary": {
+            "average_team_return": -23.668146386837197,
+            "average_coverage": 0.05555555555555555,
+            "average_full_coverage": 0.0,
+            "average_mean_landmark_distance": 0.630610870818297,
+            "average_collision_rate": 0.061333333333333344,
+            "average_steps": 25.0
+          },
+          "median_return": -24.093961256001496,
+          "p10_return": -28.575026339575167,
+          "worst_return": -37.306786727515394,
+          "inference_ms": 0.24533199844881892,
+          "episodes": [
+            {
+              "seed": 91000,
+              "team_return": -18.12806993975953,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4090418815612793,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91001,
+              "team_return": -32.03125926825954,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8321430683135986,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91002,
+              "team_return": -35.58713491291098,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.1304858922958374,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91003,
+              "team_return": -19.232363758370937,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5388301014900208,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91004,
+              "team_return": -17.73622968353976,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.2403973489999771,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91005,
+              "team_return": -23.693407881155977,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5926917195320129,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91006,
+              "team_return": -25.241583531427807,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7682742476463318,
+              "collision_rate": 0.16,
+              "steps": 25
+            },
+            {
+              "seed": 91007,
+              "team_return": -28.19100045861024,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.863724946975708,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91008,
+              "team_return": -27.976042274933587,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7485453486442566,
+              "collision_rate": 0.16,
+              "steps": 25
+            },
+            {
+              "seed": 91009,
+              "team_return": -26.413880855625518,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6877701282501221,
+              "collision_rate": 0.16,
+              "steps": 25
+            },
+            {
+              "seed": 91010,
+              "team_return": -26.49496675453075,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9017200469970703,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91011,
+              "team_return": -37.306786727515394,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.0873383283615112,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91012,
+              "team_return": -19.179256811580096,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.3690012991428375,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91013,
+              "team_return": -18.852323692488703,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5260176658630371,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91014,
+              "team_return": -24.494514630847014,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6179324984550476,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91015,
+              "team_return": -13.857624976777249,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.3240496814250946,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91016,
+              "team_return": -17.739443922887432,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4231850802898407,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91017,
+              "team_return": -26.602902013925156,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.584189236164093,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91018,
+              "team_return": -27.57592524335084,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7953410148620605,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91019,
+              "team_return": -14.761701256768369,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5448814034461975,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91020,
+              "team_return": -19.629027449623926,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5709707140922546,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91021,
+              "team_return": -22.592092086753635,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6448564529418945,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91022,
+              "team_return": -25.669274476200673,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8214747309684753,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91023,
+              "team_return": -17.57767045769912,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5653154253959656,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91024,
+              "team_return": -26.86198404989302,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5336537957191467,
+              "collision_rate": 0.24,
+              "steps": 25
+            },
+            {
+              "seed": 91025,
+              "team_return": -26.536297711810835,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.397965669631958,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91026,
+              "team_return": -21.012294004988686,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.31776419281959534,
+              "collision_rate": 0.16,
+              "steps": 25
+            },
+            {
+              "seed": 91027,
+              "team_return": -27.676592017617313,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9191455245018005,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91028,
+              "team_return": -18.371928600756803,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7077683806419373,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91029,
+              "team_return": -23.02081215450713,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.45385029911994934,
+              "collision_rate": 0.08,
+              "steps": 25
+            }
+          ]
+        },
+        "agent_failure": {
+          "summary": {
+            "average_team_return": -23.984944045441114,
+            "average_coverage": 0.08888888888888888,
+            "average_full_coverage": 0.0,
+            "average_mean_landmark_distance": 0.6463881889979045,
+            "average_collision_rate": 0.037333333333333336,
+            "average_steps": 25.0
+          },
+          "median_return": -24.362728881372625,
+          "p10_return": -31.727816961009918,
+          "worst_return": -37.63209310220084,
+          "inference_ms": 0.23835700005292892,
+          "episodes": [
+            {
+              "seed": 91000,
+              "team_return": -29.3678879503299,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.0030173063278198,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91001,
+              "team_return": -32.51961464075992,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9440686106681824,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91002,
+              "team_return": -36.03473290336908,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.0981032848358154,
+              "collision_rate": 0.16,
+              "steps": 25
+            },
+            {
+              "seed": 91003,
+              "team_return": -19.69786432631059,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5116108059883118,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91004,
+              "team_return": -20.87025934503353,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5624352097511292,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91005,
+              "team_return": -24.850850922557385,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6999474167823792,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91006,
+              "team_return": -24.27089389541724,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6631191372871399,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91007,
+              "team_return": -24.3499903055823,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6771604418754578,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91008,
+              "team_return": -30.608953245745006,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9689283967018127,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91009,
+              "team_return": -22.661619614275487,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6881403923034668,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91010,
+              "team_return": -25.10957611478377,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8407971262931824,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91011,
+              "team_return": -37.63209310220084,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.0680838823318481,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91012,
+              "team_return": -17.89588628786911,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4926377832889557,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91013,
+              "team_return": -18.960798622421336,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.3999939262866974,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91014,
+              "team_return": -25.313345137433,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5928418040275574,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91015,
+              "team_return": -13.830243106082897,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.30751481652259827,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91016,
+              "team_return": -24.375467457162948,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5674821734428406,
+              "collision_rate": 0.16,
+              "steps": 25
+            },
+            {
+              "seed": 91017,
+              "team_return": -16.13188573070892,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4048273265361786,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91018,
+              "team_return": -26.48248234311946,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7450299263000488,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91019,
+              "team_return": -14.061591483111272,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.37665343284606934,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91020,
+              "team_return": -20.10242859782125,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5446760058403015,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91021,
+              "team_return": -20.674604826972004,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5723661780357361,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91022,
+              "team_return": -23.4272344591261,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7324404716491699,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91023,
+              "team_return": -18.11836370002828,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.530906081199646,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91024,
+              "team_return": -25.527910755216865,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6395242810249329,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91025,
+              "team_return": -31.639839441037694,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6176905035972595,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91026,
+              "team_return": -25.742344071876452,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7082486748695374,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91027,
+              "team_return": -28.1427763643983,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4407435953617096,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91028,
+              "team_return": -16.259004331069765,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.36561933159828186,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91029,
+              "team_return": -24.88777828141272,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6270373463630676,
+              "collision_rate": 0.0,
+              "steps": 25
+            }
+          ]
+        }
+      }
+    },
+    "communication": {
+      "checkpoint_step": 10000,
+      "conditions": {
+        "clean": {
+          "summary": {
+            "average_team_return": -27.801421687675603,
+            "average_coverage": 0.04444444444444444,
+            "average_full_coverage": 0.0,
+            "average_mean_landmark_distance": 0.8266512950261434,
+            "average_collision_rate": 0.034666666666666665,
+            "average_steps": 25.0
+          },
+          "median_return": -25.685759250066024,
+          "p10_return": -39.292870155755395,
+          "worst_return": -45.376850213186394,
+          "inference_ms": 0.26764400070533156,
+          "episodes": [
+            {
+              "seed": 91000,
+              "team_return": -23.254656139198953,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.48919984698295593,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91001,
+              "team_return": -32.631891380720376,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.912971019744873,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91002,
+              "team_return": -39.12376381503879,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.3960319757461548,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91003,
+              "team_return": -31.054089122757226,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.3687607049942017,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91004,
+              "team_return": -24.061795441754327,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9298853874206543,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91005,
+              "team_return": -24.74288145072172,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.37331151962280273,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91006,
+              "team_return": -21.534925238230702,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4512382447719574,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91007,
+              "team_return": -31.689542426686597,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6893376708030701,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91008,
+              "team_return": -32.7779605532725,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8740717768669128,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91009,
+              "team_return": -27.24212921951436,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8715594410896301,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91010,
+              "team_return": -25.348113004870864,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7332286834716797,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91011,
+              "team_return": -45.376850213186394,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.3064044713974,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91012,
+              "team_return": -17.231187853606418,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4076472222805023,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91013,
+              "team_return": -19.772816485845016,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7485560774803162,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91014,
+              "team_return": -33.235759852562104,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.1925607919692993,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91015,
+              "team_return": -17.47967979487751,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6117566227912903,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91016,
+              "team_return": -20.090098976432543,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5468479990959167,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91017,
+              "team_return": -20.945009546240133,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8577755093574524,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91018,
+              "team_return": -31.49821399308576,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8228635787963867,
+              "collision_rate": 0.16,
+              "steps": 25
+            },
+            {
+              "seed": 91019,
+              "team_return": -22.781872186724424,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8234345316886902,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91020,
+              "team_return": -24.28419182160538,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4426034986972809,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91021,
+              "team_return": -28.34801641040329,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9242669939994812,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91022,
+              "team_return": -30.963047815643773,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.0628732442855835,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91023,
+              "team_return": -25.66872865844109,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8828887939453125,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91024,
+              "team_return": -27.55358040887623,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7438170313835144,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91025,
+              "team_return": -41.06386649470954,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.1799817085266113,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91026,
+              "team_return": -25.702789841690958,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8756442666053772,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91027,
+              "team_return": -40.8148272222048,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.1082559823989868,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91028,
+              "team_return": -23.113109818587844,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6163495779037476,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91029,
+              "team_return": -24.657255442778617,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5554146766662598,
+              "collision_rate": 0.08,
+              "steps": 25
+            }
+          ]
+        },
+        "noise": {
+          "summary": {
+            "average_team_return": -27.33759329992484,
+            "average_coverage": 0.01111111111111111,
+            "average_full_coverage": 0.0,
+            "average_mean_landmark_distance": 0.8383450508117676,
+            "average_collision_rate": 0.02666666666666667,
+            "average_steps": 25.0
+          },
+          "median_return": -25.875695613575672,
+          "p10_return": -39.028889200661155,
+          "worst_return": -42.83939011091734,
+          "inference_ms": 0.28407900128513575,
+          "episodes": [
+            {
+              "seed": 91000,
+              "team_return": -22.61408800423722,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8826821446418762,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91001,
+              "team_return": -32.67618521018503,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.912971019744873,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91002,
+              "team_return": -38.80136632788411,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.3482965230941772,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91003,
+              "team_return": -25.37180531769095,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9731616377830505,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91004,
+              "team_return": -25.572807697852316,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9183376431465149,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91005,
+              "team_return": -20.995535588172736,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5607476830482483,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91006,
+              "team_return": -22.444156894703394,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.395047664642334,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91007,
+              "team_return": -32.11180062853381,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7403366565704346,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91008,
+              "team_return": -32.7779605532725,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8740717768669128,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91009,
+              "team_return": -27.022581125905713,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8285487294197083,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91010,
+              "team_return": -24.55874343569265,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7635206580162048,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91011,
+              "team_return": -42.83939011091734,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.2057576179504395,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91012,
+              "team_return": -19.100173235632642,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4558908939361572,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91013,
+              "team_return": -22.257304662313835,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7503867745399475,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91014,
+              "team_return": -27.049486826973155,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8562089800834656,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91015,
+              "team_return": -16.97175312941323,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7165041565895081,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91016,
+              "team_return": -20.196325745163964,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5525890588760376,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91017,
+              "team_return": -20.09983815985251,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6767333149909973,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91018,
+              "team_return": -31.570475219002205,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.1783653497695923,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91019,
+              "team_return": -18.47552794135602,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5137630105018616,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91020,
+              "team_return": -32.74680374446898,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.0575224161148071,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91021,
+              "team_return": -28.82950807487446,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8986401557922363,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91022,
+              "team_return": -30.155993413498216,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.1595691442489624,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91023,
+              "team_return": -26.178583529299033,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9828672409057617,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91024,
+              "team_return": -26.954679779106105,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7271315455436707,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91025,
+              "team_return": -41.11239643243652,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.2123349905014038,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91026,
+              "team_return": -23.159266888738884,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7456681728363037,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91027,
+              "team_return": -41.07659505565454,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.1281737089157104,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91028,
+              "team_return": -22.584866079981914,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6002765893936157,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91029,
+              "team_return": -23.821800184931245,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5342462658882141,
+              "collision_rate": 0.2,
+              "steps": 25
+            }
+          ]
+        },
+        "agent_failure": {
+          "summary": {
+            "average_team_return": -26.025623857240873,
+            "average_coverage": 0.03333333333333333,
+            "average_full_coverage": 0.0,
+            "average_mean_landmark_distance": 0.7407742599646251,
+            "average_collision_rate": 0.017333333333333333,
+            "average_steps": 25.0
+          },
+          "median_return": -23.95484321998952,
+          "p10_return": -37.56660321446279,
+          "worst_return": -49.27298780736743,
+          "inference_ms": 0.2683479990810156,
+          "episodes": [
+            {
+              "seed": 91000,
+              "team_return": -23.966707949171646,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6898193359375,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91001,
+              "team_return": -32.631891380720376,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.912971019744873,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91002,
+              "team_return": -38.44693730833592,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.3486870527267456,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91003,
+              "team_return": -18.255210976866977,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5690218806266785,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91004,
+              "team_return": -23.760081921584515,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5597136616706848,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91005,
+              "team_return": -32.09985284871256,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.1914454698562622,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91006,
+              "team_return": -18.668741121607194,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.37966132164001465,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91007,
+              "team_return": -21.838748499813512,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5823666453361511,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91008,
+              "team_return": -32.7779605532725,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8740717768669128,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91009,
+              "team_return": -13.183772533541081,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.3688485324382782,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91010,
+              "team_return": -23.94297849080739,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7063233852386475,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91011,
+              "team_return": -32.85040652457698,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.864989697933197,
+              "collision_rate": 0.04,
+              "steps": 25
+            },
+            {
+              "seed": 91012,
+              "team_return": -17.79738969149182,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5528078675270081,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91013,
+              "team_return": -25.70147141336107,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8449826240539551,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91014,
+              "team_return": -40.015644378632594,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.2488594055175781,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91015,
+              "team_return": -20.7357017663709,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8670069575309753,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91016,
+              "team_return": -22.81680622795407,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6084481477737427,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91017,
+              "team_return": -17.981278273334826,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4554623067378998,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91018,
+              "team_return": -18.29239656056691,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5126442313194275,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91019,
+              "team_return": -17.314087822154885,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.4722472131252289,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91020,
+              "team_return": -27.517628407284597,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7848559021949768,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91021,
+              "team_return": -21.47630523171862,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.3376568853855133,
+              "collision_rate": 0.12,
+              "steps": 25
+            },
+            {
+              "seed": 91022,
+              "team_return": -28.563294726084646,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9671266674995422,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91023,
+              "team_return": -25.66872865844109,
+              "coverage": 0.3333333333333333,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.8828887939453125,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91024,
+              "team_return": -27.55358040887623,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.7438170313835144,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91025,
+              "team_return": -49.27298780736743,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 1.0053666830062866,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91026,
+              "team_return": -21.38862958705947,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.5826027989387512,
+              "collision_rate": 0.08,
+              "steps": 25
+            },
+            {
+              "seed": 91027,
+              "team_return": -37.46878831514355,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.9991677403450012,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91028,
+              "team_return": -23.113109818587844,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6163495779037476,
+              "collision_rate": 0.0,
+              "steps": 25
+            },
+            {
+              "seed": 91029,
+              "team_return": -25.667596513785057,
+              "coverage": 0.0,
+              "full_coverage": 0.0,
+              "mean_landmark_distance": 0.6930171847343445,
+              "collision_rate": 0.08,
+              "steps": 25
+            }
+          ]
+        }
+      }
+    }
+  }
+}

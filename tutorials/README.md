@@ -36,6 +36,14 @@
 | 29 | 驾驶奖励设计 | [文章草稿](../docs/csdn/29-奖励越精细驾驶就一定越好吗.md) | [`29-driving-reward-design/`](29-driving-reward-design/) |
 | 30 | 视觉扰动与数据增强 | [文章草稿](../docs/csdn/30-画面变暗以后策略还认识赛道吗.md) | [`30-visual-robustness/`](30-visual-robustness/) |
 | 31 | 未见赛道与可靠性审计 | [文章草稿](../docs/csdn/31-训练成功不等于可靠驾驶视觉控制最终复盘.md) | [`31-driving-reliability/`](31-driving-reliability/) |
+| 32 | Simple Spread 环境与规则基线 | [文章草稿](../docs/csdn/32-一个奖励多个智能体该怎么分工.md) | [`32-multi-agent-baselines/`](32-multi-agent-baselines/) |
+| 33 | Independent DQN 与非平稳性 | [文章草稿](../docs/csdn/33-两个DQN一起训练环境为什么一直在变.md) | [`33-independent-dqn/`](33-independent-dqn/) |
+| 34 | 参数共享与 Agent ID | [文章草稿](../docs/csdn/34-多个智能体应该共用一个大脑吗.md) | [`34-parameter-sharing/`](34-parameter-sharing/) |
+| 35 | VDN 与信用分配 | [文章草稿](../docs/csdn/35-团队得分应该由谁负责VDN与信用分配.md) | [`35-vdn-credit-assignment/`](35-vdn-credit-assignment/) |
+| 36 | QMIX 单调混合网络 | [文章草稿](../docs/csdn/36-VDN不够灵活时QMIX如何混合价值.md) | [`36-qmix/`](36-qmix/) |
+| 37 | IPPO 与 MAPPO | [文章草稿](../docs/csdn/37-集中训练分散执行从IPPO到MAPPO.md) | [`37-ippo-vs-mappo/`](37-ippo-vs-mappo/) |
+| 38 | 可学习通信与消息消融 | [文章草稿](../docs/csdn/38-没有通信局部观测下如何配合.md) | [`38-learned-communication/`](38-learned-communication/) |
+| 39 | 多智能体可靠性审计 | [文章草稿](../docs/csdn/39-训练成功不等于团队可靠多智能体最终审计.md) | [`39-marl-reliability/`](39-marl-reliability/) |
 
 ## 使用方法
 
@@ -79,5 +87,13 @@ python -m pip install -r requirements.txt
 - 第 29 篇比较原始奖励和行为塑形，并统一按环境原始回报评价。
 - 第 30 篇加入训练时图像增强，并在五类受控像素扰动下测试。
 - 第 31 篇使用未见赛道、尾部回报、越界率、动作抖动和延迟统一复盘。
+- 第 32 篇建立 Simple Spread 规则基线和协作指标。
+- 第 33 篇用 IQL 展示队友策略变化造成的非平稳性。
+- 第 34 篇比较独立网络、参数共享与 Agent ID。
+- 第 35 篇加入 VDN 和目标匹配进展信号。
+- 第 36 篇实现使用全局状态的 QMIX 单调混合器。
+- 第 37 篇比较局部 Critic 的 IPPO 与集中 Critic 的 MAPPO。
+- 第 38 篇训练连续消息并通过测试时切断消息验证实际用途。
+- 第 39 篇注入观测噪声和单体失效，审计团队可靠性。
 - [`../贪吃蛇/`](../贪吃蛇/) 和 [`../连续控制/`](../连续控制/) 保存各阶段持续更新的实现；
   教程快照只为配合文章阅读，不会随以后章节的功能继续变化。
