@@ -1,0 +1,297 @@
+{
+  "experiment": "52-cem-planning",
+  "results": {
+    "random_256": {
+      "summary": {
+        "episodes": 10,
+        "average_return": -165.0395010324616,
+        "return_std": 146.14362737436028,
+        "p10_return": -273.9307993306869,
+        "worst_return": -537.8865408229883,
+        "upright_fraction": 0.8165000000000001,
+        "average_action_energy": 283.0801656174569
+      },
+      "episodes": [
+        {
+          "seed": 71000,
+          "return": -1.590192800307323,
+          "upright_fraction": 0.99,
+          "action_energy": 270.94439048405184
+        },
+        {
+          "seed": 71001,
+          "return": -119.9162981431037,
+          "upright_fraction": 0.88,
+          "action_energy": 281.2888392590353
+        },
+        {
+          "seed": 71002,
+          "return": -244.6023836093201,
+          "upright_fraction": 0.74,
+          "action_energy": 285.4602014287375
+        },
+        {
+          "seed": 71003,
+          "return": -126.31459352274189,
+          "upright_fraction": 0.825,
+          "action_energy": 287.37404253748537
+        },
+        {
+          "seed": 71004,
+          "return": -244.20345716577958,
+          "upright_fraction": 0.76,
+          "action_energy": 267.72494324384024
+        },
+        {
+          "seed": 71005,
+          "return": -537.8865408229883,
+          "upright_fraction": 0.485,
+          "action_energy": 326.9063304247102
+        },
+        {
+          "seed": 71006,
+          "return": -126.00187292037572,
+          "upright_fraction": 0.835,
+          "action_energy": 264.4034030218063
+        },
+        {
+          "seed": 71007,
+          "return": -1.109147239382008,
+          "upright_fraction": 1.0,
+          "action_energy": 274.46176211583406
+        },
+        {
+          "seed": 71008,
+          "return": -121.790166078561,
+          "upright_fraction": 0.865,
+          "action_energy": 295.43796220587683
+        },
+        {
+          "seed": 71009,
+          "return": -126.98035802205642,
+          "upright_fraction": 0.785,
+          "action_energy": 276.7997814531914
+        }
+      ]
+    },
+    "cem_64": {
+      "summary": {
+        "episodes": 10,
+        "average_return": -113.34912211868325,
+        "return_std": 108.27229749810843,
+        "p10_return": -153.86305112214328,
+        "worst_return": -394.38036982111964,
+        "upright_fraction": 0.8710000000000001,
+        "average_action_energy": 139.09239363372686
+      },
+      "episodes": [
+        {
+          "seed": 71000,
+          "return": -1.207154362127332,
+          "upright_fraction": 0.99,
+          "action_energy": 132.0586159905249
+        },
+        {
+          "seed": 71001,
+          "return": -119.15874553699474,
+          "upright_fraction": 0.875,
+          "action_energy": 114.29590152969467
+        },
+        {
+          "seed": 71002,
+          "return": -119.22360906219726,
+          "upright_fraction": 0.875,
+          "action_energy": 137.54362305248833
+        },
+        {
+          "seed": 71003,
+          "return": -127.13890460003479,
+          "upright_fraction": 0.81,
+          "action_energy": 145.4807008501466
+        },
+        {
+          "seed": 71004,
+          "return": -122.07511461366452,
+          "upright_fraction": 0.865,
+          "action_energy": 146.56639811594846
+        },
+        {
+          "seed": 71005,
+          "return": -394.38036982111964,
+          "upright_fraction": 0.675,
+          "action_energy": 160.53095988453424
+        },
+        {
+          "seed": 71006,
+          "return": -126.62496594558466,
+          "upright_fraction": 0.82,
+          "action_energy": 152.07652418709768
+        },
+        {
+          "seed": 71007,
+          "return": -0.5875844656224956,
+          "upright_fraction": 1.0,
+          "action_energy": 111.33183891780209
+        },
+        {
+          "seed": 71008,
+          "return": -121.05245557888917,
+          "upright_fraction": 0.875,
+          "action_energy": 127.60948379087131
+        },
+        {
+          "seed": 71009,
+          "return": -2.0423172005977928,
+          "upright_fraction": 0.925,
+          "action_energy": 163.42989001816022
+        }
+      ]
+    },
+    "cem_128": {
+      "summary": {
+        "episodes": 10,
+        "average_return": -112.07741302038542,
+        "return_std": 105.73882621697274,
+        "p10_return": -152.67072197226096,
+        "worst_return": -384.46819317766125,
+        "upright_fraction": 0.8714999999999999,
+        "average_action_energy": 110.33522634756139
+      },
+      "episodes": [
+        {
+          "seed": 71000,
+          "return": -1.0749755653871789,
+          "upright_fraction": 0.99,
+          "action_energy": 78.66056775343895
+        },
+        {
+          "seed": 71001,
+          "return": -118.37284045952129,
+          "upright_fraction": 0.885,
+          "action_energy": 93.083197648637
+        },
+        {
+          "seed": 71002,
+          "return": -118.55485343223289,
+          "upright_fraction": 0.875,
+          "action_energy": 114.66801412751192
+        },
+        {
+          "seed": 71003,
+          "return": -126.91544739388317,
+          "upright_fraction": 0.82,
+          "action_energy": 117.343622952234
+        },
+        {
+          "seed": 71004,
+          "return": -122.32433335431132,
+          "upright_fraction": 0.865,
+          "action_energy": 126.20723314665156
+        },
+        {
+          "seed": 71005,
+          "return": -384.46819317766125,
+          "upright_fraction": 0.675,
+          "action_energy": 149.44725047534212
+        },
+        {
+          "seed": 71006,
+          "return": -126.43695931685276,
+          "upright_fraction": 0.81,
+          "action_energy": 121.94932588204028
+        },
+        {
+          "seed": 71007,
+          "return": -0.3648026443007864,
+          "upright_fraction": 1.0,
+          "action_energy": 75.31665710698621
+        },
+        {
+          "seed": 71008,
+          "return": -120.31258790079093,
+          "upright_fraction": 0.87,
+          "action_energy": 108.34785847548119
+        },
+        {
+          "seed": 71009,
+          "return": -1.9491369589127665,
+          "upright_fraction": 0.925,
+          "action_energy": 118.32853590729064
+        }
+      ]
+    },
+    "cem_256": {
+      "summary": {
+        "episodes": 10,
+        "average_return": -112.82515854681826,
+        "return_std": 108.05402068340952,
+        "p10_return": -153.35087889955923,
+        "worst_return": -393.2023749785089,
+        "upright_fraction": 0.8705,
+        "average_action_energy": 76.11128488203545
+      },
+      "episodes": [
+        {
+          "seed": 71000,
+          "return": -0.8662894366651981,
+          "upright_fraction": 0.99,
+          "action_energy": 45.4135841620282
+        },
+        {
+          "seed": 71001,
+          "return": -118.4254781485523,
+          "upright_fraction": 0.885,
+          "action_energy": 44.53035848165791
+        },
+        {
+          "seed": 71002,
+          "return": -118.85419255761656,
+          "upright_fraction": 0.875,
+          "action_energy": 84.0524693145839
+        },
+        {
+          "seed": 71003,
+          "return": -126.70071266856483,
+          "upright_fraction": 0.815,
+          "action_energy": 79.4739919133026
+        },
+        {
+          "seed": 71004,
+          "return": -121.90744967245848,
+          "upright_fraction": 0.86,
+          "action_energy": 87.3431120894711
+        },
+        {
+          "seed": 71005,
+          "return": -393.2023749785089,
+          "upright_fraction": 0.665,
+          "action_energy": 130.67468933732266
+        },
+        {
+          "seed": 71006,
+          "return": -126.27659546248802,
+          "upright_fraction": 0.815,
+          "action_energy": 89.15909227328646
+        },
+        {
+          "seed": 71007,
+          "return": -0.22174788454351438,
+          "upright_fraction": 1.0,
+          "action_energy": 37.37625144988306
+        },
+        {
+          "seed": 71008,
+          "return": -120.1206597111904,
+          "upright_fraction": 0.875,
+          "action_energy": 77.0619013413743
+        },
+        {
+          "seed": 71009,
+          "return": -1.676084947594618,
+          "upright_fraction": 0.925,
+          "action_energy": 86.02739845744418
+        }
+      ]
+    }
+  }
+}

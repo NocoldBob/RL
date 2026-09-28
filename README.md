@@ -436,6 +436,13 @@ TD 误差同时更新策略和价值网络，并用少量熵奖励保持探索�
   off_policy_evaluation.py # 轨迹 IS、WIS 与 FQE
   finetune_offline.py # 直接、混合回放和保守在线微调
   benchmark_offline_reliability.py # 未见种子与扰动审计
+模型式强化学习/
+  pendulum_env.py # Pendulum 环境、扰动和统一评估
+  dynamics_model.py # 动力学模型、模型集成与 MPC/CEM
+  rollout_diagnostics.py # 多步递归预测误差
+  model_based_sac.py # Dyna/MBPO 使用的通用 SAC 与 replay
+  benchmark_imagination.py # 想象比例和 rollout 长度消融
+  benchmark_model_reliability.py # 动力学偏移、噪声和延迟审计
 tutorials/        # 各篇教程的独立代码快照与运行入口
 tests/            # 环境、模型、检查点和短训练测试
 docs/csdn/        # 可发布到 CSDN 的后续教程
@@ -503,15 +510,24 @@ python -m pytest
 - 第四十六篇：不能上线试跑时，如何评估离线策略 · [文章草稿](docs/csdn/46-不能上线试跑时如何评估离线策略.md) · [对应代码](tutorials/46-off-policy-evaluation/)
 - 第四十七篇：离线策略拿到少量交互预算后，应该怎样微调 · [文章草稿](docs/csdn/47-离线策略拿到少量交互预算后应该怎样微调.md) · [对应代码](tutorials/47-offline-to-online/)
 - 第四十八篇：离线训练成功等于可以部署吗：最终可靠性审计 · [文章草稿](docs/csdn/48-离线训练成功等于可以部署吗最终可靠性审计.md) · [对应代码](tutorials/48-offline-reliability/)
+- 第四十九篇：不直接学习策略，先学习环境会怎样变化 · [文章草稿](docs/csdn/49-不直接学习策略先学习环境会怎样变化.md) · [对应代码](tutorials/49-dynamics-model/)
+- 第五十篇：单步预测很准，为什么滚动几十步就错了 · [文章草稿](docs/csdn/50-单步预测很准为什么滚动几十步就错了.md) · [对应代码](tutorials/50-rollout-error/)
+- 第五十一篇：有了环境模型，如何用随机射击规划动作 · [文章草稿](docs/csdn/51-有了环境模型如何用随机射击规划动作.md) · [对应代码](tutorials/51-random-shooting-mpc/)
+- 第五十二篇：随机搜索太浪费，CEM 如何逐轮缩小动作范围 · [文章草稿](docs/csdn/52-随机搜索太浪费CEM如何逐轮缩小动作范围.md) · [对应代码](tutorials/52-cem-planning/)
+- 第五十三篇：一个模型说得很自信，真的可信吗 · [文章草稿](docs/csdn/53-一个模型说得很自信真的可信吗.md) · [对应代码](tutorials/53-ensemble-uncertainty/)
+- 第五十四篇：真实经验不够时，Dyna 如何用想象数据补训练 · [文章草稿](docs/csdn/54-真实经验不够时Dyna如何用想象数据补训练.md) · [对应代码](tutorials/54-dyna/)
+- 第五十五篇：想象轨迹越长越好吗：实现简化版 MBPO · [文章草稿](docs/csdn/55-想象轨迹越长越好吗实现简化版MBPO.md) · [对应代码](tutorials/55-mbpo/)
+- 第五十六篇：固定数据上直接规划，模型会不会钻漏洞 · [文章草稿](docs/csdn/56-固定数据上直接规划模型会不会钻漏洞.md) · [对应代码](tutorials/56-offline-model-planning/)
+- 第五十七篇：模型式强化学习最终可靠性审计 · [文章草稿](docs/csdn/57-模型式强化学习最终可靠性审计.md) · [对应代码](tutorials/57-model-reliability/)
 
 [查看教程与代码的完整索引](tutorials/README.md)
 
 ## 后续路线
 
 MiniGrid DoorKey 项目在第二十四篇闭环；第二十五至三十一篇完成视觉驾驶；第三十二至三十九篇
-完成 Simple Spread 多智能体协作；第四十至四十八篇完成离线数据、BC、离线 DQN、CQL、IQL、
-OPE、离线到在线微调与可靠性审计。下一阶段建议进入模型式强化学习，从学习环境模型、短视野
-规划开始，再逐步比较 Dyna、MBPO 和模型误差下的可靠性。
+完成 Simple Spread 多智能体协作；第四十至四十八篇完成离线强化学习；第四十九至五十七篇完成
+动力学建模、MPC、CEM、模型集成、Dyna、MBPO、离线模型规划与可靠性审计。下一阶段建议进入
+层次强化学习或安全强化学习，也可以把现有方法迁移到真实设备与算力约束环境。
 
 ## License
 

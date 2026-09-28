@@ -1,0 +1,866 @@
+{
+  "experiment": "55-mbpo",
+  "real_transitions": 4000,
+  "results": {
+    "horizon_1": {
+      "training": {
+        "imagined_fraction": 0.5,
+        "rollout_horizon": 1,
+        "updates": 6000,
+        "history": [
+          {
+            "step": 500,
+            "imagined_transitions": 768,
+            "q_loss": 0.01017488818615675,
+            "actor_loss": 2.4615280628204346
+          },
+          {
+            "step": 1000,
+            "imagined_transitions": 1280,
+            "q_loss": 0.014665314927697182,
+            "actor_loss": 4.862159729003906
+          },
+          {
+            "step": 1500,
+            "imagined_transitions": 1792,
+            "q_loss": 0.022473515942692757,
+            "actor_loss": 7.1089324951171875
+          },
+          {
+            "step": 2000,
+            "imagined_transitions": 2304,
+            "q_loss": 0.06397075206041336,
+            "actor_loss": 8.866212844848633
+          },
+          {
+            "step": 2500,
+            "imagined_transitions": 2816,
+            "q_loss": 0.0875595211982727,
+            "actor_loss": 10.438941955566406
+          },
+          {
+            "step": 3000,
+            "imagined_transitions": 3328,
+            "q_loss": 0.09240341186523438,
+            "actor_loss": 11.58606243133545
+          },
+          {
+            "step": 3500,
+            "imagined_transitions": 3840,
+            "q_loss": 0.14409488439559937,
+            "actor_loss": 12.796852111816406
+          },
+          {
+            "step": 4000,
+            "imagined_transitions": 4352,
+            "q_loss": 0.2169921100139618,
+            "actor_loss": 13.192290306091309
+          },
+          {
+            "step": 4500,
+            "imagined_transitions": 4864,
+            "q_loss": 0.18900266289710999,
+            "actor_loss": 14.690391540527344
+          },
+          {
+            "step": 5000,
+            "imagined_transitions": 5376,
+            "q_loss": 0.4002844989299774,
+            "actor_loss": 12.615067481994629
+          },
+          {
+            "step": 5500,
+            "imagined_transitions": 5888,
+            "q_loss": 0.4179738759994507,
+            "actor_loss": 13.750670433044434
+          },
+          {
+            "step": 6000,
+            "imagined_transitions": 6400,
+            "q_loss": 0.45410966873168945,
+            "actor_loss": 10.233180046081543
+          }
+        ]
+      },
+      "evaluation": {
+        "summary": {
+          "episodes": 20,
+          "average_return": -159.44068327224664,
+          "return_std": 109.18816191984148,
+          "p10_return": -322.8298637034914,
+          "worst_return": -342.21774141232174,
+          "upright_fraction": 0.8487500000000001,
+          "average_action_energy": 78.88501769300493
+        },
+        "episodes": [
+          {
+            "seed": 74000,
+            "return": -240.11340300781956,
+            "upright_fraction": 0.78,
+            "action_energy": 145.41618714435026
+          },
+          {
+            "seed": 74001,
+            "return": -123.10490559671368,
+            "upright_fraction": 0.88,
+            "action_energy": 39.12454273668118
+          },
+          {
+            "seed": 74002,
+            "return": -115.85319911314062,
+            "upright_fraction": 0.89,
+            "action_energy": 59.70365997985937
+          },
+          {
+            "seed": 74003,
+            "return": -322.10705403422526,
+            "upright_fraction": 0.735,
+            "action_energy": 126.00037659215741
+          },
+          {
+            "seed": 74004,
+            "return": -125.56926252654549,
+            "upright_fraction": 0.845,
+            "action_energy": 38.91456689895131
+          },
+          {
+            "seed": 74005,
+            "return": -1.0635878694944327,
+            "upright_fraction": 0.985,
+            "action_energy": 31.40315108001232
+          },
+          {
+            "seed": 74006,
+            "return": -255.53851130574304,
+            "upright_fraction": 0.79,
+            "action_energy": 105.74470596259926
+          },
+          {
+            "seed": 74007,
+            "return": -1.6449630835348423,
+            "upright_fraction": 0.985,
+            "action_energy": 27.390644289553165
+          },
+          {
+            "seed": 74008,
+            "return": -1.833026812516281,
+            "upright_fraction": 0.95,
+            "action_energy": 58.87372731231153
+          },
+          {
+            "seed": 74009,
+            "return": -124.76769343341405,
+            "upright_fraction": 0.85,
+            "action_energy": 37.54031719046179
+          },
+          {
+            "seed": 74010,
+            "return": -116.5603859629682,
+            "upright_fraction": 0.89,
+            "action_energy": 59.899240670361905
+          },
+          {
+            "seed": 74011,
+            "return": -225.9281794502004,
+            "upright_fraction": 0.795,
+            "action_energy": 141.38117556646466
+          },
+          {
+            "seed": 74012,
+            "return": -121.42620615745513,
+            "upright_fraction": 0.875,
+            "action_energy": 38.7657476849854
+          },
+          {
+            "seed": 74013,
+            "return": -119.26313857707578,
+            "upright_fraction": 0.88,
+            "action_energy": 79.39693339032237
+          },
+          {
+            "seed": 74014,
+            "return": -1.180658858968464,
+            "upright_fraction": 0.985,
+            "action_energy": 26.339748229831457
+          },
+          {
+            "seed": 74015,
+            "return": -116.60966062630183,
+            "upright_fraction": 0.88,
+            "action_energy": 84.50792647805429
+          },
+          {
+            "seed": 74016,
+            "return": -329.3351507268866,
+            "upright_fraction": 0.73,
+            "action_energy": 126.71037083631381
+          },
+          {
+            "seed": 74017,
+            "return": -244.91270596083538,
+            "upright_fraction": 0.755,
+            "action_energy": 105.34576843120158
+          },
+          {
+            "seed": 74018,
+            "return": -342.21774141232174,
+            "upright_fraction": 0.71,
+            "action_energy": 138.95727671471468
+          },
+          {
+            "seed": 74019,
+            "return": -259.7842309287719,
+            "upright_fraction": 0.785,
+            "action_energy": 106.28428667091066
+          }
+        ]
+      },
+      "checkpoint": "runs\\model-based\\mbpo-horizon_1.pt"
+    },
+    "horizon_3": {
+      "training": {
+        "imagined_fraction": 0.5,
+        "rollout_horizon": 3,
+        "updates": 6000,
+        "history": [
+          {
+            "step": 500,
+            "imagined_transitions": 2304,
+            "q_loss": 0.009636449627578259,
+            "actor_loss": 2.894591808319092
+          },
+          {
+            "step": 1000,
+            "imagined_transitions": 3840,
+            "q_loss": 0.020988566800951958,
+            "actor_loss": 5.39701509475708
+          },
+          {
+            "step": 1500,
+            "imagined_transitions": 5376,
+            "q_loss": 0.036605317145586014,
+            "actor_loss": 7.4743242263793945
+          },
+          {
+            "step": 2000,
+            "imagined_transitions": 6912,
+            "q_loss": 0.06873337179422379,
+            "actor_loss": 8.842379570007324
+          },
+          {
+            "step": 2500,
+            "imagined_transitions": 8448,
+            "q_loss": 0.09763635694980621,
+            "actor_loss": 10.879827499389648
+          },
+          {
+            "step": 3000,
+            "imagined_transitions": 9984,
+            "q_loss": 0.1416230946779251,
+            "actor_loss": 12.394538879394531
+          },
+          {
+            "step": 3500,
+            "imagined_transitions": 11520,
+            "q_loss": 0.13351985812187195,
+            "actor_loss": 13.126978874206543
+          },
+          {
+            "step": 4000,
+            "imagined_transitions": 13056,
+            "q_loss": 0.1860542595386505,
+            "actor_loss": 13.022299766540527
+          },
+          {
+            "step": 4500,
+            "imagined_transitions": 14592,
+            "q_loss": 0.3220675587654114,
+            "actor_loss": 13.036334037780762
+          },
+          {
+            "step": 5000,
+            "imagined_transitions": 16128,
+            "q_loss": 0.22782552242279053,
+            "actor_loss": 12.818103790283203
+          },
+          {
+            "step": 5500,
+            "imagined_transitions": 17664,
+            "q_loss": 0.30593910813331604,
+            "actor_loss": 12.278694152832031
+          },
+          {
+            "step": 6000,
+            "imagined_transitions": 19200,
+            "q_loss": 0.4015148878097534,
+            "actor_loss": 11.130331039428711
+          }
+        ]
+      },
+      "evaluation": {
+        "summary": {
+          "episodes": 20,
+          "average_return": -159.11640699772093,
+          "return_std": 109.25682872708465,
+          "p10_return": -319.7155773232325,
+          "worst_return": -340.5779605768914,
+          "upright_fraction": 0.85,
+          "average_action_energy": 65.6166758454248
+        },
+        "episodes": [
+          {
+            "seed": 74000,
+            "return": -241.92912385435324,
+            "upright_fraction": 0.765,
+            "action_energy": 154.3807199334537
+          },
+          {
+            "seed": 74001,
+            "return": -122.61499337841418,
+            "upright_fraction": 0.88,
+            "action_energy": 30.47908787948876
+          },
+          {
+            "seed": 74002,
+            "return": -115.44174516828492,
+            "upright_fraction": 0.89,
+            "action_energy": 45.06203429229175
+          },
+          {
+            "seed": 74003,
+            "return": -318.5767134360772,
+            "upright_fraction": 0.75,
+            "action_energy": 110.32532262928598
+          },
+          {
+            "seed": 74004,
+            "return": -125.12684561132588,
+            "upright_fraction": 0.845,
+            "action_energy": 28.417502507755795
+          },
+          {
+            "seed": 74005,
+            "return": -0.48811777095530007,
+            "upright_fraction": 0.985,
+            "action_energy": 18.749085862713848
+          },
+          {
+            "seed": 74006,
+            "return": -256.69856353592735,
+            "upright_fraction": 0.785,
+            "action_energy": 92.69419604412957
+          },
+          {
+            "seed": 74007,
+            "return": -0.9895004304534935,
+            "upright_fraction": 0.985,
+            "action_energy": 8.799261148976647
+          },
+          {
+            "seed": 74008,
+            "return": -1.1905863278401403,
+            "upright_fraction": 0.95,
+            "action_energy": 40.31080921835877
+          },
+          {
+            "seed": 74009,
+            "return": -124.66434125513278,
+            "upright_fraction": 0.855,
+            "action_energy": 24.968846966209327
+          },
+          {
+            "seed": 74010,
+            "return": -116.20106782558568,
+            "upright_fraction": 0.89,
+            "action_energy": 45.324295061097054
+          },
+          {
+            "seed": 74011,
+            "return": -224.722934381441,
+            "upright_fraction": 0.8,
+            "action_energy": 120.94714816048973
+          },
+          {
+            "seed": 74012,
+            "return": -120.85520469858882,
+            "upright_fraction": 0.88,
+            "action_energy": 24.218914927445546
+          },
+          {
+            "seed": 74013,
+            "return": -118.85891457538563,
+            "upright_fraction": 0.88,
+            "action_energy": 65.17349147837277
+          },
+          {
+            "seed": 74014,
+            "return": -0.6054577698620783,
+            "upright_fraction": 0.985,
+            "action_energy": 13.786625130649412
+          },
+          {
+            "seed": 74015,
+            "return": -115.9967329072431,
+            "upright_fraction": 0.88,
+            "action_energy": 70.3462910952303
+          },
+          {
+            "seed": 74016,
+            "return": -329.9653523076297,
+            "upright_fraction": 0.74,
+            "action_energy": 110.8457560365244
+          },
+          {
+            "seed": 74017,
+            "return": -245.44110196874198,
+            "upright_fraction": 0.76,
+            "action_energy": 91.62579977173698
+          },
+          {
+            "seed": 74018,
+            "return": -340.5779605768914,
+            "upright_fraction": 0.715,
+            "action_energy": 122.61550089656501
+          },
+          {
+            "seed": 74019,
+            "return": -261.3828821742845,
+            "upright_fraction": 0.78,
+            "action_energy": 93.26282786772039
+          }
+        ]
+      },
+      "checkpoint": "runs\\model-based\\mbpo-horizon_3.pt"
+    },
+    "horizon_5": {
+      "training": {
+        "imagined_fraction": 0.5,
+        "rollout_horizon": 5,
+        "updates": 6000,
+        "history": [
+          {
+            "step": 500,
+            "imagined_transitions": 3840,
+            "q_loss": 0.01091354712843895,
+            "actor_loss": 3.1422696113586426
+          },
+          {
+            "step": 1000,
+            "imagined_transitions": 6400,
+            "q_loss": 0.022185053676366806,
+            "actor_loss": 5.281479835510254
+          },
+          {
+            "step": 1500,
+            "imagined_transitions": 8960,
+            "q_loss": 0.028952788561582565,
+            "actor_loss": 7.651012897491455
+          },
+          {
+            "step": 2000,
+            "imagined_transitions": 11520,
+            "q_loss": 0.049524176865816116,
+            "actor_loss": 9.519052505493164
+          },
+          {
+            "step": 2500,
+            "imagined_transitions": 14080,
+            "q_loss": 0.06571517884731293,
+            "actor_loss": 10.747855186462402
+          },
+          {
+            "step": 3000,
+            "imagined_transitions": 16640,
+            "q_loss": 0.08731025457382202,
+            "actor_loss": 12.143198013305664
+          },
+          {
+            "step": 3500,
+            "imagined_transitions": 19200,
+            "q_loss": 0.10213236510753632,
+            "actor_loss": 12.461524963378906
+          },
+          {
+            "step": 4000,
+            "imagined_transitions": 21760,
+            "q_loss": 0.15104171633720398,
+            "actor_loss": 12.518096923828125
+          },
+          {
+            "step": 4500,
+            "imagined_transitions": 24320,
+            "q_loss": 0.24213480949401855,
+            "actor_loss": 12.754151344299316
+          },
+          {
+            "step": 5000,
+            "imagined_transitions": 26880,
+            "q_loss": 0.2011655569076538,
+            "actor_loss": 12.75546646118164
+          },
+          {
+            "step": 5500,
+            "imagined_transitions": 29440,
+            "q_loss": 0.2418159395456314,
+            "actor_loss": 11.591095924377441
+          },
+          {
+            "step": 6000,
+            "imagined_transitions": 32000,
+            "q_loss": 0.29548436403274536,
+            "actor_loss": 11.702075004577637
+          }
+        ]
+      },
+      "evaluation": {
+        "summary": {
+          "episodes": 20,
+          "average_return": -158.7492563459,
+          "return_std": 108.93813201849905,
+          "p10_return": -321.47322069405595,
+          "worst_return": -340.8341161826509,
+          "upright_fraction": 0.8500000000000002,
+          "average_action_energy": 66.73995701666915
+        },
+        "episodes": [
+          {
+            "seed": 74000,
+            "return": -239.12138589724623,
+            "upright_fraction": 0.78,
+            "action_energy": 138.61480216495693
+          },
+          {
+            "seed": 74001,
+            "return": -122.52166563433676,
+            "upright_fraction": 0.875,
+            "action_energy": 24.632240319857374
+          },
+          {
+            "seed": 74002,
+            "return": -115.2062757842816,
+            "upright_fraction": 0.89,
+            "action_energy": 48.22794984612892
+          },
+          {
+            "seed": 74003,
+            "return": -320.6056773565907,
+            "upright_fraction": 0.74,
+            "action_energy": 117.0088727187831
+          },
+          {
+            "seed": 74004,
+            "return": -125.31474721788624,
+            "upright_fraction": 0.845,
+            "action_energy": 23.48815819871379
+          },
+          {
+            "seed": 74005,
+            "return": -0.6078660979684009,
+            "upright_fraction": 0.985,
+            "action_energy": 20.698742346838117
+          },
+          {
+            "seed": 74006,
+            "return": -253.70288647260554,
+            "upright_fraction": 0.79,
+            "action_energy": 94.28945285920054
+          },
+          {
+            "seed": 74007,
+            "return": -1.1752160948243546,
+            "upright_fraction": 0.985,
+            "action_energy": 15.497282150899991
+          },
+          {
+            "seed": 74008,
+            "return": -1.3870227439338918,
+            "upright_fraction": 0.95,
+            "action_energy": 47.13051499426365
+          },
+          {
+            "seed": 74009,
+            "return": -124.6230875586371,
+            "upright_fraction": 0.85,
+            "action_energy": 23.66946083708899
+          },
+          {
+            "seed": 74010,
+            "return": -115.93493237608892,
+            "upright_fraction": 0.89,
+            "action_energy": 48.40631002438022
+          },
+          {
+            "seed": 74011,
+            "return": -224.99714589573622,
+            "upright_fraction": 0.805,
+            "action_energy": 122.0929046962201
+          },
+          {
+            "seed": 74012,
+            "return": -120.98250928701206,
+            "upright_fraction": 0.875,
+            "action_energy": 25.449106908403337
+          },
+          {
+            "seed": 74013,
+            "return": -118.81527666227105,
+            "upright_fraction": 0.88,
+            "action_energy": 67.90632608358283
+          },
+          {
+            "seed": 74014,
+            "return": -0.7235332859053218,
+            "upright_fraction": 0.985,
+            "action_energy": 15.63729836139828
+          },
+          {
+            "seed": 74015,
+            "return": -116.03189609819076,
+            "upright_fraction": 0.885,
+            "action_energy": 73.56194397667423
+          },
+          {
+            "seed": 74016,
+            "return": -329.2811107312431,
+            "upright_fraction": 0.735,
+            "action_energy": 117.9658512804017
+          },
+          {
+            "seed": 74017,
+            "return": -245.16927582978525,
+            "upright_fraction": 0.755,
+            "action_energy": 92.34257950618485
+          },
+          {
+            "seed": 74018,
+            "return": -340.8341161826509,
+            "upright_fraction": 0.715,
+            "action_energy": 123.74943171444465
+          },
+          {
+            "seed": 74019,
+            "return": -257.94949971080496,
+            "upright_fraction": 0.785,
+            "action_energy": 94.42991134496151
+          }
+        ]
+      },
+      "checkpoint": "runs\\model-based\\mbpo-horizon_5.pt"
+    },
+    "horizon_10": {
+      "training": {
+        "imagined_fraction": 0.5,
+        "rollout_horizon": 10,
+        "updates": 6000,
+        "history": [
+          {
+            "step": 500,
+            "imagined_transitions": 7680,
+            "q_loss": 0.010178209282457829,
+            "actor_loss": 2.724316120147705
+          },
+          {
+            "step": 1000,
+            "imagined_transitions": 12800,
+            "q_loss": 0.018533622846007347,
+            "actor_loss": 5.133370399475098
+          },
+          {
+            "step": 1500,
+            "imagined_transitions": 17920,
+            "q_loss": 0.030796021223068237,
+            "actor_loss": 7.280604362487793
+          },
+          {
+            "step": 2000,
+            "imagined_transitions": 23040,
+            "q_loss": 0.06371186673641205,
+            "actor_loss": 8.759363174438477
+          },
+          {
+            "step": 2500,
+            "imagined_transitions": 28160,
+            "q_loss": 0.08616315573453903,
+            "actor_loss": 10.336833953857422
+          },
+          {
+            "step": 3000,
+            "imagined_transitions": 33280,
+            "q_loss": 0.10711111128330231,
+            "actor_loss": 11.3872709274292
+          },
+          {
+            "step": 3500,
+            "imagined_transitions": 38400,
+            "q_loss": 0.13791361451148987,
+            "actor_loss": 12.132761001586914
+          },
+          {
+            "step": 4000,
+            "imagined_transitions": 43520,
+            "q_loss": 0.1855759471654892,
+            "actor_loss": 13.001949310302734
+          },
+          {
+            "step": 4500,
+            "imagined_transitions": 48640,
+            "q_loss": 0.19506937265396118,
+            "actor_loss": 11.992635726928711
+          },
+          {
+            "step": 5000,
+            "imagined_transitions": 53760,
+            "q_loss": 0.19716325402259827,
+            "actor_loss": 12.40390396118164
+          },
+          {
+            "step": 5500,
+            "imagined_transitions": 58880,
+            "q_loss": 0.1969943642616272,
+            "actor_loss": 10.870058059692383
+          },
+          {
+            "step": 6000,
+            "imagined_transitions": 64000,
+            "q_loss": 0.21953058242797852,
+            "actor_loss": 10.855324745178223
+          }
+        ]
+      },
+      "evaluation": {
+        "summary": {
+          "episodes": 20,
+          "average_return": -159.62100227112094,
+          "return_std": 109.84972360927063,
+          "p10_return": -323.27607110081124,
+          "worst_return": -344.54548724318107,
+          "upright_fraction": 0.8465,
+          "average_action_energy": 65.2259644532397
+        },
+        "episodes": [
+          {
+            "seed": 74000,
+            "return": -241.10414257664056,
+            "upright_fraction": 0.78,
+            "action_energy": 130.54143073689193
+          },
+          {
+            "seed": 74001,
+            "return": -122.32474435921657,
+            "upright_fraction": 0.875,
+            "action_energy": 18.491036083956715
+          },
+          {
+            "seed": 74002,
+            "return": -115.4599846428044,
+            "upright_fraction": 0.89,
+            "action_energy": 46.420438471250236
+          },
+          {
+            "seed": 74003,
+            "return": -322.6548940616141,
+            "upright_fraction": 0.73,
+            "action_energy": 115.85909153113607
+          },
+          {
+            "seed": 74004,
+            "return": -125.41498921922555,
+            "upright_fraction": 0.835,
+            "action_energy": 32.42547148396261
+          },
+          {
+            "seed": 74005,
+            "return": -0.5865942729228513,
+            "upright_fraction": 0.985,
+            "action_energy": 19.499702541157603
+          },
+          {
+            "seed": 74006,
+            "return": -258.70176096679927,
+            "upright_fraction": 0.785,
+            "action_energy": 94.82912983070128
+          },
+          {
+            "seed": 74007,
+            "return": -1.107420665011244,
+            "upright_fraction": 0.985,
+            "action_energy": 12.569889543578029
+          },
+          {
+            "seed": 74008,
+            "return": -1.3099918427742978,
+            "upright_fraction": 0.95,
+            "action_energy": 44.10097519867122
+          },
+          {
+            "seed": 74009,
+            "return": -124.59699874826457,
+            "upright_fraction": 0.845,
+            "action_energy": 28.166901998687536
+          },
+          {
+            "seed": 74010,
+            "return": -116.2744877120597,
+            "upright_fraction": 0.89,
+            "action_energy": 46.557856581232045
+          },
+          {
+            "seed": 74011,
+            "return": -225.149093257606,
+            "upright_fraction": 0.8,
+            "action_energy": 119.81408709066454
+          },
+          {
+            "seed": 74012,
+            "return": -120.8127420128827,
+            "upright_fraction": 0.87,
+            "action_energy": 25.923789713764563
+          },
+          {
+            "seed": 74013,
+            "return": -119.29239219801359,
+            "upright_fraction": 0.88,
+            "action_energy": 65.8603089475364
+          },
+          {
+            "seed": 74014,
+            "return": -0.7022120487796775,
+            "upright_fraction": 0.985,
+            "action_energy": 14.324061403051019
+          },
+          {
+            "seed": 74015,
+            "return": -116.44296367194089,
+            "upright_fraction": 0.88,
+            "action_energy": 71.0108698894528
+          },
+          {
+            "seed": 74016,
+            "return": -328.86666445358577,
+            "upright_fraction": 0.725,
+            "action_energy": 116.29262601747178
+          },
+          {
+            "seed": 74017,
+            "return": -244.10977131617855,
+            "upright_fraction": 0.76,
+            "action_energy": 82.39964607963338
+          },
+          {
+            "seed": 74018,
+            "return": -344.54548724318107,
+            "upright_fraction": 0.7,
+            "action_energy": 124.28536729869666
+          },
+          {
+            "seed": 74019,
+            "return": -262.9627101529175,
+            "upright_fraction": 0.78,
+            "action_energy": 95.14660862329765
+          }
+        ]
+      },
+      "checkpoint": "runs\\model-based\\mbpo-horizon_10.pt"
+    }
+  }
+}

@@ -53,6 +53,15 @@
 | 46 | IS、WIS 与 FQE | [文章草稿](../docs/csdn/46-不能上线试跑时如何评估离线策略.md) | [`46-off-policy-evaluation/`](46-off-policy-evaluation/) |
 | 47 | 离线到在线微调 | [文章草稿](../docs/csdn/47-离线策略拿到少量交互预算后应该怎样微调.md) | [`47-offline-to-online/`](47-offline-to-online/) |
 | 48 | 离线策略可靠性审计 | [文章草稿](../docs/csdn/48-离线训练成功等于可以部署吗最终可靠性审计.md) | [`48-offline-reliability/`](48-offline-reliability/) |
+| 49 | Pendulum 动力学模型 | [文章草稿](../docs/csdn/49-不直接学习策略先学习环境会怎样变化.md) | [`49-dynamics-model/`](49-dynamics-model/) |
+| 50 | 多步模型误差 | [文章草稿](../docs/csdn/50-单步预测很准为什么滚动几十步就错了.md) | [`50-rollout-error/`](50-rollout-error/) |
+| 51 | Random Shooting MPC | [文章草稿](../docs/csdn/51-有了环境模型如何用随机射击规划动作.md) | [`51-random-shooting-mpc/`](51-random-shooting-mpc/) |
+| 52 | CEM 规划 | [文章草稿](../docs/csdn/52-随机搜索太浪费CEM如何逐轮缩小动作范围.md) | [`52-cem-planning/`](52-cem-planning/) |
+| 53 | 模型集成与不确定性 | [文章草稿](../docs/csdn/53-一个模型说得很自信真的可信吗.md) | [`53-ensemble-uncertainty/`](53-ensemble-uncertainty/) |
+| 54 | Dyna 想象数据 | [文章草稿](../docs/csdn/54-真实经验不够时Dyna如何用想象数据补训练.md) | [`54-dyna/`](54-dyna/) |
+| 55 | 简化版 MBPO | [文章草稿](../docs/csdn/55-想象轨迹越长越好吗实现简化版MBPO.md) | [`55-mbpo/`](55-mbpo/) |
+| 56 | 离线模型规划 | [文章草稿](../docs/csdn/56-固定数据上直接规划模型会不会钻漏洞.md) | [`56-offline-model-planning/`](56-offline-model-planning/) |
+| 57 | 模型式强化学习可靠性审计 | [文章草稿](../docs/csdn/57-模型式强化学习最终可靠性审计.md) | [`57-model-reliability/`](57-model-reliability/) |
 
 ## 使用方法
 
@@ -106,5 +115,7 @@ python -m pip install -r requirements.txt
 - 第 39 篇注入观测噪声和单体失效，审计团队可靠性。
 - 第 40 至第 45 篇建立版本化 Acrobot 数据，并依次比较 BC、离线 DQN、CQL、IQL 与数据质量。
 - 第 46 至第 48 篇实现 OPE、少量在线微调和独立扰动审计，形成离线强化学习闭环。
-- [`../贪吃蛇/`](../贪吃蛇/)、[`../连续控制/`](../连续控制/) 和 [`../离线强化学习/`](../离线强化学习/) 保存各阶段持续更新的实现；
+- 第 49 至第 53 篇从动力学模型、多步误差推进到 MPC、CEM 与模型集成。
+- 第 54 至第 57 篇实现 Dyna、MBPO、离线模型规划和动力学偏移可靠性审计。
+- [`../贪吃蛇/`](../贪吃蛇/)、[`../连续控制/`](../连续控制/)、[`../离线强化学习/`](../离线强化学习/) 和 [`../模型式强化学习/`](../模型式强化学习/) 保存各阶段持续更新的实现；
   教程快照只为配合文章阅读，不会随以后章节的功能继续变化。

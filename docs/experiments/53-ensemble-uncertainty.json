@@ -1,0 +1,177 @@
+{
+  "experiment": "53-ensemble-uncertainty",
+  "results": {
+    "single": {
+      "summary": {
+        "episodes": 5,
+        "average_return": -148.25404039564583,
+        "return_std": 92.62419735250046,
+        "p10_return": -247.99406324548167,
+        "worst_return": -249.48515880091844,
+        "upright_fraction": 0.845,
+        "average_action_energy": 117.10593597595592
+      },
+      "episodes": [
+        {
+          "seed": 72000,
+          "return": -123.47013752617106,
+          "upright_fraction": 0.86,
+          "action_energy": 110.07614043193462
+        },
+        {
+          "seed": 72001,
+          "return": -0.45968860094837233,
+          "upright_fraction": 1.0,
+          "action_energy": 91.03224939242273
+        },
+        {
+          "seed": 72002,
+          "return": -249.48515880091844,
+          "upright_fraction": 0.755,
+          "action_energy": 142.31873438265495
+        },
+        {
+          "seed": 72003,
+          "return": -122.09779713786475,
+          "upright_fraction": 0.865,
+          "action_energy": 112.37373945653962
+        },
+        {
+          "seed": 72004,
+          "return": -245.75741991232653,
+          "upright_fraction": 0.745,
+          "action_energy": 129.72881621622764
+        }
+      ]
+    },
+    "ensemble": {
+      "summary": {
+        "episodes": 5,
+        "average_return": -148.56218555851734,
+        "return_std": 92.84521649587258,
+        "p10_return": -248.45614824572286,
+        "worst_return": -249.44881697532358,
+        "upright_fraction": 0.843,
+        "average_action_energy": 124.65966362409108
+      },
+      "episodes": [
+        {
+          "seed": 72000,
+          "return": -123.18828800061344,
+          "upright_fraction": 0.855,
+          "action_energy": 114.67564420489362
+        },
+        {
+          "seed": 72001,
+          "return": -0.4804873993606604,
+          "upright_fraction": 1.0,
+          "action_energy": 100.37895401848436
+        },
+        {
+          "seed": 72002,
+          "return": -249.44881697532358,
+          "upright_fraction": 0.755,
+          "action_energy": 149.63726949252032
+        },
+        {
+          "seed": 72003,
+          "return": -122.72619026596726,
+          "upright_fraction": 0.86,
+          "action_energy": 126.0902802227356
+        },
+        {
+          "seed": 72004,
+          "return": -246.96714515132174,
+          "upright_fraction": 0.745,
+          "action_energy": 132.5161701818215
+        }
+      ]
+    },
+    "pessimistic_0.5": {
+      "summary": {
+        "episodes": 5,
+        "average_return": -148.5504600636319,
+        "return_std": 92.63081212836092,
+        "p10_return": -248.19164730120076,
+        "worst_return": -249.38026548723565,
+        "upright_fraction": 0.844,
+        "average_action_energy": 123.44538260636928
+      },
+      "episodes": [
+        {
+          "seed": 72000,
+          "return": -123.40548404686038,
+          "upright_fraction": 0.86,
+          "action_energy": 117.0702471019249
+        },
+        {
+          "seed": 72001,
+          "return": -0.6700930972260274,
+          "upright_fraction": 1.0,
+          "action_energy": 97.46773206141916
+        },
+        {
+          "seed": 72002,
+          "return": -249.38026548723565,
+          "upright_fraction": 0.755,
+          "action_energy": 148.4843725711471
+        },
+        {
+          "seed": 72003,
+          "return": -122.88773766468897,
+          "upright_fraction": 0.86,
+          "action_energy": 127.83428282498426
+        },
+        {
+          "seed": 72004,
+          "return": -246.40872002214843,
+          "upright_fraction": 0.745,
+          "action_energy": 126.37027847237096
+        }
+      ]
+    },
+    "pessimistic_2.0": {
+      "summary": {
+        "episodes": 5,
+        "average_return": -149.65032683718704,
+        "return_std": 92.97747935704791,
+        "p10_return": -249.6358363617046,
+        "worst_return": -250.3324364877761,
+        "upright_fraction": 0.8380000000000001,
+        "average_action_energy": 136.74265027189503
+      },
+      "episodes": [
+        {
+          "seed": 72000,
+          "return": -124.12716033036563,
+          "upright_fraction": 0.855,
+          "action_energy": 134.67705770703444
+        },
+        {
+          "seed": 72001,
+          "return": -1.3993747782729895,
+          "upright_fraction": 1.0,
+          "action_energy": 110.61329589517482
+        },
+        {
+          "seed": 72002,
+          "return": -250.3324364877761,
+          "upright_fraction": 0.745,
+          "action_energy": 143.48092408982848
+        },
+        {
+          "seed": 72003,
+          "return": -123.80172641692305,
+          "upright_fraction": 0.85,
+          "action_energy": 136.94266851952693
+        },
+        {
+          "seed": 72004,
+          "return": -248.59093617259734,
+          "upright_fraction": 0.74,
+          "action_energy": 157.9993051479105
+        }
+      ]
+    }
+  }
+}

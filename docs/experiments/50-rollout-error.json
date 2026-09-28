@@ -1,0 +1,108 @@
+{
+  "experiment": "50-rollout-error",
+  "checkpoint": {
+    "seed": 11,
+    "best_validation_loss": 0.002662387676537037,
+    "history": [
+      {
+        "step": 250,
+        "validation_loss": 0.03174486383795738,
+        "state_rmse": 0.03864676132798195,
+        "reward_rmse": 0.6821104884147644
+      },
+      {
+        "step": 500,
+        "validation_loss": 0.008757833391427994,
+        "state_rmse": 0.02790016680955887,
+        "reward_rmse": 0.5266216993331909
+      },
+      {
+        "step": 750,
+        "validation_loss": 0.006614540237933397,
+        "state_rmse": 0.026518790051341057,
+        "reward_rmse": 0.4724239110946655
+      },
+      {
+        "step": 1000,
+        "validation_loss": 0.005293096881359816,
+        "state_rmse": 0.02592918463051319,
+        "reward_rmse": 0.4118805229663849
+      },
+      {
+        "step": 1250,
+        "validation_loss": 0.004426141269505024,
+        "state_rmse": 0.025542521849274635,
+        "reward_rmse": 0.35698291659355164
+      },
+      {
+        "step": 1500,
+        "validation_loss": 0.0038674981333315372,
+        "state_rmse": 0.025088880211114883,
+        "reward_rmse": 0.3189387917518616
+      },
+      {
+        "step": 1750,
+        "validation_loss": 0.0036137597635388374,
+        "state_rmse": 0.024891560897231102,
+        "reward_rmse": 0.3030855655670166
+      },
+      {
+        "step": 2000,
+        "validation_loss": 0.003402397967875004,
+        "state_rmse": 0.024630386382341385,
+        "reward_rmse": 0.2913200259208679
+      },
+      {
+        "step": 2250,
+        "validation_loss": 0.0033023073337972164,
+        "state_rmse": 0.024526000022888184,
+        "reward_rmse": 0.28554007411003113
+      },
+      {
+        "step": 2500,
+        "validation_loss": 0.0032802156638354063,
+        "state_rmse": 0.025226153433322906,
+        "reward_rmse": 0.2745082378387451
+      },
+      {
+        "step": 2750,
+        "validation_loss": 0.002925700042396784,
+        "state_rmse": 0.024171173572540283,
+        "reward_rmse": 0.2538561224937439
+      },
+      {
+        "step": 3000,
+        "validation_loss": 0.002662387676537037,
+        "state_rmse": 0.024039682000875473,
+        "reward_rmse": 0.22565177083015442
+      }
+    ]
+  },
+  "horizons": [
+    {
+      "horizon": 1,
+      "state_rmse": 0.013391408688449407,
+      "reward_mae": 0.14814060096733367
+    },
+    {
+      "horizon": 5,
+      "state_rmse": 0.05886479015438401,
+      "reward_mae": 0.6943747632922171
+    },
+    {
+      "horizon": 10,
+      "state_rmse": 0.06939382373033373,
+      "reward_mae": 1.1674444210586212
+    },
+    {
+      "horizon": 25,
+      "state_rmse": 0.30818819619819293,
+      "reward_mae": 1.9845017530197446
+    },
+    {
+      "horizon": 50,
+      "state_rmse": 3.4882380270986806,
+      "reward_mae": 5.37002875115788
+    }
+  ]
+}

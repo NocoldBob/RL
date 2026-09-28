@@ -1,0 +1,407 @@
+{
+  "experiment": "49-dynamics-model",
+  "training_transitions": 19200,
+  "validation_transitions": 4800,
+  "models": [
+    {
+      "model": 0,
+      "checkpoint": "runs\\model-based\\dynamics\\model-0.pt",
+      "seed": 11,
+      "best_validation_loss": 0.002662387676537037,
+      "history": [
+        {
+          "step": 250,
+          "validation_loss": 0.03174486383795738,
+          "state_rmse": 0.03864676132798195,
+          "reward_rmse": 0.6821104884147644
+        },
+        {
+          "step": 500,
+          "validation_loss": 0.008757833391427994,
+          "state_rmse": 0.02790016680955887,
+          "reward_rmse": 0.5266216993331909
+        },
+        {
+          "step": 750,
+          "validation_loss": 0.006614540237933397,
+          "state_rmse": 0.026518790051341057,
+          "reward_rmse": 0.4724239110946655
+        },
+        {
+          "step": 1000,
+          "validation_loss": 0.005293096881359816,
+          "state_rmse": 0.02592918463051319,
+          "reward_rmse": 0.4118805229663849
+        },
+        {
+          "step": 1250,
+          "validation_loss": 0.004426141269505024,
+          "state_rmse": 0.025542521849274635,
+          "reward_rmse": 0.35698291659355164
+        },
+        {
+          "step": 1500,
+          "validation_loss": 0.0038674981333315372,
+          "state_rmse": 0.025088880211114883,
+          "reward_rmse": 0.3189387917518616
+        },
+        {
+          "step": 1750,
+          "validation_loss": 0.0036137597635388374,
+          "state_rmse": 0.024891560897231102,
+          "reward_rmse": 0.3030855655670166
+        },
+        {
+          "step": 2000,
+          "validation_loss": 0.003402397967875004,
+          "state_rmse": 0.024630386382341385,
+          "reward_rmse": 0.2913200259208679
+        },
+        {
+          "step": 2250,
+          "validation_loss": 0.0033023073337972164,
+          "state_rmse": 0.024526000022888184,
+          "reward_rmse": 0.28554007411003113
+        },
+        {
+          "step": 2500,
+          "validation_loss": 0.0032802156638354063,
+          "state_rmse": 0.025226153433322906,
+          "reward_rmse": 0.2745082378387451
+        },
+        {
+          "step": 2750,
+          "validation_loss": 0.002925700042396784,
+          "state_rmse": 0.024171173572540283,
+          "reward_rmse": 0.2538561224937439
+        },
+        {
+          "step": 3000,
+          "validation_loss": 0.002662387676537037,
+          "state_rmse": 0.024039682000875473,
+          "reward_rmse": 0.22565177083015442
+        }
+      ]
+    },
+    {
+      "model": 1,
+      "checkpoint": "runs\\model-based\\dynamics\\model-1.pt",
+      "seed": 22,
+      "best_validation_loss": 0.0023279504384845495,
+      "history": [
+        {
+          "step": 250,
+          "validation_loss": 0.021595420315861702,
+          "state_rmse": 0.03413558006286621,
+          "reward_rmse": 0.6594952344894409
+        },
+        {
+          "step": 500,
+          "validation_loss": 0.008502865210175514,
+          "state_rmse": 0.02775212563574314,
+          "reward_rmse": 0.517655074596405
+        },
+        {
+          "step": 750,
+          "validation_loss": 0.006340693682432175,
+          "state_rmse": 0.026456201449036598,
+          "reward_rmse": 0.45214197039604187
+        },
+        {
+          "step": 1000,
+          "validation_loss": 0.004900983069092035,
+          "state_rmse": 0.025616569444537163,
+          "reward_rmse": 0.3804026246070862
+        },
+        {
+          "step": 1250,
+          "validation_loss": 0.004057787824422121,
+          "state_rmse": 0.025210266932845116,
+          "reward_rmse": 0.3275904357433319
+        },
+        {
+          "step": 1500,
+          "validation_loss": 0.003609210252761841,
+          "state_rmse": 0.024716388434171677,
+          "reward_rmse": 0.2998044490814209
+        },
+        {
+          "step": 1750,
+          "validation_loss": 0.0033956249244511127,
+          "state_rmse": 0.024580681696534157,
+          "reward_rmse": 0.28703367710113525
+        },
+        {
+          "step": 2000,
+          "validation_loss": 0.0031862871255725622,
+          "state_rmse": 0.02420356310904026,
+          "reward_rmse": 0.27714672684669495
+        },
+        {
+          "step": 2250,
+          "validation_loss": 0.002973375376313925,
+          "state_rmse": 0.024089006707072258,
+          "reward_rmse": 0.25857189297676086
+        },
+        {
+          "step": 2500,
+          "validation_loss": 0.002731987275183201,
+          "state_rmse": 0.02401316538453102,
+          "reward_rmse": 0.2330935001373291
+        },
+        {
+          "step": 2750,
+          "validation_loss": 0.0024628168903291225,
+          "state_rmse": 0.023853076621890068,
+          "reward_rmse": 0.20007461309432983
+        },
+        {
+          "step": 3000,
+          "validation_loss": 0.0023279504384845495,
+          "state_rmse": 0.024273354560136795,
+          "reward_rmse": 0.17138904333114624
+        }
+      ]
+    },
+    {
+      "model": 2,
+      "checkpoint": "runs\\model-based\\dynamics\\model-2.pt",
+      "seed": 33,
+      "best_validation_loss": 0.0024812272749841213,
+      "history": [
+        {
+          "step": 250,
+          "validation_loss": 0.02633051574230194,
+          "state_rmse": 0.035871800035238266,
+          "reward_rmse": 0.6278519034385681
+        },
+        {
+          "step": 500,
+          "validation_loss": 0.008655622601509094,
+          "state_rmse": 0.028278930112719536,
+          "reward_rmse": 0.5214347243309021
+        },
+        {
+          "step": 750,
+          "validation_loss": 0.006579511798918247,
+          "state_rmse": 0.027367522940039635,
+          "reward_rmse": 0.45761317014694214
+        },
+        {
+          "step": 1000,
+          "validation_loss": 0.005281702149659395,
+          "state_rmse": 0.02648038975894451,
+          "reward_rmse": 0.39724427461624146
+        },
+        {
+          "step": 1250,
+          "validation_loss": 0.00436678109690547,
+          "state_rmse": 0.02602183073759079,
+          "reward_rmse": 0.341714471578598
+        },
+        {
+          "step": 1500,
+          "validation_loss": 0.003797286655753851,
+          "state_rmse": 0.025686129927635193,
+          "reward_rmse": 0.30223411321640015
+        },
+        {
+          "step": 1750,
+          "validation_loss": 0.0035042616073042154,
+          "state_rmse": 0.025254489853978157,
+          "reward_rmse": 0.28556662797927856
+        },
+        {
+          "step": 2000,
+          "validation_loss": 0.0033624148927628994,
+          "state_rmse": 0.024995921179652214,
+          "reward_rmse": 0.2799622416496277
+        },
+        {
+          "step": 2250,
+          "validation_loss": 0.0031682560220360756,
+          "state_rmse": 0.024946607649326324,
+          "reward_rmse": 0.2636532783508301
+        },
+        {
+          "step": 2500,
+          "validation_loss": 0.0029354863800108433,
+          "state_rmse": 0.02467602677643299,
+          "reward_rmse": 0.24292625486850739
+        },
+        {
+          "step": 2750,
+          "validation_loss": 0.00272575905546546,
+          "state_rmse": 0.02465515397489071,
+          "reward_rmse": 0.21727417409420013
+        },
+        {
+          "step": 3000,
+          "validation_loss": 0.0024812272749841213,
+          "state_rmse": 0.02435273863375187,
+          "reward_rmse": 0.18744666874408722
+        }
+      ]
+    },
+    {
+      "model": 3,
+      "checkpoint": "runs\\model-based\\dynamics\\model-3.pt",
+      "seed": 44,
+      "best_validation_loss": 0.002748549683019519,
+      "history": [
+        {
+          "step": 250,
+          "validation_loss": 0.023006655275821686,
+          "state_rmse": 0.03389241546392441,
+          "reward_rmse": 0.7322894334793091
+        },
+        {
+          "step": 500,
+          "validation_loss": 0.00820368155837059,
+          "state_rmse": 0.027598032727837563,
+          "reward_rmse": 0.521043598651886
+        },
+        {
+          "step": 750,
+          "validation_loss": 0.00630434975028038,
+          "state_rmse": 0.026161767542362213,
+          "reward_rmse": 0.4665190279483795
+        },
+        {
+          "step": 1000,
+          "validation_loss": 0.005120319779962301,
+          "state_rmse": 0.025486303493380547,
+          "reward_rmse": 0.4081622362136841
+        },
+        {
+          "step": 1250,
+          "validation_loss": 0.004261691123247147,
+          "state_rmse": 0.02514350414276123,
+          "reward_rmse": 0.35281336307525635
+        },
+        {
+          "step": 1500,
+          "validation_loss": 0.003739201230928302,
+          "state_rmse": 0.02486908994615078,
+          "reward_rmse": 0.31431281566619873
+        },
+        {
+          "step": 1750,
+          "validation_loss": 0.0034596705809235573,
+          "state_rmse": 0.02462327666580677,
+          "reward_rmse": 0.29509949684143066
+        },
+        {
+          "step": 2000,
+          "validation_loss": 0.003305599559098482,
+          "state_rmse": 0.024507444351911545,
+          "reward_rmse": 0.28554320335388184
+        },
+        {
+          "step": 2250,
+          "validation_loss": 0.0031704287976026535,
+          "state_rmse": 0.024394940584897995,
+          "reward_rmse": 0.2759441137313843
+        },
+        {
+          "step": 2500,
+          "validation_loss": 0.003030116204172373,
+          "state_rmse": 0.024503622204065323,
+          "reward_rmse": 0.2598235607147217
+        },
+        {
+          "step": 2750,
+          "validation_loss": 0.0028404616750776768,
+          "state_rmse": 0.02435150370001793,
+          "reward_rmse": 0.24360774457454681
+        },
+        {
+          "step": 3000,
+          "validation_loss": 0.002748549683019519,
+          "state_rmse": 0.024857744574546814,
+          "reward_rmse": 0.22135783731937408
+        }
+      ]
+    },
+    {
+      "model": 4,
+      "checkpoint": "runs\\model-based\\dynamics\\model-4.pt",
+      "seed": 55,
+      "best_validation_loss": 0.0027884733863174915,
+      "history": [
+        {
+          "step": 250,
+          "validation_loss": 0.020905515179038048,
+          "state_rmse": 0.035356298089027405,
+          "reward_rmse": 0.6736804246902466
+        },
+        {
+          "step": 500,
+          "validation_loss": 0.008412293158471584,
+          "state_rmse": 0.028689773753285408,
+          "reward_rmse": 0.5185484290122986
+        },
+        {
+          "step": 750,
+          "validation_loss": 0.00619472423568368,
+          "state_rmse": 0.026893211528658867,
+          "reward_rmse": 0.44948866963386536
+        },
+        {
+          "step": 1000,
+          "validation_loss": 0.005030075553804636,
+          "state_rmse": 0.026122400537133217,
+          "reward_rmse": 0.3902553915977478
+        },
+        {
+          "step": 1250,
+          "validation_loss": 0.004244243260473013,
+          "state_rmse": 0.025393720716238022,
+          "reward_rmse": 0.3436180651187897
+        },
+        {
+          "step": 1500,
+          "validation_loss": 0.0037875843700021505,
+          "state_rmse": 0.024906182661652565,
+          "reward_rmse": 0.31396380066871643
+        },
+        {
+          "step": 1750,
+          "validation_loss": 0.0035538419615477324,
+          "state_rmse": 0.024815233424305916,
+          "reward_rmse": 0.29803428053855896
+        },
+        {
+          "step": 2000,
+          "validation_loss": 0.0034142641816288233,
+          "state_rmse": 0.024714544415473938,
+          "reward_rmse": 0.29157623648643494
+        },
+        {
+          "step": 2250,
+          "validation_loss": 0.0032654711976647377,
+          "state_rmse": 0.02441772259771824,
+          "reward_rmse": 0.2848796248435974
+        },
+        {
+          "step": 2500,
+          "validation_loss": 0.0030932545196264982,
+          "state_rmse": 0.024092312902212143,
+          "reward_rmse": 0.2741674780845642
+        },
+        {
+          "step": 2750,
+          "validation_loss": 0.003025968559086323,
+          "state_rmse": 0.024333089590072632,
+          "reward_rmse": 0.2636377811431885
+        },
+        {
+          "step": 3000,
+          "validation_loss": 0.0027884733863174915,
+          "state_rmse": 0.02389993704855442,
+          "reward_rmse": 0.24623098969459534
+        }
+      ]
+    }
+  ]
+}

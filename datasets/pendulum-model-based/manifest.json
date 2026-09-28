@@ -1,0 +1,22 @@
+{
+  "experiment": "49-dynamics-dataset",
+  "environment": "Pendulum-v1",
+  "collection": "equal random, smooth-random, and noisy heuristic episodes",
+  "summary": {
+    "transitions": 24000,
+    "episodes": 120,
+    "average_reward": -6.174393177032471,
+    "observation_mean": [
+      -0.2699698805809021,
+      0.0067740632221102715,
+      0.1582740843296051
+    ],
+    "observation_std": [
+      0.7312085628509521,
+      0.6264212131500244,
+      3.754310131072998
+    ],
+    "action_mean": -0.021438924595713615,
+    "action_std": 1.304942011833191
+  }
+}
