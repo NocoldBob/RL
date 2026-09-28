@@ -44,6 +44,15 @@
 | 37 | IPPO 与 MAPPO | [文章草稿](../docs/csdn/37-集中训练分散执行从IPPO到MAPPO.md) | [`37-ippo-vs-mappo/`](37-ippo-vs-mappo/) |
 | 38 | 可学习通信与消息消融 | [文章草稿](../docs/csdn/38-没有通信局部观测下如何配合.md) | [`38-learned-communication/`](38-learned-communication/) |
 | 39 | 多智能体可靠性审计 | [文章草稿](../docs/csdn/39-训练成功不等于团队可靠多智能体最终审计.md) | [`39-marl-reliability/`](39-marl-reliability/) |
+| 40 | 构建版本化离线数据集 | [文章草稿](../docs/csdn/40-不能再和环境交互时如何制作离线强化学习数据集.md) | [`40-offline-dataset/`](40-offline-dataset/) |
+| 41 | 专家与混合数据行为克隆 | [文章草稿](../docs/csdn/41-不与环境交互只模仿历史动作能学会控制吗.md) | [`41-behavior-cloning/`](41-behavior-cloning/) |
+| 42 | 离线 DQN 与外推误差 | [文章草稿](../docs/csdn/42-把DQN搬到固定数据上为什么Q值会骗自己.md) | [`42-offline-dqn/`](42-offline-dqn/) |
+| 43 | CQL 保守价值学习 | [文章草稿](../docs/csdn/43-保守Q学习能否压住离线DQN的盲目乐观.md) | [`43-cql/`](43-cql/) |
+| 44 | IQL 与数据内策略改进 | [文章草稿](../docs/csdn/44-不对陌生动作取最大值IQL如何学习离线策略.md) | [`44-iql/`](44-iql/) |
+| 45 | 数据质量与覆盖消融 | [文章草稿](../docs/csdn/45-离线强化学习里数据越多就一定越好吗.md) | [`45-dataset-quality/`](45-dataset-quality/) |
+| 46 | IS、WIS 与 FQE | [文章草稿](../docs/csdn/46-不能上线试跑时如何评估离线策略.md) | [`46-off-policy-evaluation/`](46-off-policy-evaluation/) |
+| 47 | 离线到在线微调 | [文章草稿](../docs/csdn/47-离线策略拿到少量交互预算后应该怎样微调.md) | [`47-offline-to-online/`](47-offline-to-online/) |
+| 48 | 离线策略可靠性审计 | [文章草稿](../docs/csdn/48-离线训练成功等于可以部署吗最终可靠性审计.md) | [`48-offline-reliability/`](48-offline-reliability/) |
 
 ## 使用方法
 
@@ -95,5 +104,7 @@ python -m pip install -r requirements.txt
 - 第 37 篇比较局部 Critic 的 IPPO 与集中 Critic 的 MAPPO。
 - 第 38 篇训练连续消息并通过测试时切断消息验证实际用途。
 - 第 39 篇注入观测噪声和单体失效，审计团队可靠性。
-- [`../贪吃蛇/`](../贪吃蛇/) 和 [`../连续控制/`](../连续控制/) 保存各阶段持续更新的实现；
+- 第 40 至第 45 篇建立版本化 Acrobot 数据，并依次比较 BC、离线 DQN、CQL、IQL 与数据质量。
+- 第 46 至第 48 篇实现 OPE、少量在线微调和独立扰动审计，形成离线强化学习闭环。
+- [`../贪吃蛇/`](../贪吃蛇/)、[`../连续控制/`](../连续控制/) 和 [`../离线强化学习/`](../离线强化学习/) 保存各阶段持续更新的实现；
   教程快照只为配合文章阅读，不会随以后章节的功能继续变化。

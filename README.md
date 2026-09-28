@@ -429,6 +429,13 @@ TD 误差同时更新策略和价值网络，并用少量熵奖励保持探索�
   train_value_agents.py # 价值学习统一训练入口
   train_marl_ppo.py # 多智能体 PPO 统一训练入口
   benchmark_marl_reliability.py # 噪声与单体失效审计
+离线强化学习/
+  dataset.py # 带轨迹边界、行为概率和来源的固定数据格式
+  offline_agents.py # BC、离线 DQN、CQL 与 IQL
+  train_offline.py # 不导入环境的统一离线训练入口
+  off_policy_evaluation.py # 轨迹 IS、WIS 与 FQE
+  finetune_offline.py # 直接、混合回放和保守在线微调
+  benchmark_offline_reliability.py # 未见种子与扰动审计
 tutorials/        # 各篇教程的独立代码快照与运行入口
 tests/            # 环境、模型、检查点和短训练测试
 docs/csdn/        # 可发布到 CSDN 的后续教程
@@ -487,14 +494,24 @@ python -m pytest
 - 第三十七篇：集中训练、分散执行：从 IPPO 到 MAPPO · [文章草稿](docs/csdn/37-集中训练分散执行从IPPO到MAPPO.md) · [对应代码](tutorials/37-ippo-vs-mappo/)
 - 第三十八篇：没有通信，局部观测下如何配合 · [文章草稿](docs/csdn/38-没有通信局部观测下如何配合.md) · [对应代码](tutorials/38-learned-communication/)
 - 第三十九篇：训练成功不等于团队可靠：多智能体最终审计 · [文章草稿](docs/csdn/39-训练成功不等于团队可靠多智能体最终审计.md) · [对应代码](tutorials/39-marl-reliability/)
+- 第四十篇：不能再和环境交互时，如何制作离线强化学习数据集 · [文章草稿](docs/csdn/40-不能再和环境交互时如何制作离线强化学习数据集.md) · [对应代码](tutorials/40-offline-dataset/)
+- 第四十一篇：不与环境交互，只模仿历史动作能学会控制吗 · [文章草稿](docs/csdn/41-不与环境交互只模仿历史动作能学会控制吗.md) · [对应代码](tutorials/41-behavior-cloning/)
+- 第四十二篇：把 DQN 搬到固定数据上，为什么 Q 值会骗自己 · [文章草稿](docs/csdn/42-把DQN搬到固定数据上为什么Q值会骗自己.md) · [对应代码](tutorials/42-offline-dqn/)
+- 第四十三篇：保守 Q 学习能否压住离线 DQN 的盲目乐观 · [文章草稿](docs/csdn/43-保守Q学习能否压住离线DQN的盲目乐观.md) · [对应代码](tutorials/43-cql/)
+- 第四十四篇：不对陌生动作取最大值，IQL 如何学习离线策略 · [文章草稿](docs/csdn/44-不对陌生动作取最大值IQL如何学习离线策略.md) · [对应代码](tutorials/44-iql/)
+- 第四十五篇：离线强化学习里，数据越多就一定越好吗 · [文章草稿](docs/csdn/45-离线强化学习里数据越多就一定越好吗.md) · [对应代码](tutorials/45-dataset-quality/)
+- 第四十六篇：不能上线试跑时，如何评估离线策略 · [文章草稿](docs/csdn/46-不能上线试跑时如何评估离线策略.md) · [对应代码](tutorials/46-off-policy-evaluation/)
+- 第四十七篇：离线策略拿到少量交互预算后，应该怎样微调 · [文章草稿](docs/csdn/47-离线策略拿到少量交互预算后应该怎样微调.md) · [对应代码](tutorials/47-offline-to-online/)
+- 第四十八篇：离线训练成功等于可以部署吗：最终可靠性审计 · [文章草稿](docs/csdn/48-离线训练成功等于可以部署吗最终可靠性审计.md) · [对应代码](tutorials/48-offline-reliability/)
 
 [查看教程与代码的完整索引](tutorials/README.md)
 
 ## 后续路线
 
 MiniGrid DoorKey 项目在第二十四篇闭环；第二十五至三十一篇完成视觉驾驶；第三十二至三十九篇
-完成 Simple Spread 多智能体协作，包括 IQL、参数共享、VDN、QMIX、MAPPO、通信消融与故障审计。
-下一阶段可转向离线强化学习、模型式强化学习，或真实设备与算力约束。
+完成 Simple Spread 多智能体协作；第四十至四十八篇完成离线数据、BC、离线 DQN、CQL、IQL、
+OPE、离线到在线微调与可靠性审计。下一阶段建议进入模型式强化学习，从学习环境模型、短视野
+规划开始，再逐步比较 Dyna、MBPO 和模型误差下的可靠性。
 
 ## License
 
