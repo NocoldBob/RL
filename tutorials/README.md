@@ -15,53 +15,53 @@
 | 08 | 同一局面，六种模型会怎么走？ | [固定局面决策检查](https://blog.csdn.net/bobwww123/article/details/164296013) | [`08-decision-inspection/`](08-decision-inspection/) |
 | 09 | 油门不是开关：连续动作入门 | [CSDN 正式文章](https://blog.csdn.net/bobwww123/article/details/164314437) | [`09-continuous-action-basics/`](09-continuous-action-basics/) |
 | 10 | 油门到底该踩多少？连续 PPO | [CSDN 正式文章](https://blog.csdn.net/bobwww123/article/details/164314648) | [`10-continuous-ppo/`](10-continuous-ppo/) |
-| 11 | 经验也能反复学习：第一次实现 SAC | [文章草稿](../docs/csdn/11-经验也能反复学习第一次实现SAC.md) | [`11-sac/`](11-sac/) |
-| 12 | PPO 还是 SAC：同样 5 万步结果为什么不同 | [文章草稿](../docs/csdn/12-PPO还是SAC同样5万步结果为什么不同.md) | [`12-ppo-vs-sac/`](12-ppo-vs-sac/) |
-| 13 | 一根油门不够了：走进二维连续动作 | [文章草稿](../docs/csdn/13-一根油门不够了走进二维连续动作.md) | [`13-lunar-baselines/`](13-lunar-baselines/) |
-| 14 | 代码能运行，为什么月球还是落不下来 | [文章草稿](../docs/csdn/14-代码能运行为什么月球还是落不下来.md) | [`14-lunar-transfer-diagnostics/`](14-lunar-transfer-diagnostics/) |
-| 15 | 一次成功不算稳定：三随机种子检验 PPO | [文章草稿](../docs/csdn/15-一次成功不算稳定用三随机种子检验PPO.md) | [`15-stable-lunar-ppo/`](15-stable-lunar-ppo/) |
-| 16 | 网络更大、探索更多，SAC 就一定会着陆吗 | [文章草稿](../docs/csdn/16-网络更大探索更多SAC就一定会着陆吗.md) | [`16-lunar-sac-stability/`](16-lunar-sac-stability/) |
-| 17 | PPO 还是 SAC：同预算与固定危险场景复盘 | [文章草稿](../docs/csdn/17-PPO还是SAC同预算与固定危险场景复盘.md) | [`17-lunar-ppo-vs-sac/`](17-lunar-ppo-vs-sac/) |
-| 18 | DoorKey 环境与规则专家基线 | [文章草稿](../docs/csdn/18-门就在眼前为什么没有钥匙还是过不去.md) | [`18-doorkey-baselines/`](18-doorkey-baselines/) |
-| 19 | 完整地图 DQN 与稀疏奖励 | [文章草稿](../docs/csdn/19-看见完整地图DQN就能稳定学会开门吗.md) | [`19-full-observation-dqn/`](19-full-observation-dqn/) |
-| 20 | 局部观测与观测别名 | [文章草稿](../docs/csdn/20-视野缩小以后同一画面可能需要不同动作.md) | [`20-partial-observation/`](20-partial-observation/) |
-| 21 | GRU 记忆与截断 BPTT | [文章草稿](../docs/csdn/21-记忆不是自动学会的GRU与PPO对照.md) | [`21-memory-ppo/`](21-memory-ppo/) |
-| 22 | 访问计数与课程学习 | [文章草稿](../docs/csdn/22-探索范围不等于任务进展课程学习解决稀疏奖励.md) | [`22-curriculum-exploration/`](22-curriculum-exploration/) |
-| 23 | 行为克隆与参考 KL 微调 | [文章草稿](../docs/csdn/23-示范是起点不是免疫牌行为克隆与保守微调.md) | [`23-imitation-ppo/`](23-imitation-ppo/) |
-| 24 | DoorKey 跨尺寸泛化 | [文章草稿](../docs/csdn/24-训练成功不等于泛化成功DoorKey跨尺寸评估.md) | [`24-generalization/`](24-generalization/) |
-| 25 | CarRacing RGB 输入管线与基线 | [文章草稿](../docs/csdn/25-从状态向量到RGB图像CarRacing视觉输入管线.md) | [`25-visual-input-pipeline/`](25-visual-input-pipeline/) |
-| 26 | 单帧与 4 帧堆叠 | [文章草稿](../docs/csdn/26-一张图够不够判断车辆状态单帧与帧堆叠.md) | [`26-frame-stacking/`](26-frame-stacking/) |
-| 27 | 离散动作视觉 Double DQN | [文章草稿](../docs/csdn/27-离散化方向盘后DQN能学会开车吗.md) | [`27-discrete-dqn-driving/`](27-discrete-dqn-driving/) |
-| 28 | 连续动作视觉 PPO | [文章草稿](../docs/csdn/28-连续动作PPO如何同时控制转向油门和刹车.md) | [`28-continuous-ppo-driving/`](28-continuous-ppo-driving/) |
-| 29 | 驾驶奖励设计 | [文章草稿](../docs/csdn/29-奖励越精细驾驶就一定越好吗.md) | [`29-driving-reward-design/`](29-driving-reward-design/) |
-| 30 | 视觉扰动与数据增强 | [文章草稿](../docs/csdn/30-画面变暗以后策略还认识赛道吗.md) | [`30-visual-robustness/`](30-visual-robustness/) |
-| 31 | 未见赛道与可靠性审计 | [文章草稿](../docs/csdn/31-训练成功不等于可靠驾驶视觉控制最终复盘.md) | [`31-driving-reliability/`](31-driving-reliability/) |
-| 32 | Simple Spread 环境与规则基线 | [文章草稿](../docs/csdn/32-一个奖励多个智能体该怎么分工.md) | [`32-multi-agent-baselines/`](32-multi-agent-baselines/) |
-| 33 | Independent DQN 与非平稳性 | [文章草稿](../docs/csdn/33-两个DQN一起训练环境为什么一直在变.md) | [`33-independent-dqn/`](33-independent-dqn/) |
-| 34 | 参数共享与 Agent ID | [文章草稿](../docs/csdn/34-多个智能体应该共用一个大脑吗.md) | [`34-parameter-sharing/`](34-parameter-sharing/) |
-| 35 | VDN 与信用分配 | [文章草稿](../docs/csdn/35-团队得分应该由谁负责VDN与信用分配.md) | [`35-vdn-credit-assignment/`](35-vdn-credit-assignment/) |
-| 36 | QMIX 单调混合网络 | [文章草稿](../docs/csdn/36-VDN不够灵活时QMIX如何混合价值.md) | [`36-qmix/`](36-qmix/) |
-| 37 | IPPO 与 MAPPO | [文章草稿](../docs/csdn/37-集中训练分散执行从IPPO到MAPPO.md) | [`37-ippo-vs-mappo/`](37-ippo-vs-mappo/) |
-| 38 | 可学习通信与消息消融 | [文章草稿](../docs/csdn/38-没有通信局部观测下如何配合.md) | [`38-learned-communication/`](38-learned-communication/) |
-| 39 | 多智能体可靠性审计 | [文章草稿](../docs/csdn/39-训练成功不等于团队可靠多智能体最终审计.md) | [`39-marl-reliability/`](39-marl-reliability/) |
-| 40 | 构建版本化离线数据集 | [文章草稿](../docs/csdn/40-不能再和环境交互时如何制作离线强化学习数据集.md) | [`40-offline-dataset/`](40-offline-dataset/) |
-| 41 | 专家与混合数据行为克隆 | [文章草稿](../docs/csdn/41-不与环境交互只模仿历史动作能学会控制吗.md) | [`41-behavior-cloning/`](41-behavior-cloning/) |
-| 42 | 离线 DQN 与外推误差 | [文章草稿](../docs/csdn/42-把DQN搬到固定数据上为什么Q值会骗自己.md) | [`42-offline-dqn/`](42-offline-dqn/) |
-| 43 | CQL 保守价值学习 | [文章草稿](../docs/csdn/43-保守Q学习能否压住离线DQN的盲目乐观.md) | [`43-cql/`](43-cql/) |
-| 44 | IQL 与数据内策略改进 | [文章草稿](../docs/csdn/44-不对陌生动作取最大值IQL如何学习离线策略.md) | [`44-iql/`](44-iql/) |
-| 45 | 数据质量与覆盖消融 | [文章草稿](../docs/csdn/45-离线强化学习里数据越多就一定越好吗.md) | [`45-dataset-quality/`](45-dataset-quality/) |
-| 46 | IS、WIS 与 FQE | [文章草稿](../docs/csdn/46-不能上线试跑时如何评估离线策略.md) | [`46-off-policy-evaluation/`](46-off-policy-evaluation/) |
-| 47 | 离线到在线微调 | [文章草稿](../docs/csdn/47-离线策略拿到少量交互预算后应该怎样微调.md) | [`47-offline-to-online/`](47-offline-to-online/) |
-| 48 | 离线策略可靠性审计 | [文章草稿](../docs/csdn/48-离线训练成功等于可以部署吗最终可靠性审计.md) | [`48-offline-reliability/`](48-offline-reliability/) |
-| 49 | Pendulum 动力学模型 | [文章草稿](../docs/csdn/49-不直接学习策略先学习环境会怎样变化.md) | [`49-dynamics-model/`](49-dynamics-model/) |
-| 50 | 多步模型误差 | [文章草稿](../docs/csdn/50-单步预测很准为什么滚动几十步就错了.md) | [`50-rollout-error/`](50-rollout-error/) |
-| 51 | Random Shooting MPC | [文章草稿](../docs/csdn/51-有了环境模型如何用随机射击规划动作.md) | [`51-random-shooting-mpc/`](51-random-shooting-mpc/) |
-| 52 | CEM 规划 | [文章草稿](../docs/csdn/52-随机搜索太浪费CEM如何逐轮缩小动作范围.md) | [`52-cem-planning/`](52-cem-planning/) |
-| 53 | 模型集成与不确定性 | [文章草稿](../docs/csdn/53-一个模型说得很自信真的可信吗.md) | [`53-ensemble-uncertainty/`](53-ensemble-uncertainty/) |
-| 54 | Dyna 想象数据 | [文章草稿](../docs/csdn/54-真实经验不够时Dyna如何用想象数据补训练.md) | [`54-dyna/`](54-dyna/) |
-| 55 | 简化版 MBPO | [文章草稿](../docs/csdn/55-想象轨迹越长越好吗实现简化版MBPO.md) | [`55-mbpo/`](55-mbpo/) |
-| 56 | 离线模型规划 | [文章草稿](../docs/csdn/56-固定数据上直接规划模型会不会钻漏洞.md) | [`56-offline-model-planning/`](56-offline-model-planning/) |
-| 57 | 模型式强化学习可靠性审计 | [文章草稿](../docs/csdn/57-模型式强化学习最终可靠性审计.md) | [`57-model-reliability/`](57-model-reliability/) |
+| 11 | 经验也能反复学习：第一次实现 SAC | [文章文档](../docs/csdn/11-经验也能反复学习第一次实现SAC.md) | [`11-sac/`](11-sac/) |
+| 12 | PPO 还是 SAC：同样 5 万步结果为什么不同 | [文章文档](../docs/csdn/12-PPO还是SAC同样5万步结果为什么不同.md) | [`12-ppo-vs-sac/`](12-ppo-vs-sac/) |
+| 13 | 一根油门不够了：走进二维连续动作 | [文章文档](../docs/csdn/13-一根油门不够了走进二维连续动作.md) | [`13-lunar-baselines/`](13-lunar-baselines/) |
+| 14 | 代码能运行，为什么月球还是落不下来 | [文章文档](../docs/csdn/14-代码能运行为什么月球还是落不下来.md) | [`14-lunar-transfer-diagnostics/`](14-lunar-transfer-diagnostics/) |
+| 15 | 一次成功不算稳定：三随机种子检验 PPO | [文章文档](../docs/csdn/15-一次成功不算稳定用三随机种子检验PPO.md) | [`15-stable-lunar-ppo/`](15-stable-lunar-ppo/) |
+| 16 | 网络更大、探索更多，SAC 就一定会着陆吗 | [文章文档](../docs/csdn/16-网络更大探索更多SAC就一定会着陆吗.md) | [`16-lunar-sac-stability/`](16-lunar-sac-stability/) |
+| 17 | PPO 还是 SAC：同预算与固定危险场景复盘 | [文章文档](../docs/csdn/17-PPO还是SAC同预算与固定危险场景复盘.md) | [`17-lunar-ppo-vs-sac/`](17-lunar-ppo-vs-sac/) |
+| 18 | DoorKey 环境与规则专家基线 | [文章文档](../docs/csdn/18-门就在眼前为什么没有钥匙还是过不去.md) | [`18-doorkey-baselines/`](18-doorkey-baselines/) |
+| 19 | 完整地图 DQN 与稀疏奖励 | [文章文档](../docs/csdn/19-看见完整地图DQN就能稳定学会开门吗.md) | [`19-full-observation-dqn/`](19-full-observation-dqn/) |
+| 20 | 局部观测与观测别名 | [文章文档](../docs/csdn/20-视野缩小以后同一画面可能需要不同动作.md) | [`20-partial-observation/`](20-partial-observation/) |
+| 21 | GRU 记忆与截断 BPTT | [文章文档](../docs/csdn/21-记忆不是自动学会的GRU与PPO对照.md) | [`21-memory-ppo/`](21-memory-ppo/) |
+| 22 | 访问计数与课程学习 | [文章文档](../docs/csdn/22-探索范围不等于任务进展课程学习解决稀疏奖励.md) | [`22-curriculum-exploration/`](22-curriculum-exploration/) |
+| 23 | 行为克隆与参考 KL 微调 | [文章文档](../docs/csdn/23-示范是起点不是免疫牌行为克隆与保守微调.md) | [`23-imitation-ppo/`](23-imitation-ppo/) |
+| 24 | DoorKey 跨尺寸泛化 | [文章文档](../docs/csdn/24-训练成功不等于泛化成功DoorKey跨尺寸评估.md) | [`24-generalization/`](24-generalization/) |
+| 25 | CarRacing RGB 输入管线与基线 | [文章文档](../docs/csdn/25-从状态向量到RGB图像CarRacing视觉输入管线.md) | [`25-visual-input-pipeline/`](25-visual-input-pipeline/) |
+| 26 | 单帧与 4 帧堆叠 | [文章文档](../docs/csdn/26-一张图够不够判断车辆状态单帧与帧堆叠.md) | [`26-frame-stacking/`](26-frame-stacking/) |
+| 27 | 离散动作视觉 Double DQN | [文章文档](../docs/csdn/27-离散化方向盘后DQN能学会开车吗.md) | [`27-discrete-dqn-driving/`](27-discrete-dqn-driving/) |
+| 28 | 连续动作视觉 PPO | [文章文档](../docs/csdn/28-连续动作PPO如何同时控制转向油门和刹车.md) | [`28-continuous-ppo-driving/`](28-continuous-ppo-driving/) |
+| 29 | 驾驶奖励设计 | [文章文档](../docs/csdn/29-奖励越精细驾驶就一定越好吗.md) | [`29-driving-reward-design/`](29-driving-reward-design/) |
+| 30 | 视觉扰动与数据增强 | [文章文档](../docs/csdn/30-画面变暗以后策略还认识赛道吗.md) | [`30-visual-robustness/`](30-visual-robustness/) |
+| 31 | 未见赛道与可靠性审计 | [文章文档](../docs/csdn/31-训练成功不等于可靠驾驶视觉控制最终复盘.md) | [`31-driving-reliability/`](31-driving-reliability/) |
+| 32 | Simple Spread 环境与规则基线 | [文章文档](../docs/csdn/32-一个奖励多个智能体该怎么分工.md) | [`32-multi-agent-baselines/`](32-multi-agent-baselines/) |
+| 33 | Independent DQN 与非平稳性 | [文章文档](../docs/csdn/33-三个DQN一起训练环境为什么一直在变.md) | [`33-independent-dqn/`](33-independent-dqn/) |
+| 34 | 参数共享与 Agent ID | [文章文档](../docs/csdn/34-多个智能体应该共用一个大脑吗.md) | [`34-parameter-sharing/`](34-parameter-sharing/) |
+| 35 | VDN 与信用分配 | [文章文档](../docs/csdn/35-团队得分应该由谁负责VDN与信用分配.md) | [`35-vdn-credit-assignment/`](35-vdn-credit-assignment/) |
+| 36 | QMIX 单调混合网络 | [文章文档](../docs/csdn/36-VDN不够灵活时QMIX如何混合价值.md) | [`36-qmix/`](36-qmix/) |
+| 37 | IPPO 与 MAPPO | [文章文档](../docs/csdn/37-集中训练分散执行从IPPO到MAPPO.md) | [`37-ippo-vs-mappo/`](37-ippo-vs-mappo/) |
+| 38 | 可学习通信与消息消融 | [文章文档](../docs/csdn/38-没有通信局部观测下如何配合.md) | [`38-learned-communication/`](38-learned-communication/) |
+| 39 | 多智能体可靠性审计 | [文章文档](../docs/csdn/39-训练成功不等于团队可靠多智能体最终审计.md) | [`39-marl-reliability/`](39-marl-reliability/) |
+| 40 | 构建版本化离线数据集 | [文章文档](../docs/csdn/40-不能再和环境交互时如何制作离线强化学习数据集.md) | [`40-offline-dataset/`](40-offline-dataset/) |
+| 41 | 专家与混合数据行为克隆 | [文章文档](../docs/csdn/41-不与环境交互只模仿历史动作能学会控制吗.md) | [`41-behavior-cloning/`](41-behavior-cloning/) |
+| 42 | 离线 DQN 与外推误差 | [文章文档](../docs/csdn/42-把DQN搬到固定数据上为什么Q值会骗自己.md) | [`42-offline-dqn/`](42-offline-dqn/) |
+| 43 | CQL 保守价值学习 | [文章文档](../docs/csdn/43-保守Q学习能否压住离线DQN的盲目乐观.md) | [`43-cql/`](43-cql/) |
+| 44 | IQL 与数据内策略改进 | [文章文档](../docs/csdn/44-不对陌生动作取最大值IQL如何学习离线策略.md) | [`44-iql/`](44-iql/) |
+| 45 | 数据质量与覆盖消融 | [文章文档](../docs/csdn/45-离线强化学习里数据越多就一定越好吗.md) | [`45-dataset-quality/`](45-dataset-quality/) |
+| 46 | IS、WIS 与 FQE | [文章文档](../docs/csdn/46-不能上线试跑时如何评估离线策略.md) | [`46-off-policy-evaluation/`](46-off-policy-evaluation/) |
+| 47 | 离线到在线微调 | [文章文档](../docs/csdn/47-离线策略拿到少量交互预算后应该怎样微调.md) | [`47-offline-to-online/`](47-offline-to-online/) |
+| 48 | 离线策略可靠性审计 | [文章文档](../docs/csdn/48-离线训练成功等于可以部署吗最终可靠性审计.md) | [`48-offline-reliability/`](48-offline-reliability/) |
+| 49 | Pendulum 动力学模型 | [文章文档](../docs/csdn/49-不直接学习策略先学习环境会怎样变化.md) | [`49-dynamics-model/`](49-dynamics-model/) |
+| 50 | 多步模型误差 | [文章文档](../docs/csdn/50-单步预测很准为什么滚动几十步就错了.md) | [`50-rollout-error/`](50-rollout-error/) |
+| 51 | Random Shooting MPC | [文章文档](../docs/csdn/51-有了环境模型如何用随机射击规划动作.md) | [`51-random-shooting-mpc/`](51-random-shooting-mpc/) |
+| 52 | CEM 规划 | [文章文档](../docs/csdn/52-随机搜索太浪费CEM如何逐轮缩小动作范围.md) | [`52-cem-planning/`](52-cem-planning/) |
+| 53 | 模型集成与不确定性 | [文章文档](../docs/csdn/53-一个模型说得很自信真的可信吗.md) | [`53-ensemble-uncertainty/`](53-ensemble-uncertainty/) |
+| 54 | Dyna 想象数据 | [文章文档](../docs/csdn/54-真实经验不够时Dyna如何用想象数据补训练.md) | [`54-dyna/`](54-dyna/) |
+| 55 | 简化版 MBPO | [文章文档](../docs/csdn/55-想象轨迹越长越好吗实现简化版MBPO.md) | [`55-mbpo/`](55-mbpo/) |
+| 56 | 离线模型规划 | [文章文档](../docs/csdn/56-固定数据上直接规划模型会不会钻漏洞.md) | [`56-offline-model-planning/`](56-offline-model-planning/) |
+| 57 | 模型式强化学习可靠性审计 | [文章文档](../docs/csdn/57-模型式强化学习最终可靠性审计.md) | [`57-model-reliability/`](57-model-reliability/) |
 
 ## 使用方法
 

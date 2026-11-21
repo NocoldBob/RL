@@ -31,6 +31,8 @@ def cover(lesson: int, title: str, path: Path) -> None:
     axis.text(0.06, 0.29, "MiniGrid DoorKey", color="#FBBF24", fontsize=28, weight="bold")
     axis.plot([0.72, 0.90], [0.68, 0.33], color="#60A5FA", linewidth=8)
     axis.scatter([0.72, 0.90], [0.68, 0.33], color="#FBBF24", s=300)
+    axis.set_xlim(0.0, 1.0)
+    axis.set_ylim(0.0, 1.0)
     save(figure, path)
 
 

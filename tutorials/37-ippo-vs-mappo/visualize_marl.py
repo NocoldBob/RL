@@ -19,7 +19,7 @@ matplotlib.rcParams["axes.unicode_minus"] = False
 
 TITLES = {
     32: "一个奖励，多个智能体该怎么分工",
-    33: "两个 DQN 一起训练，环境为什么一直在变",
+    33: "三个 DQN 一起训练，环境为什么一直在变",
     34: "多个智能体应该共用一个大脑吗",
     35: "团队得分应该由谁负责",
     36: "VDN 不够灵活时，QMIX 如何混合价值",
@@ -46,6 +46,8 @@ def cover(lesson: int, subtitle: str, path: Path) -> None:
         for second in range(first + 1, 3):
             axis.plot(*zip(points[first], points[second], strict=True), color="#475569", lw=4)
     axis.scatter(points[:, 0], points[:, 1], s=420, color=["#38BDF8", "#F97316", "#22C55E"])
+    axis.set_xlim(0.0, 1.0)
+    axis.set_ylim(0.0, 1.0)
     save(figure, path)
 
 

@@ -45,6 +45,10 @@ Double TD 目标，并记录状态价值、动作优势、动作间隔、参数�
 稳定着陆；拆分 Actor/Critic 后一度达到 `55%` 着陆率，随后再次崩塌，由此转入可观测的稳定化
 实验，而不是继续盲目增加训练步数。
 
+目前课程已扩展到 57 篇，后续依次覆盖 MiniGrid 部分可观测任务、CarRacing 视觉控制、
+多智能体协作、离线强化学习和模型式强化学习。每一阶段都保留可运行代码、原始实验数据、
+可视化脚本和独立教程快照。
+
 ## 当前版本带来了什么
 
 - 环境严格执行智能体传入的动作，让动作、奖励和下一状态保持一致。
@@ -60,6 +64,11 @@ Double TD 目标，并记录状态价值、动作优势、动作间隔、参数�
 - 增加连续动作 PPO、正确的截断自举、多训练种子评估和规则基线对照。
 - 增加 SAC、经验回放、双 Q 网络、自动温度调整和时间相关探索实验。
 - 增加 LunarLander 二维连续动作环境、规则基线、着陆指标和轨迹可视化。
+- 增加 MiniGrid DoorKey 的记忆、课程学习、示范微调和跨尺寸泛化实验。
+- 增加 CarRacing 的视觉预处理、帧堆叠、离散与连续控制及鲁棒性评估。
+- 增加 Simple Spread 多智能体环境，以及参数共享、VDN、QMIX、MAPPO 和通信实验。
+- 增加 Acrobot 离线数据集、BC、离线 DQN、CQL、IQL、离策略评估与在线微调实验。
+- 增加 Pendulum 动力学模型、MPC、CEM、不确定性估计、Dyna、MBPO 和可靠性审计。
 
 ## 环境要求
 
@@ -445,11 +454,12 @@ TD 误差同时更新策略和价值网络，并用少量熵奖励保持探索�
   benchmark_model_reliability.py # 动力学偏移、噪声和延迟审计
 tutorials/        # 各篇教程的独立代码快照与运行入口
 tests/            # 环境、模型、检查点和短训练测试
-docs/csdn/        # 可发布到 CSDN 的后续教程
+docs/csdn/        # 系列文章 Markdown 文档（保留历史目录名）
 ```
 
 不熟悉 Git 的读者可以直接进入 [`tutorials/`](tutorials/README.md)，按文章编号找到对应代码，
-不需要从提交历史中还原旧版本。根目录 [`贪吃蛇/`](贪吃蛇/) 始终保留项目的最新完整实现。
+不需要从提交历史中还原旧版本。各阶段的中文目录保存持续更新的实现，`tutorials/` 则保留
+与每篇文章对应的代码快照。
 
 ## 测试
 
@@ -472,53 +482,53 @@ python -m pytest
 - [第八篇：同一局面，六种模型会怎么走？](https://blog.csdn.net/bobwww123/article/details/164296013) · [对应代码](tutorials/08-decision-inspection/)
 - [第九篇：油门不是开关，第一次走进连续动作空间](https://blog.csdn.net/bobwww123/article/details/164314437) · [对应代码](tutorials/09-continuous-action-basics/)
 - [第十篇：油门到底该踩多少？用 PPO 学会连续控制](https://blog.csdn.net/bobwww123/article/details/164314648) · [对应代码](tutorials/10-continuous-ppo/)
-- 第十一篇：经验也能反复学习，第一次实现 SAC · [文章草稿](docs/csdn/11-经验也能反复学习第一次实现SAC.md) · [对应代码](tutorials/11-sac/)
-- 第十二篇：PPO 还是 SAC？同样 5 万步结果为什么不同 · [文章草稿](docs/csdn/12-PPO还是SAC同样5万步结果为什么不同.md) · [对应代码](tutorials/12-ppo-vs-sac/)
-- 第十三篇：一根油门不够了，走进二维连续动作 · [文章草稿](docs/csdn/13-一根油门不够了走进二维连续动作.md) · [对应代码](tutorials/13-lunar-baselines/)
-- 第十四篇：代码能运行，为什么月球还是落不下来 · [文章草稿](docs/csdn/14-代码能运行为什么月球还是落不下来.md) · [对应代码](tutorials/14-lunar-transfer-diagnostics/)
-- 第十五篇：一次成功不算稳定，用三随机种子检验 PPO · [文章草稿](docs/csdn/15-一次成功不算稳定用三随机种子检验PPO.md) · [对应代码](tutorials/15-stable-lunar-ppo/)
-- 第十六篇：网络更大、探索更多，SAC 就一定会着陆吗 · [文章草稿](docs/csdn/16-网络更大探索更多SAC就一定会着陆吗.md) · [对应代码](tutorials/16-lunar-sac-stability/)
-- 第十七篇：PPO 还是 SAC？同预算与固定危险场景复盘 · [文章草稿](docs/csdn/17-PPO还是SAC同预算与固定危险场景复盘.md) · [对应代码](tutorials/17-lunar-ppo-vs-sac/)
-- 第十八篇：门就在眼前，为什么没有钥匙还是过不去 · [文章草稿](docs/csdn/18-门就在眼前为什么没有钥匙还是过不去.md) · [对应代码](tutorials/18-doorkey-baselines/)
-- 第十九篇：看见完整地图，DQN 就能稳定学会开门吗 · [文章草稿](docs/csdn/19-看见完整地图DQN就能稳定学会开门吗.md) · [对应代码](tutorials/19-full-observation-dqn/)
-- 第二十篇：视野缩小以后，同一画面可能需要不同动作 · [文章草稿](docs/csdn/20-视野缩小以后同一画面可能需要不同动作.md) · [对应代码](tutorials/20-partial-observation/)
-- 第二十一篇：记忆不是自动学会的：GRU 与 PPO 对照 · [文章草稿](docs/csdn/21-记忆不是自动学会的GRU与PPO对照.md) · [对应代码](tutorials/21-memory-ppo/)
-- 第二十二篇：探索范围不等于任务进展：课程学习解决稀疏奖励 · [文章草稿](docs/csdn/22-探索范围不等于任务进展课程学习解决稀疏奖励.md) · [对应代码](tutorials/22-curriculum-exploration/)
-- 第二十三篇：示范是起点，不是免疫牌：行为克隆与保守微调 · [文章草稿](docs/csdn/23-示范是起点不是免疫牌行为克隆与保守微调.md) · [对应代码](tutorials/23-imitation-ppo/)
-- 第二十四篇：训练成功不等于泛化成功：DoorKey 跨尺寸评估 · [文章草稿](docs/csdn/24-训练成功不等于泛化成功DoorKey跨尺寸评估.md) · [对应代码](tutorials/24-generalization/)
-- 第二十五篇：从状态向量到 RGB 图像：CarRacing 视觉输入管线 · [文章草稿](docs/csdn/25-从状态向量到RGB图像CarRacing视觉输入管线.md) · [对应代码](tutorials/25-visual-input-pipeline/)
-- 第二十六篇：一张图够不够判断车辆状态：单帧与帧堆叠 · [文章草稿](docs/csdn/26-一张图够不够判断车辆状态单帧与帧堆叠.md) · [对应代码](tutorials/26-frame-stacking/)
-- 第二十七篇：离散化方向盘后，DQN 能学会开车吗 · [文章草稿](docs/csdn/27-离散化方向盘后DQN能学会开车吗.md) · [对应代码](tutorials/27-discrete-dqn-driving/)
-- 第二十八篇：连续动作 PPO 如何同时控制转向、油门和刹车 · [文章草稿](docs/csdn/28-连续动作PPO如何同时控制转向油门和刹车.md) · [对应代码](tutorials/28-continuous-ppo-driving/)
-- 第二十九篇：奖励越精细，驾驶就一定越好吗 · [文章草稿](docs/csdn/29-奖励越精细驾驶就一定越好吗.md) · [对应代码](tutorials/29-driving-reward-design/)
-- 第三十篇：画面变暗以后，策略还认识赛道吗 · [文章草稿](docs/csdn/30-画面变暗以后策略还认识赛道吗.md) · [对应代码](tutorials/30-visual-robustness/)
-- 第三十一篇：训练成功不等于可靠驾驶：视觉控制最终复盘 · [文章草稿](docs/csdn/31-训练成功不等于可靠驾驶视觉控制最终复盘.md) · [对应代码](tutorials/31-driving-reliability/)
-- 第三十二篇：一个奖励，多个智能体该怎么分工 · [文章草稿](docs/csdn/32-一个奖励多个智能体该怎么分工.md) · [对应代码](tutorials/32-multi-agent-baselines/)
-- 第三十三篇：两个 DQN 一起训练，环境为什么一直在变 · [文章草稿](docs/csdn/33-两个DQN一起训练环境为什么一直在变.md) · [对应代码](tutorials/33-independent-dqn/)
-- 第三十四篇：多个智能体应该共用一个大脑吗 · [文章草稿](docs/csdn/34-多个智能体应该共用一个大脑吗.md) · [对应代码](tutorials/34-parameter-sharing/)
-- 第三十五篇：团队得分应该由谁负责：VDN 与信用分配 · [文章草稿](docs/csdn/35-团队得分应该由谁负责VDN与信用分配.md) · [对应代码](tutorials/35-vdn-credit-assignment/)
-- 第三十六篇：VDN 不够灵活时，QMIX 如何混合价值 · [文章草稿](docs/csdn/36-VDN不够灵活时QMIX如何混合价值.md) · [对应代码](tutorials/36-qmix/)
-- 第三十七篇：集中训练、分散执行：从 IPPO 到 MAPPO · [文章草稿](docs/csdn/37-集中训练分散执行从IPPO到MAPPO.md) · [对应代码](tutorials/37-ippo-vs-mappo/)
-- 第三十八篇：没有通信，局部观测下如何配合 · [文章草稿](docs/csdn/38-没有通信局部观测下如何配合.md) · [对应代码](tutorials/38-learned-communication/)
-- 第三十九篇：训练成功不等于团队可靠：多智能体最终审计 · [文章草稿](docs/csdn/39-训练成功不等于团队可靠多智能体最终审计.md) · [对应代码](tutorials/39-marl-reliability/)
-- 第四十篇：不能再和环境交互时，如何制作离线强化学习数据集 · [文章草稿](docs/csdn/40-不能再和环境交互时如何制作离线强化学习数据集.md) · [对应代码](tutorials/40-offline-dataset/)
-- 第四十一篇：不与环境交互，只模仿历史动作能学会控制吗 · [文章草稿](docs/csdn/41-不与环境交互只模仿历史动作能学会控制吗.md) · [对应代码](tutorials/41-behavior-cloning/)
-- 第四十二篇：把 DQN 搬到固定数据上，为什么 Q 值会骗自己 · [文章草稿](docs/csdn/42-把DQN搬到固定数据上为什么Q值会骗自己.md) · [对应代码](tutorials/42-offline-dqn/)
-- 第四十三篇：保守 Q 学习能否压住离线 DQN 的盲目乐观 · [文章草稿](docs/csdn/43-保守Q学习能否压住离线DQN的盲目乐观.md) · [对应代码](tutorials/43-cql/)
-- 第四十四篇：不对陌生动作取最大值，IQL 如何学习离线策略 · [文章草稿](docs/csdn/44-不对陌生动作取最大值IQL如何学习离线策略.md) · [对应代码](tutorials/44-iql/)
-- 第四十五篇：离线强化学习里，数据越多就一定越好吗 · [文章草稿](docs/csdn/45-离线强化学习里数据越多就一定越好吗.md) · [对应代码](tutorials/45-dataset-quality/)
-- 第四十六篇：不能上线试跑时，如何评估离线策略 · [文章草稿](docs/csdn/46-不能上线试跑时如何评估离线策略.md) · [对应代码](tutorials/46-off-policy-evaluation/)
-- 第四十七篇：离线策略拿到少量交互预算后，应该怎样微调 · [文章草稿](docs/csdn/47-离线策略拿到少量交互预算后应该怎样微调.md) · [对应代码](tutorials/47-offline-to-online/)
-- 第四十八篇：离线训练成功等于可以部署吗：最终可靠性审计 · [文章草稿](docs/csdn/48-离线训练成功等于可以部署吗最终可靠性审计.md) · [对应代码](tutorials/48-offline-reliability/)
-- 第四十九篇：不直接学习策略，先学习环境会怎样变化 · [文章草稿](docs/csdn/49-不直接学习策略先学习环境会怎样变化.md) · [对应代码](tutorials/49-dynamics-model/)
-- 第五十篇：单步预测很准，为什么滚动几十步就错了 · [文章草稿](docs/csdn/50-单步预测很准为什么滚动几十步就错了.md) · [对应代码](tutorials/50-rollout-error/)
-- 第五十一篇：有了环境模型，如何用随机射击规划动作 · [文章草稿](docs/csdn/51-有了环境模型如何用随机射击规划动作.md) · [对应代码](tutorials/51-random-shooting-mpc/)
-- 第五十二篇：随机搜索太浪费，CEM 如何逐轮缩小动作范围 · [文章草稿](docs/csdn/52-随机搜索太浪费CEM如何逐轮缩小动作范围.md) · [对应代码](tutorials/52-cem-planning/)
-- 第五十三篇：一个模型说得很自信，真的可信吗 · [文章草稿](docs/csdn/53-一个模型说得很自信真的可信吗.md) · [对应代码](tutorials/53-ensemble-uncertainty/)
-- 第五十四篇：真实经验不够时，Dyna 如何用想象数据补训练 · [文章草稿](docs/csdn/54-真实经验不够时Dyna如何用想象数据补训练.md) · [对应代码](tutorials/54-dyna/)
-- 第五十五篇：想象轨迹越长越好吗：实现简化版 MBPO · [文章草稿](docs/csdn/55-想象轨迹越长越好吗实现简化版MBPO.md) · [对应代码](tutorials/55-mbpo/)
-- 第五十六篇：固定数据上直接规划，模型会不会钻漏洞 · [文章草稿](docs/csdn/56-固定数据上直接规划模型会不会钻漏洞.md) · [对应代码](tutorials/56-offline-model-planning/)
-- 第五十七篇：模型式强化学习最终可靠性审计 · [文章草稿](docs/csdn/57-模型式强化学习最终可靠性审计.md) · [对应代码](tutorials/57-model-reliability/)
+- 第十一篇：经验也能反复学习，第一次实现 SAC · [文章文档](docs/csdn/11-经验也能反复学习第一次实现SAC.md) · [对应代码](tutorials/11-sac/)
+- 第十二篇：PPO 还是 SAC？同样 5 万步结果为什么不同 · [文章文档](docs/csdn/12-PPO还是SAC同样5万步结果为什么不同.md) · [对应代码](tutorials/12-ppo-vs-sac/)
+- 第十三篇：一根油门不够了，走进二维连续动作 · [文章文档](docs/csdn/13-一根油门不够了走进二维连续动作.md) · [对应代码](tutorials/13-lunar-baselines/)
+- 第十四篇：代码能运行，为什么月球还是落不下来 · [文章文档](docs/csdn/14-代码能运行为什么月球还是落不下来.md) · [对应代码](tutorials/14-lunar-transfer-diagnostics/)
+- 第十五篇：一次成功不算稳定，用三随机种子检验 PPO · [文章文档](docs/csdn/15-一次成功不算稳定用三随机种子检验PPO.md) · [对应代码](tutorials/15-stable-lunar-ppo/)
+- 第十六篇：网络更大、探索更多，SAC 就一定会着陆吗 · [文章文档](docs/csdn/16-网络更大探索更多SAC就一定会着陆吗.md) · [对应代码](tutorials/16-lunar-sac-stability/)
+- 第十七篇：PPO 还是 SAC？同预算与固定危险场景复盘 · [文章文档](docs/csdn/17-PPO还是SAC同预算与固定危险场景复盘.md) · [对应代码](tutorials/17-lunar-ppo-vs-sac/)
+- 第十八篇：门就在眼前，为什么没有钥匙还是过不去 · [文章文档](docs/csdn/18-门就在眼前为什么没有钥匙还是过不去.md) · [对应代码](tutorials/18-doorkey-baselines/)
+- 第十九篇：看见完整地图，DQN 就能稳定学会开门吗 · [文章文档](docs/csdn/19-看见完整地图DQN就能稳定学会开门吗.md) · [对应代码](tutorials/19-full-observation-dqn/)
+- 第二十篇：视野缩小以后，同一画面可能需要不同动作 · [文章文档](docs/csdn/20-视野缩小以后同一画面可能需要不同动作.md) · [对应代码](tutorials/20-partial-observation/)
+- 第二十一篇：记忆不是自动学会的：GRU 与 PPO 对照 · [文章文档](docs/csdn/21-记忆不是自动学会的GRU与PPO对照.md) · [对应代码](tutorials/21-memory-ppo/)
+- 第二十二篇：探索范围不等于任务进展：课程学习解决稀疏奖励 · [文章文档](docs/csdn/22-探索范围不等于任务进展课程学习解决稀疏奖励.md) · [对应代码](tutorials/22-curriculum-exploration/)
+- 第二十三篇：示范是起点，不是免疫牌：行为克隆与保守微调 · [文章文档](docs/csdn/23-示范是起点不是免疫牌行为克隆与保守微调.md) · [对应代码](tutorials/23-imitation-ppo/)
+- 第二十四篇：训练成功不等于泛化成功：DoorKey 跨尺寸评估 · [文章文档](docs/csdn/24-训练成功不等于泛化成功DoorKey跨尺寸评估.md) · [对应代码](tutorials/24-generalization/)
+- 第二十五篇：从状态向量到 RGB 图像：CarRacing 视觉输入管线 · [文章文档](docs/csdn/25-从状态向量到RGB图像CarRacing视觉输入管线.md) · [对应代码](tutorials/25-visual-input-pipeline/)
+- 第二十六篇：一张图够不够判断车辆状态：单帧与帧堆叠 · [文章文档](docs/csdn/26-一张图够不够判断车辆状态单帧与帧堆叠.md) · [对应代码](tutorials/26-frame-stacking/)
+- 第二十七篇：离散化方向盘后，DQN 能学会开车吗 · [文章文档](docs/csdn/27-离散化方向盘后DQN能学会开车吗.md) · [对应代码](tutorials/27-discrete-dqn-driving/)
+- 第二十八篇：连续动作 PPO 如何同时控制转向、油门和刹车 · [文章文档](docs/csdn/28-连续动作PPO如何同时控制转向油门和刹车.md) · [对应代码](tutorials/28-continuous-ppo-driving/)
+- 第二十九篇：奖励越精细，驾驶就一定越好吗 · [文章文档](docs/csdn/29-奖励越精细驾驶就一定越好吗.md) · [对应代码](tutorials/29-driving-reward-design/)
+- 第三十篇：画面变暗以后，策略还认识赛道吗 · [文章文档](docs/csdn/30-画面变暗以后策略还认识赛道吗.md) · [对应代码](tutorials/30-visual-robustness/)
+- 第三十一篇：训练成功不等于可靠驾驶：视觉控制最终复盘 · [文章文档](docs/csdn/31-训练成功不等于可靠驾驶视觉控制最终复盘.md) · [对应代码](tutorials/31-driving-reliability/)
+- 第三十二篇：一个奖励，多个智能体该怎么分工 · [文章文档](docs/csdn/32-一个奖励多个智能体该怎么分工.md) · [对应代码](tutorials/32-multi-agent-baselines/)
+- 第三十三篇：三个 DQN 一起训练，环境为什么一直在变 · [文章文档](docs/csdn/33-三个DQN一起训练环境为什么一直在变.md) · [对应代码](tutorials/33-independent-dqn/)
+- 第三十四篇：多个智能体应该共用一个大脑吗 · [文章文档](docs/csdn/34-多个智能体应该共用一个大脑吗.md) · [对应代码](tutorials/34-parameter-sharing/)
+- 第三十五篇：团队得分应该由谁负责：VDN 与信用分配 · [文章文档](docs/csdn/35-团队得分应该由谁负责VDN与信用分配.md) · [对应代码](tutorials/35-vdn-credit-assignment/)
+- 第三十六篇：VDN 不够灵活时，QMIX 如何混合价值 · [文章文档](docs/csdn/36-VDN不够灵活时QMIX如何混合价值.md) · [对应代码](tutorials/36-qmix/)
+- 第三十七篇：集中训练、分散执行：从 IPPO 到 MAPPO · [文章文档](docs/csdn/37-集中训练分散执行从IPPO到MAPPO.md) · [对应代码](tutorials/37-ippo-vs-mappo/)
+- 第三十八篇：没有通信，局部观测下如何配合 · [文章文档](docs/csdn/38-没有通信局部观测下如何配合.md) · [对应代码](tutorials/38-learned-communication/)
+- 第三十九篇：训练成功不等于团队可靠：多智能体最终审计 · [文章文档](docs/csdn/39-训练成功不等于团队可靠多智能体最终审计.md) · [对应代码](tutorials/39-marl-reliability/)
+- 第四十篇：不能再和环境交互时，如何制作离线强化学习数据集 · [文章文档](docs/csdn/40-不能再和环境交互时如何制作离线强化学习数据集.md) · [对应代码](tutorials/40-offline-dataset/)
+- 第四十一篇：不与环境交互，只模仿历史动作能学会控制吗 · [文章文档](docs/csdn/41-不与环境交互只模仿历史动作能学会控制吗.md) · [对应代码](tutorials/41-behavior-cloning/)
+- 第四十二篇：把 DQN 搬到固定数据上，为什么 Q 值会骗自己 · [文章文档](docs/csdn/42-把DQN搬到固定数据上为什么Q值会骗自己.md) · [对应代码](tutorials/42-offline-dqn/)
+- 第四十三篇：保守 Q 学习能否压住离线 DQN 的盲目乐观 · [文章文档](docs/csdn/43-保守Q学习能否压住离线DQN的盲目乐观.md) · [对应代码](tutorials/43-cql/)
+- 第四十四篇：不对陌生动作取最大值，IQL 如何学习离线策略 · [文章文档](docs/csdn/44-不对陌生动作取最大值IQL如何学习离线策略.md) · [对应代码](tutorials/44-iql/)
+- 第四十五篇：离线强化学习里，数据越多就一定越好吗 · [文章文档](docs/csdn/45-离线强化学习里数据越多就一定越好吗.md) · [对应代码](tutorials/45-dataset-quality/)
+- 第四十六篇：不能上线试跑时，如何评估离线策略 · [文章文档](docs/csdn/46-不能上线试跑时如何评估离线策略.md) · [对应代码](tutorials/46-off-policy-evaluation/)
+- 第四十七篇：离线策略拿到少量交互预算后，应该怎样微调 · [文章文档](docs/csdn/47-离线策略拿到少量交互预算后应该怎样微调.md) · [对应代码](tutorials/47-offline-to-online/)
+- 第四十八篇：离线训练成功等于可以部署吗：最终可靠性审计 · [文章文档](docs/csdn/48-离线训练成功等于可以部署吗最终可靠性审计.md) · [对应代码](tutorials/48-offline-reliability/)
+- 第四十九篇：不直接学习策略，先学习环境会怎样变化 · [文章文档](docs/csdn/49-不直接学习策略先学习环境会怎样变化.md) · [对应代码](tutorials/49-dynamics-model/)
+- 第五十篇：单步预测很准，为什么滚动几十步就错了 · [文章文档](docs/csdn/50-单步预测很准为什么滚动几十步就错了.md) · [对应代码](tutorials/50-rollout-error/)
+- 第五十一篇：有了环境模型，如何用随机射击规划动作 · [文章文档](docs/csdn/51-有了环境模型如何用随机射击规划动作.md) · [对应代码](tutorials/51-random-shooting-mpc/)
+- 第五十二篇：随机搜索太浪费，CEM 如何逐轮缩小动作范围 · [文章文档](docs/csdn/52-随机搜索太浪费CEM如何逐轮缩小动作范围.md) · [对应代码](tutorials/52-cem-planning/)
+- 第五十三篇：一个模型说得很自信，真的可信吗 · [文章文档](docs/csdn/53-一个模型说得很自信真的可信吗.md) · [对应代码](tutorials/53-ensemble-uncertainty/)
+- 第五十四篇：真实经验不够时，Dyna 如何用想象数据补训练 · [文章文档](docs/csdn/54-真实经验不够时Dyna如何用想象数据补训练.md) · [对应代码](tutorials/54-dyna/)
+- 第五十五篇：想象轨迹越长越好吗：实现简化版 MBPO · [文章文档](docs/csdn/55-想象轨迹越长越好吗实现简化版MBPO.md) · [对应代码](tutorials/55-mbpo/)
+- 第五十六篇：固定数据上直接规划，模型会不会钻漏洞 · [文章文档](docs/csdn/56-固定数据上直接规划模型会不会钻漏洞.md) · [对应代码](tutorials/56-offline-model-planning/)
+- 第五十七篇：模型式强化学习最终可靠性审计 · [文章文档](docs/csdn/57-模型式强化学习最终可靠性审计.md) · [对应代码](tutorials/57-model-reliability/)
 
 [查看教程与代码的完整索引](tutorials/README.md)
 

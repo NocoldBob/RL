@@ -39,4 +39,4 @@ python .\离线强化学习\train_offline.py --mode iql --dataset datasets\acrob
 
 ![结论](../assets/csdn-44/conclusion.png)
 
-IQL 的优势不是凭空探索，而是在固定数据内部更谨慎地挑选动作。本实验中它显著改善 mixed 数据策略，但仍需要可靠性审计。
+IQL 在固定数据内部更谨慎地挑选动作，并不会凭空增加探索信息。它在 mixed 数据上显著改善了策略，但仍有 41% 的回合失败，需要继续做可靠性审计。

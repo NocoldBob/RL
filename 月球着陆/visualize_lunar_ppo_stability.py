@@ -34,6 +34,8 @@ def plot_cover(path: Path) -> None:
     axis.plot([0.72, 0.92], [0.28, 0.20], color="#F97316", linewidth=6)
     axis.text(0.82, 0.80, "90%", color="#86EFAC", fontsize=18, ha="center")
     axis.text(0.82, 0.10, "仍有两个种子失败", color="#FCA5A5", fontsize=15, ha="center")
+    axis.set_xlim(0.0, 1.0)
+    axis.set_ylim(0.0, 1.0)
     save(figure, path)
 
 

@@ -20,7 +20,7 @@ L_CQL = L_Bellman + alpha [logsumexp_a Q(s,a) - Q(s,a_data)]
 
 ## 2. 为什么“更保守”仍然不成功
 
-保守正则解决的是过高估计，不会自动解决混合数据中的动作冲突、有限模型容量和 checkpoint 选择困难。`alpha` 太小可能压不住外推，太大又可能把有价值动作一起压低。本实验说明 CQL 是一种归纳偏置，不是一张离线 RL 免死金牌。
+保守正则针对过高估计，不会自动解决混合数据中的动作冲突、有限模型容量和 checkpoint 选择困难。`alpha` 太小可能压不住外推，太大又可能把有价值动作一起压低。结果说明 CQL 提供了一种归纳偏置，但不能保证策略成功。
 
 ```powershell
 python .\离线强化学习\train_offline.py --mode cql --cql-alpha 1 --dataset datasets\acrobot\mixed.npz

@@ -43,6 +43,8 @@ def cover(lesson: int, subtitle: str, path: Path) -> None:
     theta = np.linspace(0, 2 * np.pi, 200)
     axis.plot(0.82 + 0.10 * np.cos(theta), 0.52 + 0.28 * np.sin(theta), color="#334155", lw=16)
     axis.scatter([0.82], [0.76], s=500, marker="s", color="#38BDF8")
+    axis.set_xlim(0.0, 1.0)
+    axis.set_ylim(0.0, 1.0)
     save(figure, path)
 
 

@@ -12,7 +12,7 @@ y = r + gamma Q_target(s', argmax_a Q_online(s', a))
 
 固定数据只监督实际执行过的动作。某个未执行动作即使因为初始化或拟合误差被高估，`max` 也会选中它；这个虚高目标随后又被回归到当前 Q 值，误差能够自举放大。在线 DQN 还能执行该动作并获得纠正数据，离线 DQN 没有这个机会。
 
-## 2. 真实结果
+## 2. 隐藏种子评估结果
 
 ![成功率](../assets/csdn-42/success-rate.png)
 
@@ -20,11 +20,11 @@ y = r + gamma Q_target(s', argmax_a Q_online(s', a))
 
 ![平均回报](../assets/csdn-42/average-return.png)
 
-这组负结果非常关键：验证 loss 可以下降，训练过程也没有报错，但部署策略完全失败。Bellman 一致性衡量的是模型对自身目标的拟合，不等价于策略真实回报。
+验证 loss 可以下降，训练过程也没有报错，但部署策略仍然完全失败。Bellman 一致性衡量的是模型对自身目标的拟合，不等价于策略实际回报。
 
 ## 3. 正确的基线定位
 
-普通离线 DQN 不是应当删除的“失败代码”，而是后续方法必须超过的外推误差基线。实验需要同时记录数据动作的 Q、非数据动作的 Q，以及二者差距，而不能只看总 loss。
+普通离线 DQN 应保留为外推误差基线，供后续方法比较。实验需要同时记录数据动作的 Q、非数据动作的 Q 以及二者差距，不能只看总 loss。
 
 ```powershell
 python .\离线强化学习\train_offline.py --mode dqn --dataset datasets\acrobot\mixed.npz

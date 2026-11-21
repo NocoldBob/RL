@@ -2,7 +2,7 @@
 
 ![封面](../assets/csdn-54/cover.png)
 
-Dyna 在真实 replay 之外，让动力学模型生成 transition，再把两类数据混合训练策略。本篇固定 4,000 条真实 transition、SAC 网络和 6,000 次更新，只改变每个 batch 中的想象数据比例。
+Dyna 在真实 replay 之外，让动力学模型生成 transition，再把两类数据混合训练策略。实验固定 4,000 条真实 transition、SAC 网络和 6,000 次更新，只改变每个 batch 中的想象数据比例。
 
 ## 1. 单步想象
 
@@ -27,4 +27,4 @@ Dyna 在真实 replay 之外，让动力学模型生成 transition，再把两�
 
 ![结论](../assets/csdn-54/conclusion.png)
 
-Dyna 的价值是用计算换真实交互。本实验中 75% 单步想象数据最好，但增益远小于从随机策略到模型规划的提升。
+Dyna 用计算换取更少的真实交互。本次 75% 单步想象数据最好，但增益远小于从随机策略到模型规划的提升。
